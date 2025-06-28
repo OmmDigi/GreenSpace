@@ -1,0 +1,55 @@
+version: "3.8"
+
+services:
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    expose:
+      - "3000"
+    env_file:
+      - ./frontend/.env
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    depends_on:
+      - frontend
+      - crm
+      - api
+      - upload
+    restart: always
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    entrypoint:
+      [
+        "certbot",
+        "certonly",
+        "--webroot",
+        "--webroot-path=/var/www/certbot",
+        "--force-renewal",
+        "--email",
+        "ommdigitalwebsite@gmail.com",
+        "--agree-tos",
+        "--no-eff-email",
+        "-d",
+        "greenspaceinterior.in",
+        "-d",
+        "www.greenspaceinterior.in",
+      ]
+    depends_on:
+      - nginx
+
+volumes:
+  db_data:
