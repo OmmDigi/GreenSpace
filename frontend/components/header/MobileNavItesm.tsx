@@ -140,7 +140,7 @@ function MobileSidebar({ isOpen, onClose }: IMobileSidebarProps) {
           <div className="flex items-center justify-between p-6 border-b border-amber-100">
             <Image
               className="w-[9rem]"
-              src={"/logo4.png"}
+              src={"/logo.png"}
               height={500}
               width={500}
               alt="Green Space Logo"
