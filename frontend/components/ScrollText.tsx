@@ -8,21 +8,21 @@ function ScrollText() {
         <section className="marquee relative w-full h-full flex overflow-x-scroll items-center">
           <section className="left-to-right">
             {texts.map((item, index) => (
-              <h1 key={index} className="scrollEachText sm:text-[3rem]">
+              <h1 key={index} className="scrollEachText max-sm:!text-[3rem]">
                 {item}
               </h1>
             ))}
           </section>
           <section className="left-to-right">
             {texts.map((item) => (
-              <p key={item} className="scrollEachText sm:text-[3rem]">
+              <p key={item} className="scrollEachText max-sm:!text-[3rem] ">
                 {item}
               </p>
             ))}
           </section>
           <section className="left-to-right">
             {texts.map((item) => (
-              <p key={item} className="scrollEachText sm:text-[3rem]">
+              <p key={item} className="scrollEachText max-sm:!text-[3rem]">
                 {item}
               </p>
             ))}

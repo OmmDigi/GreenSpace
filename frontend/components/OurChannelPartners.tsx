@@ -1,92 +1,117 @@
+"use client";
+
 import { Handshake } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+
+import SwiperCore from "swiper";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+import { useEffect, useRef, useState } from "react";
+
+const partners = [
+  {
+    name: "Hafele",
+    logo: "/partners/hafele.png",
+    category: "Hardware Fitting Supplier",
+    description: "Providing hardware and fitting systems",
+    link: "https://www.hafeleindia.com/en/",
+  },
+  {
+    name: "Hettich",
+    logo: "/partners/hettich.png",
+    category: "Material Supplier",
+    description: "Providing furniture fittings",
+    link: "https://hettichindiaonline.com/",
+  },
+  {
+    name: "Jaguar Bath Fittings",
+    logo: "/partners/jaquar.jpg",
+    category: "Material Supplier",
+    description: "Jaquar Sanitaryware conforms to highest quality",
+    link: "https://www.jaquar.com/",
+  },
+  {
+    name: "Saint Gobain",
+    logo: "/partners/Saint-Gobain.jpg",
+    category: "Material Supplier",
+    description: "Saint-Gobain is committed to ensuring that our activities",
+    link: "https://saint-gobain.com/",
+  },
+  {
+    name: "Doorset",
+    logo: "/partners/Doorset.jpg",
+    category: "Material Supplier",
+    description: "Dorset India, the leading manufacture of door locks",
+    link: "https://www.dorsetindia.com/",
+  },
+  {
+    name: "Plantex Fittings",
+    logo: "/partners/PlantexFittings.jpg",
+    category: "Material Supplier",
+    description: "Plantex Bathroom Accessories- Stainless Steel 6pcs",
+    link: "https://www.plantex.in/",
+  },
+  {
+    name: "Kohler",
+    logo: "/partners/Kohler.jpg",
+    category: "Material Supplier",
+    description: "Kohler is your one stop destination for luxury sanitaryware",
+    link: "https://www.kohler.co.in/",
+  },
+  {
+    name: "Kajaria Tiles",
+    logo: "/partners/KajariaTiles.jpg",
+    category: "Material Supplier",
+    description: "India's Number 1 Tile Company offering designer floor tiles",
+    link: "https://www.kajariaceramics.com/",
+  },
+  {
+    name: "Godrej",
+    logo: "/partners/Godrej.png",
+    category: "Material Supplier",
+    description:
+      "Godrej Enterprises Group cater to 1.1 billion consumers globally",
+    link: "https://www.godrejenterprises.com/",
+  },
+  {
+    name: "Ebco",
+    logo: "/partners/Ebco.png",
+    category: "Material Supplier",
+    description:
+      "Ebco's product range spans Drawer Slides, Hinges, Computer Furniture Fittings,",
+    link: "https://ebco.in/",
+  },
+  {
+    name: "D’Decor",
+    logo: "/partners/DDecor.png",
+    category: "Material Supplier",
+    description:
+      "Discover premium soft furnishings for your home! Shop our extensive home furnishing",
+    link: "https://www.ddecor.com/",
+  },
+];
 
 export const OurChannelPartners: React.FC = () => {
-  const partners = [
-    {
-      name: "Hafele",
-      logo: "/partners/hafele.png",
-      category: "Hardware Fitting Supplier",
-      description: "Providing hardware and fitting systems",
-      link: "https://www.hafeleindia.com/en/",
-    },
-    {
-      name: "Hettich",
-      logo: "/partners/hettich.png",
-      category: "Material Supplier",
-      description: "Providing furniture fittings",
-      link: "https://hettichindiaonline.com/",
-    },
-    {
-      name: "Jaguar Bath Fittings",
-      logo: "/partners/jaquar.jpg",
-      category: "Material Supplier",
-      description: "Jaquar Sanitaryware conforms to highest quality",
-      link: "https://www.jaquar.com/",
-    },
-    {
-      name: "Saint Gobain",
-      logo: "/partners/Saint-Gobain.jpg",
-      category: "Material Supplier",
-      description: "Saint-Gobain is committed to ensuring that our activities",
-      link: "https://saint-gobain.com/",
-    },
-    {
-      name: "Doorset",
-      logo: "/partners/Doorset.jpg",
-      category: "Material Supplier",
-      description: "Dorset India, the leading manufacture of door locks",
-      link: "https://www.dorsetindia.com/",
-    },
-    {
-      name: "Plantex Fittings",
-      logo: "/partners/PlantexFittings.jpg",
-      category: "Material Supplier",
-      description: "Plantex Bathroom Accessories- Stainless Steel 6pcs",
-      link: "https://www.plantex.in/",
-    },
-    {
-      name: "Kohler",
-      logo: "/partners/Kohler.jpg",
-      category: "Material Supplier",
-      description:
-        "Kohler is your one stop destination for luxury sanitaryware",
-      link: "https://www.kohler.co.in/",
-    },
-    {
-      name: "Kajaria Tiles",
-      logo: "/partners/KajariaTiles.jpg",
-      category: "Material Supplier",
-      description:
-        "India's Number 1 Tile Company offering designer floor tiles",
-      link: "https://www.kajariaceramics.com/",
-    },
-    {
-      name: "Godrej",
-      logo: "/partners/Godrej.png",
-      category: "Material Supplier",
-      description:
-        "Godrej Enterprises Group cater to 1.1 billion consumers globally",
-      link: "https://www.godrejenterprises.com/",
-    },
-    {
-      name: "Ebco",
-      logo: "/partners/Ebco.png",
-      category: "Material Supplier",
-      description:
-        "Ebco's product range spans Drawer Slides, Hinges, Computer Furniture Fittings,",
-      link: "https://ebco.in/",
-    },
-    {
-      name: "D’Decor",
-      logo: "/partners/DDecor.png",
-      category: "Material Supplier",
-      description:
-        "Discover premium soft furnishings for your home! Shop our extensive home furnishing",
-      link: "https://www.ddecor.com/",
-    },
-  ];
+  SwiperCore.use([Navigation]);
+
+  const swiperRef = useRef<SwiperClass | null>(null);
+
+  const [sliderPreviewView, setSliderPreviewView] = useState(4);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setSliderPreviewView(window.innerWidth <= 800 ? 1 : 4);
+    }
+  }, []);
+
+  // const goNext = () => {
+  //   swiperRef.current?.slideNext();
+  // };
+
+  // const goBack = () => {
+  //   swiperRef.current?.slidePrev();
+  // };
 
   return (
     <section className="pt-16 bg-white !font-jost">
@@ -119,31 +144,46 @@ export const OurChannelPartners: React.FC = () => {
 
         <div
           data-aos="fade-up"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
+          onMouseLeave={() => swiperRef.current?.autoplay?.start()}
         >
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="group bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-teal-100"
-            >
-              <div className="mb-4">
-                <Image
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="w-full h-16 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
-                  height={500}
-                  width={500}
-                />
-              </div>
-              <div className="mb-3">
+          <Swiper
+            slidesPerView={sliderPreviewView}
+            centeredSlides={false}
+            spaceBetween={40}
+            loop={true}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: true,
+            }}
+            className="w-full hover:cursor-grab"
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+          >
+            {partners.map((partner, index) => (
+              <SwiperSlide
+                key={index}
+                className="group bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-teal-100"
+              >
+                <div className="mb-4">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="w-full h-16 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                    height={500}
+                    width={500}
+                  />
+                </div>
+                {/* <div className="mb-3">
                 <span className="inline-block bg-teal-100 text-teal-800 text-xs font-medium px-3 py-1 rounded-full">
                   {partner.category}
                 </span>
-              </div>
-              <h3 className="font-bold text-gray-900 text-lg mb-2">
+              </div> */}
+                {/* <h3 className="font-bold text-gray-900 text-lg mb-2">
                 {partner.name}
-              </h3>
-              <p className="text-gray-600 text-sm">{partner.description}</p>
+              </h3> */}
+                {/* <p className="text-gray-600 text-sm">{partner.description}</p>
               <div className="mt-4 transition-opacity duration-300">
                 <Link
                   href={partner.link}
@@ -164,9 +204,26 @@ export const OurChannelPartners: React.FC = () => {
                     />
                   </svg>
                 </Link>
-              </div>
-            </div>
-          ))}
+              </div> */}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* Navigation Buttons */}
+          {/* <button
+            onClick={goBack}
+            className="absolute z-10 -left-12 top-1/2 -translate-y-1/2 bg-[#00786e]  shadow-lg rounded-full p-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-110"
+          >
+            <ChevronLeft size={20} className="text-white" />
+          </button>
+
+          <button
+            onClick={goNext}
+            //   disabled={currentIndex >= images.length - slidesToShow.desktop}
+            className="absolute -right-10 z-10 top-1/2 -translate-y-1/2 bg-[#00786e] shadow-lg rounded-full p-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-110"
+          >
+            <ChevronRight size={20} className="text-white" />
+          </button> */}
         </div>
 
         {/* <div className="mt-12 bg-gradient-to-r from-teal-600 to-teal-700 rounded-xl p-8 text-center text-white">

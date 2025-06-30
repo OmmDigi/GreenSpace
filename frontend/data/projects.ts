@@ -39,8 +39,8 @@ const badRoom = Array.from({ length: 8 }, (_, index) => {
     type: "image",
     image: `/Projects/bedroom-designs/${id}.webp`,
     service_id: "bedroom-designs",
-    tag: "Badroom Design",
-    title: "Badroom Design",
+    tag: "Bedroom Design",
+    title: "Bedroom Design",
   } as IProjects;
 });
 

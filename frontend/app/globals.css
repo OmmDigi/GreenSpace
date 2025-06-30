@@ -22,6 +22,12 @@ html {
 
   --color-primary: #00776e;
   --color-secondary: #ab6447;
+
+  --breakpoint-sm-max: 639px;
+  --breakpoint-md-max: 767px;
+  --breakpoint-lg-max: 1023px;
+  --breakpoint-xl-max: 1279px;
+  --breakpoint-2xl-max: 1535px;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -45,6 +51,24 @@ button {
   max-width: 1300px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.animation-up-down {
+  animation: animationUpDown 2s linear infinite;
+}
+
+@keyframes animationUpDown {
+  0% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.1;
+  }
+
+  100% {
+    scale: 1;
+  }
 }
 
 /* #00776d60  */

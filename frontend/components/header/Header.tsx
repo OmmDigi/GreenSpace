@@ -36,7 +36,7 @@ export default function Header() {
           <NavItems />
         </MobileSideBar> */}
 
-          <OpenGetQuoteDialog isOpen>
+          <OpenGetQuoteDialog isOpen className="animation-up-down">
             <Button className="max-sm:hidden">
               <Headset size={15} />
               Booking & Consultation

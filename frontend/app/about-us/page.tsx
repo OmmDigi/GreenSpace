@@ -118,8 +118,8 @@ const AboutUs: React.FC = () => {
                   Bengal. We offer various types of Interior Design Services
                   like Residential Interior Design, Office Interior Design,
                   Kitchen Interior Design, and many other services. We are
-                  working in this industry from the last 5 years. Also, we
-                  completed more than 72 projects which include many types of
+                  working in this industry from the last 15+ years. Also, we
+                  completed more than 225+ projects which include many types of
                   home interior designing, kitchen interior designing, retail
                   store designing, etc.
                 </p>

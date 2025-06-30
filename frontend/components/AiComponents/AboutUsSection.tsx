@@ -49,7 +49,7 @@ export default function AboutUsSection() {
               <Image
                 className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                 alt="About Us - Interior Design Excellence"
-                src="/about/about-section.png"
+                src="/about/aboutSectionHomePage.png"
                 height={500}
                 width={600}
                 priority
@@ -89,7 +89,7 @@ export default function AboutUsSection() {
                 Green Space, Kolkata&apos;s trusted interior designer, has
                 crafted{" "}
                 <span className="font-semibold text-teal-700">
-                  72+ residential, office, and kitchen
+                  225+ residential, office, and kitchen
                 </span>{" "}
                 interiors over 15+ years, delivering personalized and elegant
                 spaces across West Bengal.
