@@ -11,7 +11,6 @@ import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import HandleCustomGalleryDialog from "@/components/Dialogs/HandleCustomGalleryDialog";
 import { cn } from "@/utils/cn";
 import Button from "@/components/Button";
-import OpenGetQuoteDialog from "@/components/Utils/OpenGetQuoteDialog";
 import { setGetQuoteDialog } from "@/redux/slice/getQuoteDialogSlice";
 import { useDispatch } from "react-redux";
 

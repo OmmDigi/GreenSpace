@@ -132,7 +132,7 @@ const GetQuoteDialog = () => {
                 />
 
                 {/* Right side - Form */}
-                <div className="w-full p-8 max-h-[36rem] max-sm:max-h-[70vh] overflow-y-auto">
+                <div className="w-full p-8 max-h-[36rem] max-sm:max-h-[70vh] overflow-y-auto nav_drop_down">
                   {/* Header */}
                   <div className="mb-6">
                     <h2 className="text-2xl font-bold text-gray-800">

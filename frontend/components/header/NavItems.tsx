@@ -50,7 +50,7 @@ function NavListView({ items, wrapperClassName, itemClassName }: INavListView) {
                 <div className="bg-amber-50 backdrop-blur-3xl border border-amber-50 overflow-hidden">
                   <NavListView
                     wrapperClassName="flex-col gap-0"
-                    itemClassName="px-8 py-2 hover:bg-[#fdf7df] !items-start"
+                    itemClassName="px-8 !py-1 hover:bg-[#fdf7df] !items-start !justify-start"
                     items={eachItem.submenu}
                   />
                 </div>
