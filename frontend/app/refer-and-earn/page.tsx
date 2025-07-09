@@ -67,7 +67,7 @@ const ReferEarnPage = () => {
       number: "03",
       title: "Earn Rewards",
       description:
-        "Get rewarded instantly once your friend's project is confirmed and payment is made",
+        "Get rewarded instantly once your friend&apos;s project is confirmed and payment is made",
       icon: <Trophy className="w-6 h-6" />,
     },
   ];
@@ -80,7 +80,7 @@ const ReferEarnPage = () => {
       earning: "₹15,000",
       referrals: 3,
       quote:
-        "I've earned ₹15,000 just by referring GreenSpace to my friends. The quality of work is amazing and the referral process is so simple!",
+        "I&apos;ve earned ₹15,000 just by referring GreenSpace to my friends. The quality of work is amazing and the referral process is so simple!",
     },
     {
       name: "Rajesh Kumar",
@@ -111,15 +111,15 @@ const ReferEarnPage = () => {
     {
       question: "When will I receive my reward?",
       answer:
-        "You'll receive your reward within 7-10 business days after your friend's project is confirmed and the first payment is made.",
+        "You&apos;ll receive your reward within 7-10 business days after your friend&apos;s project is confirmed and the first payment is made.",
     },
     {
       question: "Is there a limit to how many people I can refer?",
       answer:
-        "No, there's no limit! You can refer as many friends as you want and earn rewards for each successful referral.",
+        "No, there&apos;s no limit! You can refer as many friends as you want and earn rewards for each successful referral.",
     },
     {
-      question: "What if my friend doesn't mention my referral code?",
+      question: "What if my friend doesn&apos;t mention my referral code?",
       answer:
         "Your friend must use your referral code during booking. If they forget, they can contact our support team within 24 hours of booking.",
     },
@@ -193,7 +193,7 @@ const ReferEarnPage = () => {
               Earn Amazing Rewards
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              The more you refer, the more you earn. Here's what you can get for
+              The more you refer, the more you earn. Here&apos;s what you can get for
               each successful referral
             </p>
           </div>
@@ -365,7 +365,7 @@ const ReferEarnPage = () => {
                   </div>
                 </div>
 
-                <p className="text-gray-600 italic">"{testimonial.quote}"</p>
+                <p className="text-gray-600 italic">&quot;{testimonial.quote}&quot;</p>
 
                 <div className="flex text-[#edc93e] mt-4">
                   {[...Array(5)].map((_, i) => (

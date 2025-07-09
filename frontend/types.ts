@@ -86,3 +86,23 @@ export interface IJObList {
   requirements: string[];
   responsibilities: string[];
 }
+
+export interface BlogPost {
+  id: number;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  date: string;
+  featuredImage: string | null;
+  tags: string[];
+  totalViews: number;
+  related: RelatedBlog[];
+}
+
+export interface RelatedBlog {
+  title: string;
+  slug: string;
+  date : string;
+  featuredImage: string | null;
+}

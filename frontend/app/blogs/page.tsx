@@ -1,166 +1,67 @@
-"use client";
+import { Calendar, User, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
-import React, { useState } from "react";
-import {
-  Search,
-  Calendar,
-  User,
-  ChevronRight,
-  ChevronLeft,
-  Filter,
-} from "lucide-react";
+import axios from "axios";
+import https from "https";
+import Link from "next/link";
+import { formatDate } from "@/utils/formatDate";
 
-interface BlogPost {
+const httpsAgent = new https.Agent({
+  rejectUnauthorized: false, // ❗ Bypasses SSL certificate verification
+});
+
+type BlogPost = {
   id: number;
-  title: string;
-  excerpt: string;
-  author: string;
+  slug: string;
+  title: { rendered: string };
+  excerpt: { rendered: string };
   date: string;
-  category: string;
-  image: string;
-  readTime: string;
-}
-
-const BlogListing: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 6;
-
-  const blogPosts: BlogPost[] = [
-    {
-      id: 1,
-      title: "Modern Kitchen Design Trends for 2025",
-      excerpt:
-        "Discover the latest kitchen design trends that are shaping modern homes. From smart appliances to sustainable materials, explore what's trending in kitchen design.",
-      author: "Sarah Johnson",
-      date: "2025-01-15",
-      category: "Kitchen Design",
-      image:
-        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=250&fit=crop",
-      readTime: "5 min read",
-    },
-    {
-      id: 2,
-      title: "Transform Your Living Room with Interior Design Tips",
-      excerpt:
-        "Learn how to create a stunning living room that reflects your personality. Expert tips on color schemes, furniture placement, and decor selection.",
-      author: "Michael Chen",
-      date: "2025-01-12",
-      category: "Living Room",
-      image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=250&fit=crop",
-      readTime: "7 min read",
-    },
-    {
-      id: 3,
-      title: "Maximizing Small Spaces: Design Solutions",
-      excerpt:
-        "Creative solutions for making the most of limited space. Innovative storage ideas and design techniques for small apartments and homes.",
-      author: "Emily Rodriguez",
-      date: "2025-01-10",
-      category: "Small Spaces",
-      image:
-        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop",
-      readTime: "6 min read",
-    },
-    {
-      id: 4,
-      title: "Sustainable Interior Design: Eco-Friendly Choices",
-      excerpt:
-        "Explore sustainable design practices that are good for both your home and the environment. Green materials and energy-efficient solutions.",
-      author: "David Thompson",
-      date: "2025-01-08",
-      category: "Sustainability",
-      image:
-        "https://images.unsplash.com/photo-1565182999561-18d7dc61c393?w=400&h=250&fit=crop",
-      readTime: "8 min read",
-    },
-    {
-      id: 5,
-      title: "Bedroom Design Ideas for Better Sleep",
-      excerpt:
-        "Create a peaceful bedroom sanctuary that promotes rest and relaxation. Color psychology and furniture arrangement for optimal sleep.",
-      author: "Lisa Wang",
-      date: "2025-01-05",
-      category: "Bedroom",
-      image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=250&fit=crop",
-      readTime: "5 min read",
-    },
-    {
-      id: 6,
-      title: "Bathroom Renovation: Modern Luxury Trends",
-      excerpt:
-        "Transform your bathroom into a spa-like retreat. Latest trends in bathroom fixtures, tiles, and lighting for a luxurious experience.",
-      author: "Robert Kim",
-      date: "2025-01-03",
-      category: "Bathroom",
-      image:
-        "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&h=250&fit=crop",
-      readTime: "6 min read",
-    },
-    {
-      id: 7,
-      title: "Color Psychology in Interior Design",
-      excerpt:
-        "Understanding how colors affect mood and behavior in interior spaces. Choose the right color palette for different rooms in your home.",
-      author: "Anna Martinez",
-      date: "2025-01-01",
-      category: "Design Tips",
-      image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=250&fit=crop",
-      readTime: "7 min read",
-    },
-    {
-      id: 8,
-      title: "Smart Home Integration in Modern Design",
-      excerpt:
-        "Seamlessly integrate smart technology into your home design. From lighting to security, discover how to blend tech with aesthetics.",
-      author: "James Wilson",
-      date: "2024-12-28",
-      category: "Smart Homes",
-      image:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop",
-      readTime: "9 min read",
-    },
-  ];
-
-  const categories = [
-    "All",
-    "Kitchen Design",
-    "Living Room",
-    "Small Spaces",
-    "Sustainability",
-    "Bedroom",
-    "Bathroom",
-    "Design Tips",
-    "Smart Homes",
-  ];
-
-  const filteredPosts = blogPosts.filter((post) => {
-    const matchesSearch =
-      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory =
-      selectedCategory === "All" || post.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
-
-  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-  const startIndex = (currentPage - 1) * postsPerPage;
-  const currentPosts = filteredPosts.slice(
-    startIndex,
-    startIndex + postsPerPage
-  );
-
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
+  _embedded?: {
+    author?: { name: string }[];
+    "wp:featuredmedia"?: { source_url: string }[];
+    "wp:term"?: Array<
+      Array<{
+        name: string;
+      }>
+    >;
   };
+};
+
+const BlogListing: React.FC = async () => {
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const postsPerPage = 12;
+
+  // const categories = [
+  //   "All",
+  //   "Kitchen Design",
+  //   "Living Room",
+  //   "Small Spaces",
+  //   "Sustainability",
+  //   "Bedroom",
+  //   "Bathroom",
+  //   "Design Tips",
+  //   "Smart Homes",
+  // ];
+
+  // const filteredPosts = blogPosts.filter((post) => {
+  //   const matchesSearch =
+  //     post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //     post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+  //   const matchesCategory =
+  //     selectedCategory === "All" || post.category === selectedCategory;
+  //   return matchesSearch && matchesCategory;
+  // });
+
+  // const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+  // const startIndex = (currentPage - 1) * postsPerPage;
+  // const currentPosts = filteredPosts.slice(
+  //   startIndex,
+  //   startIndex + postsPerPage
+  // );
+  const blogs = await axios.get<BlogPost[]>(
+    "https://crm.greenspaceinterior.in/wp-json/wp/v2/posts?_embed&per_page=12",
+    { httpsAgent }
+  );
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -168,10 +69,12 @@ const BlogListing: React.FC = () => {
       <div className="relative bg-teal-600 text-white py-24 md:py-32 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=800&fit=crop"
             alt="Interior Design Blog"
             className="w-full h-full object-cover"
+            height={1920}
+            width={1080}
           />
           <div className="absolute inset-0 bg-teal-600/85"></div>
         </div>
@@ -200,14 +103,14 @@ const BlogListing: React.FC = () => {
               Discover the latest trends, expert insights, and creative ideas to
               transform your space into something extraordinary
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Get Free Consultation
               </button>
               <button className="border-2 border-white text-white hover:bg-white hover:text-teal-600 font-bold py-3 px-8 rounded-lg transition-all duration-300">
                 View Our Work
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -259,60 +162,70 @@ const BlogListing: React.FC = () => {
 
         {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {currentPosts.map((post) => (
-            <article
-              key={post.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
-            >
-              <div className="relative">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {post.category}
-                  </span>
-                </div>
-              </div>
-
-              <div className="p-6">
-                <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-teal-600 transition-colors">
-                  {post.title}
-                </h2>
-
-                <p className="text-gray-600 mb-4 line-clamp-3">
-                  {post.excerpt}
-                </p>
-
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                  <div className="flex items-center gap-4">
-                    <div className="flex items-center gap-1">
-                      <User className="h-4 w-4" />
-                      <span>{post.author}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Calendar className="h-4 w-4" />
-                      <span>{formatDate(post.date)}</span>
-                    </div>
+          {blogs.data.map((blog) => (
+            <Link key={blog.id} href={`/blogs/${blog.slug}`}>
+              <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <div className="relative h-48">
+                  <Image
+                    src={
+                      blog._embedded?.["wp:featuredmedia"]?.[0].source_url ||
+                      "/placeholder_background.jpg"
+                    }
+                    alt="Featured"
+                    className="object-cover"
+                    fill
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      {/* {post.category} */}
+                      {blog._embedded?.["wp:term"]?.[0]?.[0].name}
+                    </span>
                   </div>
-                  <span className="text-teal-600 font-medium">
-                    {post.readTime}
-                  </span>
                 </div>
 
-                <button className="inline-flex items-center text-teal-600 hover:text-teal-700 font-medium transition-colors">
-                  Read More
-                  <ChevronRight className="h-4 w-4 ml-1" />
-                </button>
-              </div>
-            </article>
+                <div className="p-6">
+                  <h2
+                    dangerouslySetInnerHTML={{
+                      __html: `${blog.title.rendered}`,
+                    }}
+                    className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-teal-600 transition-colors"
+                  ></h2>
+
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: `${blog.excerpt.rendered}`,
+                    }}
+                    className="text-gray-600 mb-4 line-clamp-3"
+                  ></p>
+
+                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                    <div className="flex items-center gap-4">
+                      <div className="flex items-center gap-1">
+                        <User className="h-4 w-4" />
+                        <span>{blog._embedded?.author?.[0]?.name}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Calendar className="h-4 w-4" />
+                        <span>{formatDate(blog.date)}</span>
+                      </div>
+                    </div>
+                    {/* <span className="text-teal-600 font-medium">
+                    {post.readTime}
+                  </span> */}
+                  </div>
+
+                  <button className="inline-flex items-center text-teal-600 hover:text-teal-700 font-medium transition-colors">
+                    Read More
+                    <ChevronRight className="h-4 w-4 ml-1" />
+                  </button>
+                </div>
+              </article>
+            </Link>
           ))}
         </div>
 
         {/* Pagination */}
-        {totalPages > 1 && (
+        {/* {totalPages > 1 && (
           <div className="flex justify-center items-center gap-2">
             <button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
@@ -348,11 +261,11 @@ const BlogListing: React.FC = () => {
               <ChevronRight className="h-4 w-4" />
             </button>
           </div>
-        )}
+        )} */}
       </div>
 
       {/* Call to Action Section */}
-      <div className="bg-teal-600 text-white py-16">
+      {/* <div className="bg-teal-600 text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Ready to Transform Your Space?
@@ -365,7 +278,7 @@ const BlogListing: React.FC = () => {
             Get Free Consultation
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

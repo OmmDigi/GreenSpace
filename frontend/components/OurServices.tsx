@@ -42,7 +42,7 @@ export default function OurServices() {
           swiperRef.current = swiper;
         }}
       >
-        {SERVICES.map((service, index) => (
+        {SERVICES.map((service) => (
           <SwiperSlide
             key={service.id}
             className="flex-center flex-col relative aspect-video min-h-[19rem] overflow-hidden max-sm:w-full z-10"

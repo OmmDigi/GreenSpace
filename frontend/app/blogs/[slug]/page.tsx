@@ -1,156 +1,21 @@
-"use client";
+import React from "react";
+import { Calendar, ArrowLeft } from "lucide-react";
+import { formatDate } from "@/utils/formatDate";
+import { getBlogBySlug } from "@/lib/api";
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import "@/app/rich-text-content.css";
+import Link from "next/link";
 
-import React, { useState } from "react";
-import {
-  Calendar,
-  User,
-  Clock,
-  Share2,
-  Facebook,
-  Twitter,
-  Linkedin,
-  ArrowLeft,
-  ChevronRight,
-  Heart,
-  MessageCircle,
-  Bookmark,
-  Eye,
-} from "lucide-react";
-
-interface RelatedPost {
-  id: number;
-  title: string;
-  image: string;
-  date: string;
-  readTime: string;
+interface IProps {
+  params: Promise<{ slug: string }>;
 }
 
-interface Comment {
-  id: number;
-  author: string;
-  avatar: string;
-  date: string;
-  content: string;
-  replies?: Comment[];
-}
+const BlogSingle = async ({ params }: IProps) => {
+  const slug = (await params).slug;
+  const blogPost = await getBlogBySlug(slug);
 
-const BlogSingle: React.FC = () => {
-  const [isLiked, setIsLiked] = useState(false);
-  const [isBookmarked, setIsBookmarked] = useState(false);
-  const [showCommentForm, setShowCommentForm] = useState(false);
-  const [newComment, setNewComment] = useState("");
-  const [newCommentAuthor, setNewCommentAuthor] = useState("");
-
-  const blogPost = {
-    id: 1,
-    title:
-      "Modern Kitchen Design Trends for 2025: Creating Your Dream Culinary Space",
-    excerpt:
-      "Discover the latest kitchen design trends that are shaping modern homes. From smart appliances to sustainable materials, explore what's trending in kitchen design.",
-    author: "Sarah Johnson",
-    authorBio:
-      "Sarah is a certified interior designer with over 10 years of experience in creating beautiful, functional spaces. She specializes in modern kitchen and bathroom design.",
-    authorAvatar:
-      "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
-    date: "2025-01-15",
-    category: "Kitchen Design",
-    image:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=600&fit=crop",
-    readTime: "8 min read",
-    views: 1247,
-    likes: 89,
-    shares: 23,
-    tags: [
-      "Kitchen Design",
-      "Modern Trends",
-      "Interior Design",
-      "Home Improvement",
-      "2025 Trends",
-    ],
-  };
-
-  const relatedPosts: RelatedPost[] = [
-    {
-      id: 2,
-      title: "Transform Your Living Room with Interior Design Tips",
-      image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=250&fit=crop",
-      date: "2025-01-12",
-      readTime: "7 min read",
-    },
-    {
-      id: 3,
-      title: "Maximizing Small Spaces: Design Solutions",
-      image:
-        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop",
-      date: "2025-01-10",
-      readTime: "6 min read",
-    },
-    {
-      id: 4,
-      title: "Sustainable Interior Design: Eco-Friendly Choices",
-      image:
-        "https://images.unsplash.com/photo-1565182999561-18d7dc61c393?w=400&h=250&fit=crop",
-      date: "2025-01-08",
-      readTime: "8 min read",
-    },
-  ];
-
-  const comments: Comment[] = [
-    {
-      id: 1,
-      author: "Michael Chen",
-      avatar:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face",
-      date: "2025-01-16",
-      content:
-        "This article is incredibly helpful! I'm planning to renovate my kitchen this year and these trends are exactly what I was looking for. The smart appliance integration tips are particularly useful.",
-    },
-    {
-      id: 2,
-      author: "Emma Rodriguez",
-      avatar:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop&crop=face",
-      date: "2025-01-16",
-      content:
-        "Love the sustainable materials section! It's great to see eco-friendly options becoming more mainstream in kitchen design. Do you have any specific brand recommendations?",
-    },
-    {
-      id: 3,
-      author: "David Kim",
-      avatar:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50&h=50&fit=crop&crop=face",
-      date: "2025-01-15",
-      content:
-        "The before and after photos really showcase the impact of these design principles. Thanks for sharing your expertise!",
-    },
-  ];
-
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  };
-
-  const handleShare = (platform: string) => {
-    // In a real app, you'd implement actual sharing functionality
-    console.log(`Sharing on ${platform}`);
-  };
-
-  const handleComment = () => {
-    if (newComment.trim() && newCommentAuthor.trim()) {
-      // In a real app, you'd submit the comment to your backend
-      console.log("New comment:", {
-        author: newCommentAuthor,
-        content: newComment,
-      });
-      setNewComment("");
-      setNewCommentAuthor("");
-      setShowCommentForm(false);
-    }
-  };
+  if (blogPost === null) return notFound();
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -161,10 +26,12 @@ const BlogSingle: React.FC = () => {
           Back to Blog
         </button>
         <div className="absolute inset-0 z-0">
-          <img
-            src={blogPost.image}
+          <Image
+            src={blogPost.featuredImage || "/placeholder_background.jpg"}
             alt={blogPost.title}
             className="w-full h-full object-cover"
+            height={1280}
+            width={720}
           />
           <div className="absolute inset-0 bg-teal-600/80"></div>
         </div>
@@ -173,38 +40,38 @@ const BlogSingle: React.FC = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-6">
               <span className="inline-block px-4 py-2 bg-yellow-500 text-black font-semibold rounded-full text-sm mb-4">
-                {blogPost.category}
+                {/* {blogPost} */}
+                {/* Category */}
               </span>
             </div>
             <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
               {blogPost.title}
             </h1>
-            <p className="text-xl text-teal-100 mb-8 leading-relaxed">
-              {blogPost.excerpt}
-            </p>
+            <p
+              dangerouslySetInnerHTML={{ __html: `${blogPost.excerpt}` }}
+              className="text-xl text-teal-100 mb-8 leading-relaxed"
+            ></p>
 
             {/* Article Meta */}
             <div className="flex flex-wrap justify-center items-center gap-6 text-teal-100">
               <div className="flex items-center gap-2">
-                <img
+                {/* <Image
                   src={blogPost.authorAvatar}
                   alt={blogPost.author}
                   className="w-8 h-8 rounded-full"
-                />
-                <span>{blogPost.author}</span>
+                  fill
+                /> */}
+                {/* <span>{blogPost.}</span> */}
+                {/* <span>Green Space</span> */}
               </div>
               <div className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
                 <span>{formatDate(blogPost.date)}</span>
               </div>
-              <div className="flex items-center gap-1">
-                <Clock className="h-4 w-4" />
-                <span>{blogPost.readTime}</span>
-              </div>
-              <div className="flex items-center gap-1">
+              {/* <div className="flex items-center gap-1">
                 <Eye className="h-4 w-4" />
-                <span>{blogPost.views} views</span>
-              </div>
+                <span>{blogPost.totalViews} views</span>
+              </div> */}
             </div>
           </div>
         </div>
@@ -265,7 +132,7 @@ const BlogSingle: React.FC = () => {
           </div> */}
 
           {/* Article Content */}
-          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+          {/* <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="prose prose-lg max-w-none">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 The Evolution of Modern Kitchen Design
@@ -359,6 +226,13 @@ const BlogSingle: React.FC = () => {
                 </p>
               </div>
             </div>
+          </div> */}
+
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+            <div
+              className="rich-text-content"
+              dangerouslySetInnerHTML={{ __html: `${blogPost.content}` }}
+            ></div>
           </div>
 
           {/* Tags */}
@@ -377,7 +251,7 @@ const BlogSingle: React.FC = () => {
           </div>
 
           {/* Author Bio */}
-          <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
+          {/* <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
             <div className="flex items-start gap-4">
               <img
                 src={blogPost.authorAvatar}
@@ -402,7 +276,7 @@ const BlogSingle: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Comments Section */}
           {/* <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
@@ -485,23 +359,29 @@ const BlogSingle: React.FC = () => {
               Related Articles
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {relatedPosts.map((post) => (
-                <article key={post.id} className="group cursor-pointer">
-                  <div className="relative overflow-hidden rounded-lg mb-4">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors line-clamp-2">
-                    {post.title}
-                  </h4>
-                  <div className="flex items-center gap-4 text-sm text-gray-500">
-                    <span>{formatDate(post.date)}</span>
-                    <span>{post.readTime}</span>
-                  </div>
-                </article>
+              {blogPost.related.map((rPost) => (
+                <Link key={rPost.slug} href={`/blogs/${rPost.slug}`}>
+                  <article className="group cursor-pointer">
+                    <div className="relative overflow-hidden rounded-lg mb-4">
+                      <Image
+                        src={
+                          rPost.featuredImage || "/placeholder_background.jpg"
+                        }
+                        alt={rPost.title}
+                        height={1280}
+                        width={1280}
+                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <h4 className="font-semibold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors line-clamp-2">
+                      {rPost.title}
+                    </h4>
+                    <div className="flex items-center gap-4 text-sm text-gray-500">
+                      <span>{formatDate(rPost.date)}</span>
+                      {/* <span>{post.readTime}</span> */}
+                    </div>
+                  </article>
+                </Link>
               ))}
             </div>
           </div>

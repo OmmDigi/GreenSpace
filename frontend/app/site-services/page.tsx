@@ -1,11 +1,11 @@
 import React from "react";
 import HeroSection from "@/components/SideServices/HeroSection";
 import ServiceComparisonSection from "./ServiceComparisonSection";
-import DesignCarousel from "@/components/SideServices/DesignCarousel.tsx";
 import SiteServiceList from "@/components/SideServices/SiteServiceList";
 import ReviewsCarousel from "@/components/AiComponents/ReviewsCarousel";
 import Button from "@/components/Button";
 import OpenGetQuoteDialog from "@/components/Utils/OpenGetQuoteDialog";
+import DesignCarousel from "@/components/SideServices/DesignCarousel";
 
 export default function page() {
   return (
@@ -54,7 +54,7 @@ export default function page() {
         <ReviewsCarousel />
 
         <OpenGetQuoteDialog isOpen className="flex items-center justify-center">
-          <Button>Let's Become A Happy Customer →</Button>
+          <Button>Let&apos;s Become A Happy Customer →</Button>
         </OpenGetQuoteDialog>
       </section>
     </main>

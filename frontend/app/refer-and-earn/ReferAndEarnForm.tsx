@@ -46,27 +46,27 @@ export default function ReferAndEarnForm() {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Friend's Name *
+            Friend&apos;s Name *
           </label>
           <input
             required
             type="text"
             name="friendName"
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00776e] focus:border-transparent"
-            placeholder="Enter your friend's name *"
+            placeholder="Enter your friend&apos;s name *"
           />
         </div>
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Friend's Phone Number *
+            Friend&apos;s Phone Number *
           </label>
           <input
             required
             type="tel"
             name="friendPhone"
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00776e] focus:border-transparent"
-            placeholder="Enter your friend's phone number *"
+            placeholder="Enter your friend&apos;s phone number *"
           />
         </div>
       </div>

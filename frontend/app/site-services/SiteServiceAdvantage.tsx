@@ -91,7 +91,7 @@ const SiteServiceAdvantage: React.FC = () => {
       {/* Header */}
       <div className="text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-          — The DesignCafe Site Service Advantage —
+          — The Green Space Site Service Advantage —
         </h2>
         <p className="text-lg text-gray-700 font-medium">
           Experience The Convenience Of A <span className="text-[#00776e] font-semibold">One-Stop Solution</span> For All Your Home Interiors Needs
@@ -165,7 +165,7 @@ const SiteServiceAdvantage: React.FC = () => {
       {/* Bottom CTA */}
       <div className="text-center mt-12">
         <p className="text-gray-600 mb-6">
-          Ready to experience the DesignCafe advantage?
+          Ready to experience the Green Space advantage?
         </p>
         <button className="bg-[#00776e] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#005951] transition-colors duration-200 shadow-lg">
           Get Started Today

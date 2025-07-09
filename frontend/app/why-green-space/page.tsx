@@ -65,41 +65,6 @@ const WhyChooseUs: React.FC = () => {
     },
   ];
 
-  const services = [
-    "Modular Kitchen Design",
-    "Living Room Makeover",
-    "Bedroom Interior",
-    "Bathroom Renovation",
-    "Office Interior Design",
-    "Complete Home Design",
-    "Space Planning",
-    "3D Visualization",
-  ];
-
-  const testimonials = [
-    {
-      name: "Priya Sharma",
-      role: "Homeowner",
-      rating: 5,
-      comment:
-        "Green Space Interior transformed our home beautifully. Their attention to detail and eco-friendly approach impressed us greatly.",
-    },
-    {
-      name: "Rajesh Kumar",
-      role: "Business Owner",
-      rating: 5,
-      comment:
-        "Excellent work on our office interior. The team was professional, punctual, and delivered exactly what we envisioned.",
-    },
-    {
-      name: "Anita Das",
-      role: "Architect",
-      rating: 5,
-      comment:
-        "I've worked with many interior designers, but Green Space Interior stands out for their creativity and sustainable practices.",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -346,7 +311,7 @@ const WhyChooseUs: React.FC = () => {
               The Green Space Interior Advantage
             </h2>
             <p className="text-xl text-gray-500 max-w-3xl mx-auto">
-              When you choose us, you're choosing a partner committed to
+              When you choose us, you&apos;re choosing a partner committed to
               excellence, sustainability, and your complete satisfaction.
             </p>
           </div>
@@ -375,7 +340,7 @@ const WhyChooseUs: React.FC = () => {
             Ready to Transform Your Space?
           </h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Let's discuss your project and create something amazing together.
+            Let&apos;s discuss your project and create something amazing together.
             Get your free consultation today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

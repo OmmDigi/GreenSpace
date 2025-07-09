@@ -19,6 +19,7 @@ import { CustomGalleryDialog } from "@/components/Dialogs/CustomGalleryDialog";
 const latoFont = Lato({
   variable: "--lato",
   weight: ["100", "300", "400", "700", "900"],
+  subsets : ["latin"]
 });
 
 // const libreCaslonFont = Libre_Caslon_Text({

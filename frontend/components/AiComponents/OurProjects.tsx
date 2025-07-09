@@ -14,7 +14,6 @@ import {
 } from "lucide-react";
 import CustomLink from "../CustomLink";
 import Button from "../Button";
-import { cn } from "@/utils/cn";
 import { useSearchParams } from "next/navigation";
 import CustomLinkProgress from "../CustomLinkProgress";
 import { PROJECTS } from "@/data/projects";

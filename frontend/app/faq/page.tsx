@@ -280,7 +280,7 @@ const FAQPage = () => {
               Still Have Questions?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Can't find what you're looking for? Our team is here to help you with any questions about our services.
+              Can&apos;t find what you&apos;re looking for? Our team is here to help you with any questions about our services.
             </p>
           </div>
 
