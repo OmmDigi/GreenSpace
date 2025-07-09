@@ -74,3 +74,15 @@ export interface GalleryDialogProps {
   onClose: () => void;
   initialIndex?: number;
 }
+
+export interface IJObList {
+  id: number;
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  experience: string;
+  description: string;
+  requirements: string[];
+  responsibilities: string[];
+}

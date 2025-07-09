@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import {
   Check,
@@ -12,6 +14,8 @@ import {
   ChevronUp,
 } from "lucide-react";
 import OpenGetQuoteDialog from "@/components/Utils/OpenGetQuoteDialog";
+import Button from "@/components/Button";
+import Image from "next/image";
 
 const ServiceComparisonSection = () => {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
@@ -19,6 +23,7 @@ const ServiceComparisonSection = () => {
   const comparisonData = [
     {
       icon: <Clock className="w-5 h-5" />,
+      image: "/site-service/ProjectTracking.png",
       feature: "Project Tracking",
       localVendor: false,
       peerCompanies: "maybe",
@@ -29,6 +34,7 @@ const ServiceComparisonSection = () => {
     },
     {
       icon: <Shield className="w-5 h-5" />,
+      image: "/site-service/Trust.png",
       feature: "Trust",
       localVendor: false,
       peerCompanies: "maybe",
@@ -39,6 +45,7 @@ const ServiceComparisonSection = () => {
     },
     {
       icon: <Award className="w-5 h-5" />,
+      image: "/site-service/Quality.png",
       feature: "Quality",
       localVendor: false,
       peerCompanies: "maybe",
@@ -50,6 +57,7 @@ const ServiceComparisonSection = () => {
     },
     {
       icon: <Headphones className="w-5 h-5" />,
+      image: "/site-service/AfterSalesServices.png",
       feature: "After Sales Services",
       localVendor: false,
       peerCompanies: "maybe",
@@ -61,6 +69,7 @@ const ServiceComparisonSection = () => {
     {
       icon: <DollarSign className="w-5 h-5" />,
       feature: "Price Guarantee",
+      image: "/site-service/AfterSalesServices.png",
       localVendor: false,
       peerCompanies: "maybe",
       greenSpace: true,
@@ -70,6 +79,7 @@ const ServiceComparisonSection = () => {
     },
     {
       icon: <FileCheck className="w-5 h-5" />,
+      image: "/site-service/Warranty.png",
       feature: "Warranty",
       localVendor: false,
       peerCompanies: "maybe",
@@ -111,15 +121,9 @@ const ServiceComparisonSection = () => {
     <section className="py-12 lg:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            The Green Space Site Service Advantage
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Experience The Convenience Of A One-Stop Solution For All Your Home
-            Interiors Needs
-          </p>
-        </div>
+        <h2 className="text-3xl lg:text-4xl text-center font-bold text-gray-900 mb-4">
+          — The Green Space Site Service Advantage —
+        </h2>
 
         {/* Desktop View - Fixed Table Layout */}
         <div className="hidden lg:block">
@@ -152,10 +156,17 @@ const ServiceComparisonSection = () => {
                 className="grid grid-cols-12 border-b border-gray-100 hover:bg-gray-50 transition-colors min-h-20"
               >
                 {/* Feature Column - Fixed Width */}
-                <div className="col-span-3 px-6 py-5 flex items-center">
-                  <div className="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center text-yellow-600 mr-3 flex-shrink-0">
+                <div className="col-span-3 px-6 py-5 flex items-center gap-2.5">
+                  {/* <div className="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center text-yellow-600 mr-3 flex-shrink-0">
                     {item.icon}
-                  </div>
+                  </div> */}
+                  <Image
+                    className="w-[4rem]"
+                    alt={item.feature}
+                    src={item.image}
+                    height={1080}
+                    width={1080}
+                  />
                   <span className="font-semibold text-gray-900 text-sm">
                     {item.feature}
                   </span>
@@ -307,12 +318,11 @@ const ServiceComparisonSection = () => {
               Ready to Transform Your Space?
             </h3>
             <p className="text-gray-600 mb-6">
-              Let&apos;s discuss your project and create something amazing together.
+              Let&apos;s discuss your project and create something amazing
+              together.
             </p>
             <OpenGetQuoteDialog isOpen>
-              <button className="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200">
-                Get Quote →
-              </button>
+              <Button>Get Quote →</Button>
             </OpenGetQuoteDialog>
           </div>
         </div>

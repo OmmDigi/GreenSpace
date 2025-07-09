@@ -16,7 +16,7 @@ export default function AboutUsSection() {
     <section className="py-0 lg:py-0 bg-gradient-to-br from-slate-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        {/* <div className="text-center mb-16">
+        <div className="text-center mb-16">
           <div className="inline-block">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#00776e]/10 to-[#ab6447]/10 rounded-full mb-6">
               <BadgeInfo className="w-5 h-5 text-[#00776e]" />
@@ -34,12 +34,8 @@ export default function AboutUsSection() {
                 ></div>
               </span>
             </h2>
-
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Learn Who We Are, What We Do What Our Expatriates
-            </p>
           </div>
-        </div> */}
+        </div>
 
         {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -73,32 +69,46 @@ export default function AboutUsSection() {
 
           {/* Content Section */}
           <div className="space-y-8">
-            <div
+            {/* <div
               data-aos="fade-up"
               className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#00776e]/10 to-[#ab6447]/10 rounded-full mb-6"
             >
               <BadgeInfo className="w-5 h-5 text-[#00776e]" />
               <span className="text-[#00776e] font-medium">About Us</span>
-            </div>
-            <div className="space-y-6">
+            </div> */}
+            <div className="space-y-2">
               <p
                 data-aos="fade-up"
                 data-aos-delay="250"
-                className="text-lg text-gray-700 leading-relaxed"
+                // className="text-lg text-gray-700 leading-relaxed"
+                className="text-gray-600 leading-relaxed"
               >
-                Green Space, Kolkata&apos;s trusted interior designer, has
-                crafted{" "}
-                <span className="font-semibold text-teal-700">
+                We know your 2 BHK should feel bigger, brighter and truly yours.
+                That’s why we design every corner to match your lifestyle, with
+                no wasted space, no clutter, just smart, stylish living.
+                {/* <span className="font-semibold text-teal-700">
                   225+ residential, office, and kitchen
                 </span>{" "}
                 interiors over 15+ years, delivering personalized and elegant
-                spaces across West Bengal.
+                spaces across West Bengal. */}
               </p>
-              {/* <p className="text-gray-600 leading-relaxed">
-                Our commitment to excellence and innovative design solutions has
-                established us as industry leaders, consistently delivering
-                spaces that blend functionality with aesthetic brilliance.
-              </p> */}
+              <p
+                data-aos="fade-up"
+                data-aos-delay="250"
+                className="text-gray-600 leading-relaxed"
+              >
+                From clever storage to warm lighting and furniture that fits
+                like it was made for you, we make everyday living feel special.
+                Kolkata&apos;s trusted interior designer, has crafted
+              </p>
+              <p
+                data-aos="fade-up"
+                data-aos-delay="250"
+                className="text-gray-600 leading-relaxed"
+              >
+                Ready to see how we can transform your flat into a place you’re
+                proud to call home? Book a free consultation with us.
+              </p>
             </div>
 
             {/* Statistics Grid */}

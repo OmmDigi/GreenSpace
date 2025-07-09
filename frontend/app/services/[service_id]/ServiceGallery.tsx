@@ -73,7 +73,14 @@ const ServiceGallery = ({ service_id }: IProps) => {
               Take a look at our recent projects and quality workmanship
             </p>
           </div>
-          <ImageSlider images={serviceImages} />
+          <ImageSlider
+            images={serviceImages}
+            previews={{
+              desktop: 2,
+              mobile: 1,
+            }}
+            itemClassName="!min-h-[10rem]"
+          />
         </div>
 
         {/* Video Slider Section */}

@@ -4,12 +4,14 @@ import React from "react";
 
 interface IProps extends React.ComponentProps<"button"> {
   loading?: boolean;
+  glowCss?: string;
 }
 
 export default function Button({
   children,
   className,
   loading = false,
+  glowCss,
   ...rest
 }: IProps) {
   return (
@@ -17,7 +19,7 @@ export default function Button({
       <button
         {...rest}
         className={cn(
-          "group cursor-pointer relative overflow-hidden px-8 py-4 inline-flex items-center gap-3 bg-teal-600 text-white rounded-full font-semibold transition-all duration-300 shadow-lg",
+          "group cursor-pointer relative overflow-hidden px-8 py-4 inline-flex items-center gap-3 bg-gradient-to-tl from-[#f3d662] to-[#e9c01d] text-black rounded-md font-semibold transition-all duration-300 shadow-lg",
           className,
           loading
             ? "opacity-30 hover:bg-none"
@@ -35,7 +37,12 @@ export default function Button({
         )}
       </button>
       {loading ? null : (
-        <div className="size-full absolute inset-0 bg-teal-500 -z-10 inline-block blur-[5px] rounded-full"></div>
+        <div
+          className={cn(
+            "size-full absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-600 -z-10 inline-block blur-[5px] rounded-md",
+            glowCss
+          )}
+        ></div>
       )}
     </div>
   );

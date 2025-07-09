@@ -1,8 +1,9 @@
 "use client";
 
 import { handleServicePageFormAction } from "@/app/actions/handleServicePageFormAction";
+import Button from "@/components/Button";
 import { SERVICES } from "@/constant";
-import { LoaderCircle } from "lucide-react";
+// import { LoaderCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 
@@ -136,7 +137,7 @@ export default function DetailsPageForm({ currentServiceName }: IProps) {
           />
         </div>
 
-        <button
+        {/* <button
           type="submit"
           className="w-full bg-[#00776e] hover:bg-[#00776e]/90 text-white font-semibold py-4 rounded-lg transition-colors duration-300 transform hover:scale-[1.02]"
         >
@@ -145,7 +146,10 @@ export default function DetailsPageForm({ currentServiceName }: IProps) {
           ) : (
             <span>Get Free Consultation</span>
           )}
-        </button>
+        </button> */}
+        <Button className="!w-full" loading={isPending}>
+          <span>Get Free Consultation</span>
+        </Button>
 
         <div className="text-center text-sm text-gray-500 mt-4">
           <p>We&apos;ll respond within 2 hours during business hours</p>

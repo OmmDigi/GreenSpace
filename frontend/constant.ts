@@ -283,11 +283,11 @@ export const SERVICES = [
 ];
 
 export const NAV_ITEMS: INav[] = [
-  {
-    id: 1,
-    name: "Home",
-    slug: "/",
-  },
+  // {
+  //   id: 1,
+  //   name: "Home",
+  //   slug: "/",
+  // },
   {
     id: 2,
     name: "Design Gallery",
@@ -363,13 +363,9 @@ export const NAV_ITEMS: INav[] = [
     submenu: SERVICES.map((item) => ({
       id: item.id,
       name: item.name,
-      slug: `/design-gallery?type=${item.id}`,
+      // slug: `/design-gallery?type=${item.id}`,
+      slug: `/services/${item.id}`,
     })),
-  },
-  {
-    id: 9,
-    name: "About",
-    slug: "/about-us",
   },
   // {
   //   id: 3,
@@ -386,6 +382,7 @@ export const NAV_ITEMS: INav[] = [
     name: "Site Services",
     slug: "/site-services",
   },
+
   // {
   //   id: 6,
   //   name: "FAQ",
@@ -406,23 +403,86 @@ export const NAV_ITEMS: INav[] = [
   //   name: "More",
   //   slug: "#",
   // },
+  {
+    id: 6,
+    name: "Blog",
+    slug: "/blogs",
+  },
+  {
+    id: 7,
+    name: "More",
+    slug: "#",
+    submenu: [
+      {
+        id: "7-1",
+        name: "About Us",
+        slug: "/about-us",
+      },
+      {
+        id: "7-2",
+        name: "Career",
+        slug: "/career",
+      },
+      {
+        id: "7-3",
+        name: "Why Green Space",
+        slug: "/why-green-space",
+      },
+      {
+        id: "7-4",
+        name: "Faq",
+        slug: "/faq",
+      },
+      {
+        id: "7-5",
+        name: "Contact Us",
+        slug: "/contact-us",
+      },
+      {
+        id: "7-6",
+        name: "Sitemap",
+        slug: "/sitemap",
+      },
+      {
+        id: "7-7",
+        name: "Refer & Earn",
+        slug: "/refer-and-earn",
+      },
+      {
+        id: "7-8",
+        name: "EMI Options",
+        slug: "/emi-options",
+      },
+    ],
+  },
 ];
 
 export const BANNER_ITEMS = [
   {
     id: "1",
-    heading: "Modern Elegance for Every Corner",
-    subheading:
-      "Transform your 2 BHK with sleek, stylish interiors that reflect your unique taste and lifestyle.",
-    bannerImage: "/banners/4.png",
+    bannerImage: "/banners/1.png",
+    bannerImageMobile: "/banners/m1.png",
+    altTag: "Sample Alt Tag 1",
   },
   {
     id: "2",
-    heading: "Smart Spaces, Stunning Designs",
-    subheading:
-      "Maximize every inch of your home with creative layouts and multifunctional furniture tailored for compact living.",
-    bannerImage: "/banners/3.png",
+    bannerImage: "/banners/2.png",
+    bannerImageMobile: "/banners/m2.png",
+    altTag: "Sample Alt Tag 2",
   },
+  {
+    id: "3",
+    bannerImage: "/banners/3.png",
+    bannerImageMobile: "/banners/m3.png",
+    altTag: "Sample Alt Tag 3",
+  },
+  // {
+  //   id: "2",
+  //   heading: "Smart Spaces, Stunning Designs",
+  //   subheading:
+  //     "Maximize every inch of your home with creative layouts and multifunctional furniture tailored for compact living.",
+  //   bannerImage: "/banners/3.png",
+  // },
 ];
 
 // export const categories: Category[] = [

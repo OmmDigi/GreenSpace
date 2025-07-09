@@ -1,146 +1,117 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
-import Button from "../Button";
-import {
-  CircleArrowRight,
-  Headset,
-  House,
-  Presentation,
-  ShieldCheck,
-} from "lucide-react";
-import { BANNER_ITEMS } from "@/constant";
+import React, { useEffect, useRef, useState } from "react";
+import { ChevronRight } from "lucide-react";
 import { cn } from "@/utils/cn";
-import OpenGetQuoteDialog from "../Utils/OpenGetQuoteDialog";
+import { useDispatch } from "react-redux";
+import { setGetQuoteDialog } from "@/redux/slice/getQuoteDialogSlice";
+import { BANNER_ITEMS } from "@/constant";
 
 export default function Banner() {
-  const [currentBannerIndex, setCurrentBannerInfo] = useState(0);
+  const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const dispatch = useDispatch();
 
-  const handleNextBanner = () => {
-    setCurrentBannerInfo((state) => {
-      if (state === BANNER_ITEMS.length - 1) return 0;
-      return state + 1;
+  const [device, setDevice] = useState<"desktop" | "mobile">("desktop");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setDevice(window.innerWidth <= 700 ? "mobile" : "desktop");
+    }
+  }, []);
+
+  const onNextBannerClick = () => {
+    setCurrentBannerIndex((prev) => {
+      if (prev >= BANNER_ITEMS.length - 1) return 0;
+      return prev + 1;
     });
   };
 
-  const handlePrevBanner = () => {
-    setCurrentBannerInfo((state) => {
-      if (state === 0) return BANNER_ITEMS.length - 1;
-      return state - 1;
+  const onPrevBannerClick = () => {
+    setCurrentBannerIndex((prev) => {
+      if (prev <= 0) return BANNER_ITEMS.length - 1;
+      return prev - 1;
     });
+  };
+
+  const onImageClick = () => {
+    dispatch(setGetQuoteDialog({ isOpen: true }));
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+
+    const distance = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50; // Define a minimum distance for a valid swipe
+
+    if (distance > minSwipeDistance) {
+      //swipe left
+      onNextBannerClick();
+    } else if (distance < -minSwipeDistance) {
+      //swipe right
+      onPrevBannerClick();
+    }
+
+    // Reset touch coordinates
+    touchStartX.current = null;
+    touchEndX.current = null;
   };
 
   return (
-    <section className="max-sm:mb-24 max-sm:mt-72">
-      {/* shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] */}
-      <div className="wrapper relative font-jost w-full overflow-hidden max-sm:overflow-visible aspect-[3/1] max-sm:aspect-[3/3] rounded-tr-3xl rounded-bl-3xl">
+    <section
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      className="relative"
+    >
+      <div className="flex w-full aspect-[3/1.2] max-sm:aspect-[4/5] cursor-pointer">
         {BANNER_ITEMS.map((item, index) => (
           <Image
+            onClick={onImageClick}
             key={item.id}
+            style={{ translate: `-${currentBannerIndex * 100}%` }}
             className={cn(
-              "size-full object-cover absolute",
-              "transition-all duration-[2000ms]",
-              currentBannerIndex === index
-                ? "opacity-100 backdrop-blur-none"
-                : "opacity-0 backdrop-blur-3xl"
+              "w-full flex-grow shrink-0 object-cover",
+              "transition-all duration-[500ms]",
+              currentBannerIndex === index ? "scale-100" : "scale-75"
             )}
-            alt="Hero Section Image"
-            src={item.bannerImage}
+            alt={item.altTag}
+            src={
+              device === "desktop" ? item.bannerImage : item.bannerImageMobile
+            }
             height={1920}
             width={1920}
           />
         ))}
+      </div>
 
-        <div className="absolute inset-0 black-overlay-to-right z-10 flex flex-col justify-center items-start">
-          {BANNER_ITEMS.map((item, index) => (
-            <div
-              key={item.id}
-              className={cn(
-                "space-y-3 px-10 absolute max-sm:px-0 max-sm:-top-[17rem]",
-                currentBannerIndex === index ? "z-10" : "z-0"
-              )}
-            >
-              <h2
-                className={cn(
-                  "font-medium text-3xl w-fit bg-[#fef3c6] py-1 px-3.5 text-black",
-                  "transition-all duration-1000 overflow-hidden",
-                  currentBannerIndex === index
-                    ? "translate-y-0 opacity-100"
-                    : "-translate-y-16 opacity-0",
-                  "max-sm:bg-white max-sm:px-0"
-                )}
-              >
-                {item.heading}
-              </h2>
-              <p
-                className={cn(
-                  "text-white max-w-lg tracking-wider font-[300]",
-                  "transition-all duration-1000 overflow-hidden",
-                  currentBannerIndex === index
-                    ? "translate-y-0 opacity-100"
-                    : "translate-x-16 opacity-0",
-                  "max-sm:text-black max-sm:mb-5 max-sm:max-w-full max-sm:w-full"
-                )}
-              >
-                {item.subheading}
-              </p>
-
-              {/* <OpenGetQuoteDialog isOpen>
-                <Button className={cn("bg-primary")}>
-                  <Headset size={15} />
-                  Book Free Consultation
-                </Button>
-              </OpenGetQuoteDialog> */}
-
-              <OpenGetQuoteDialog
-                isOpen
-                className={cn(
-                  index === currentBannerIndex ? "opacity-100" : "opacity-0"
-                )}
-              >
-                <Button>
-                  <Headset size={15} />
-                  Book Free Consultation
-                </Button>
-              </OpenGetQuoteDialog>
-            </div>
-          ))}
-
-          <div className="absolute flex items-center gap-7 bottom-9 left-10 max-sm:bottom-16">
-            <CircleArrowRight
-              className="rotate-180 active:scale-90 cursor-pointer"
-              strokeWidth={1}
-              color="#fff"
-              onClick={handlePrevBanner}
-            />
-            <CircleArrowRight
-              strokeWidth={1}
-              color="#fff"
-              className="active:scale-90 cursor-pointer"
-              onClick={handleNextBanner}
-            />
-          </div>
-        </div>
-
-        <div className="absolute z-20 right-0 bottom-0 max-sm:-bottom-10 flex items-center gap-8 bg-white backdrop-blur-2xl py-3.5 px-3.5">
-          <div className="flex flex-col gap-1 justify-center items-center">
-            <House strokeWidth={1} size={18} />
-            <h3 className="font-medium text-xs text-center">
-              20% Extra Storage
-            </h3>
-          </div>
-          <div className="flex flex-col gap-1 justify-center items-center">
-            <ShieldCheck strokeWidth={1} size={18} />
-            <h3 className="font-medium text-xs text-center">
-              2 Years Warranty
-            </h3>
-          </div>
-          <div className="flex flex-col gap-1 justify-center items-center">
-            <Presentation strokeWidth={1} size={18} />
-            <h3 className="font-medium text-xs text-center">Modern Design</h3>
-          </div>
-        </div>
+      <div className="absolute top-0 bottom-0 left-0 flex items-center">
+        <button
+          onClick={onPrevBannerClick}
+          role="presentation"
+          className="bg-black/50 text-white size-10 flex items-center justify-center active:scale-90"
+        >
+          <ChevronRight className="rotate-180" />
+        </button>
+      </div>
+      <div className="absolute top-0 bottom-0 right-0 flex items-center">
+        <button
+          onClick={onNextBannerClick}
+          role="presentation"
+          className="bg-black/50 text-white size-10 flex items-center justify-center active:scale-90"
+        >
+          <ChevronRight />
+        </button>
       </div>
     </section>
   );

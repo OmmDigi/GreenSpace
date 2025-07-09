@@ -1,7 +1,7 @@
 import { NAV_ITEMS } from "@/constant";
 import { INav } from "@/types";
 import { cn } from "@/utils/cn";
-// import { ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 
 interface INavListView {
@@ -32,29 +32,31 @@ function NavListView({ items, wrapperClassName, itemClassName }: INavListView) {
               <span className="h-0 absolute left-0 top-0 bg-[#e6be20] w-[1px] group-hover/eachnavlink:h-full delay-300 transition-all duration-500"></span>
 
               <span className="h-[1px] bg-[#e6be20] w-0 group-hover/eachnavlink:w-full transition-all duration-500"></span>
-              <span className="font-[450] px-4.5 z-10">{eachItem.name}</span>
+              <span className="px-4.5 z-10 font-[400] text-nowrap">
+                {eachItem.name}
+              </span>
               <span className="h-[1px] bg-[#e6be20] w-0 group-hover/eachnavlink:w-full transition-all duration-500"></span>
             </div>
 
-            {/* {eachItem.submenu && eachItem.submenu.length !== 0 ? (
+            {eachItem.submenu && eachItem.submenu.length !== 0 ? (
               <ChevronDown strokeWidth={1} size={20} className="pt-[2px]" />
-            ) : null} */}
+            ) : null}
           </Link>
 
-          {/* {eachItem.submenu ? (
-            <div className="absolute top-16 transition-all duration-300 group-hover/navitem:visible group-hover/navitem:translate-y-0 group-hover/navitem:opacity-100 z-[5000]">
-              <div className="relative">
-                <div className="bg-amber-200 inset-0 absolute -z-10 blur-[4px] rounded-2xl"></div>
-                <div className="bg-amber-50 backdrop-blur-3xl border border-amber-50 rounded-2xl overflow-hidden">
+          {eachItem.submenu ? (
+            <div className="absolute hidden transition-all duration-300 group-hover/navitem:block group-hover/navitem:translate-y-0 group-hover/navitem:opacity-100">
+              <div className="relative top-7 max-h-[80vh] overflow-y-auto nav_drop_down">
+                <div className="bg-amber-200 inset-0 absolute -z-10 blur-[4px]"></div>
+                <div className="bg-amber-50 backdrop-blur-3xl border border-amber-50 overflow-hidden">
                   <NavListView
                     wrapperClassName="flex-col gap-0"
-                    itemClassName="px-8 py-3 hover:bg-[#fdf7df]"
+                    itemClassName="px-8 py-2 hover:bg-[#fdf7df] !items-start"
                     items={eachItem.submenu}
                   />
                 </div>
               </div>
             </div>
-          ) : null} */}
+          ) : null}
         </li>
       ))}
     </ul>

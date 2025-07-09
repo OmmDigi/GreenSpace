@@ -12,12 +12,15 @@ import VideoViewSection from "@/components/VideoViewSection";
 import ScrollText from "@/components/ScrollText";
 import { OurClients } from "@/components/OurClients";
 import { OurChannelPartners } from "@/components/OurChannelPartners";
+import WhyChooseSection from "@/components/WhyChooseSection";
+import WhyGreenSpace from "@/components/WhyGreenSpace";
 
 export default function Home() {
   return (
     <AOSProvider>
       <div className="space-y-16">
         <Banner />
+        <WhyChooseSection />
         <AboutUsSection />
 
         <ScrollText />
@@ -90,7 +93,10 @@ export default function Home() {
 
               <span data-aos="fade-up" data-aos-delay="200">
                 <OpenGetQuoteDialog isOpen className="mt-10">
-                  <Button className="flex items-center gap-3.5">
+                  <Button
+                    glowCss="!bg-white"
+                    className="flex items-center gap-3.5 bg-white hover:!bg-gray-300"
+                  >
                     <Headset size={15} />
                     Book A Free Consultation
                   </Button>
@@ -127,6 +133,8 @@ export default function Home() {
 
         <Reviews />
       </section> */}
+
+        <WhyGreenSpace />
 
         <ImprovedReviewsSection2 />
 

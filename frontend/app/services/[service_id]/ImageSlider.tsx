@@ -9,6 +9,8 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import HandleCustomGalleryDialog from "@/components/Dialogs/HandleCustomGalleryDialog";
+import { cn } from "@/utils/cn";
+import Button from "@/components/Button";
 
 interface ImageSliderProps {
   images: {
@@ -18,21 +20,33 @@ interface ImageSliderProps {
     title?: string;
   }[];
   className?: string;
+  itemClassName?: string;
+  previews?: {
+    mobile: number;
+    desktop: number;
+  };
 }
 
 const ImageSlider: React.FC<ImageSliderProps> = ({
   images,
   className = "",
+  itemClassName = "",
+  previews = {
+    mobile: 1,
+    desktop: 4,
+  },
 }) => {
   SwiperCore.use([Navigation]);
 
   const swiperRef = useRef<SwiperClass | null>(null);
 
-  const [sliderPreviewView, setSliderPreviewView] = useState(4);
+  const [sliderPreviewView, setSliderPreviewView] = useState(previews.desktop);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setSliderPreviewView(window.innerWidth <= 800 ? 1 : 4);
+      setSliderPreviewView(
+        window.innerWidth <= 800 ? previews.mobile : previews.desktop
+      );
     }
   }, []);
 
@@ -60,7 +74,10 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
           {images.map((image, index) => (
             <SwiperSlide
               key={image.id}
-              className="flex-center flex-col relative min-h-[19rem] w-48 overflow-hidden max-sm:w-full z-10"
+              className={cn(
+                "flex-center flex-col relative min-h-[19rem] w-48 overflow-hidden max-sm:w-full z-10",
+                itemClassName
+              )}
             >
               <HandleCustomGalleryDialog
                 isOpen={true}
@@ -84,10 +101,11 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
                     </div>
                   </div>
                   {image.title && (
-                    <div className="p-3">
-                      <h3 className="text-sm font-medium text-gray-800 truncate">
+                    <div className="p-3 flex items-center justify-between">
+                      <h3 className="text-base font-medium text-gray-800 truncate">
                         {image.title}
                       </h3>
+                      <Button>Get Quote</Button>
                     </div>
                   )}
                 </div>

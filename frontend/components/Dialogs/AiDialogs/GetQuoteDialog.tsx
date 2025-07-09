@@ -1,16 +1,7 @@
 "use client";
 
 import React, { useEffect, useTransition } from "react";
-import {
-  X,
-  User,
-  Mail,
-  Phone,
-  Home,
-  FileText,
-  Send,
-  LoaderCircle,
-} from "lucide-react";
+import { X, LoaderCircle } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { setGetQuoteDialog } from "@/redux/slice/getQuoteDialogSlice";
@@ -19,22 +10,17 @@ import DialogWrapper from "../DialogWrapper";
 import { handleGetQuoteDialogContactForm } from "@/app/actions/handleGetQuoteDialogContactForm";
 import { useRouter } from "next/navigation";
 import { SERVICES } from "@/constant";
+import Image from "next/image";
 
-// const budgetRanges = [
-//   "Under $10,000",
-//   "$10,000 - $25,000",
-//   "$25,000 - $50,000",
-//   "$50,000 - $100,000",
-//   "Above $100,000",
-// ];
-
-// const timelineOptions = [
-//   "1-2 months",
-//   "2-4 months",
-//   "4-6 months",
-//   "6+ months",
-//   "Flexible",
-// ];
+const locations = [
+  "Kolkata",
+  "South 24 PGS",
+  "North 24 PGS",
+  "Dum Dum",
+  "Howrah",
+  "Hooghly",
+  "Others",
+];
 
 const GetQuoteDialog = () => {
   const { isOpen } = useSelector(
@@ -115,203 +101,227 @@ const GetQuoteDialog = () => {
           >
             <div
               onClick={(e) => e.stopPropagation()}
-              data-aos="fade-up"
-              className="bg-white backdrop-blur-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto custom-scrollbar max-sm:max-w-full"
+              className="bg-white max-sm:max-h-[50rem] rounded-lg max-w-4xl w-full relative overflow-hidden"
             >
-              {/* Header */}
-              <div className="bg-gradient-to-r from-[#00776e] to-[#005a53] p-6 relative">
-                <button
-                  onClick={handleCloseDialog}
-                  className="absolute top-4 right-4 text-white hover:bg-white hover:text-black hover:bg-opacity-20 rounded-full p-2 transition-colors"
-                >
-                  <X size={24} />
-                </button>
-                <h2 className="text-2xl font-bold text-white mb-2">
-                  Get Your Free Quote
-                </h2>
-                <p className="text-white opacity-90">
-                  Tell us about your dream space and we&apos;ll create a custom
-                  proposal for you
-                </p>
-              </div>
-
-              {/* Form */}
-              <form
-                action={handleFormSubmit}
-                className="p-8 space-y-6 overflow-y-auto h-full"
+              {/* Close Button */}
+              <button
+                onClick={() => {
+                  dispatch(setGetQuoteDialog({ isOpen: false }));
+                }}
+                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors z-10"
               >
-                {/* Personal Information */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="relative">
-                    <label className="block text-gray-700 font-semibold mb-2">
-                      <User size={16} className="inline mr-2 text-[#00776e]" />
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#00776e] focus:outline-none transition-colors"
-                      placeholder="Enter your full name"
-                    />
-                  </div>
-
-                  <div className="relative">
-                    <label className="block text-gray-700 font-semibold mb-2">
-                      <Mail size={16} className="inline mr-2 text-[#00776e]" />
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#00776e] focus:outline-none transition-colors"
-                      placeholder="Enter your email"
-                    />
-                  </div>
+                <X size={24} />
+              </button>
+              <div className="flex grow max-sm:flex-col">
+                {/* Left side - Image */}
+                <div className="relative max-h-[36rem] w-[42rem] max-sm:hidden">
+                  <Image
+                    src="/popupleftsideimage.png"
+                    alt="Interior Design"
+                    className="w-full object-cover rounded-l-lg"
+                    fill
+                  />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="relative">
-                    <label className="block text-gray-700 font-semibold mb-2">
-                      <Phone size={16} className="inline mr-2 text-[#00776e]" />
-                      Phone Number *
-                    </label>
-                    <input
-                      pattern="^\d{10}$"
-                      name="phone"
-                      required
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#00776e] focus:outline-none transition-colors"
-                      placeholder="Enter your phone number"
-                    />
+                <Image
+                  src={"/popupHeaderMobile.png"}
+                  alt="Green Space Offer"
+                  height={720}
+                  width={1280}
+                  className="hidden max-sm:block"
+                />
+
+                {/* Right side - Form */}
+                <div className="w-full p-8 max-h-[36rem] max-sm:max-h-[70vh] overflow-y-auto">
+                  {/* Header */}
+                  <div className="mb-6">
+                    <h2 className="text-2xl font-bold text-gray-800">
+                      Get a{" "}
+                      <span className="text-teal-600">
+                        free design consultation
+                      </span>
+                    </h2>
                   </div>
 
-                  <div className="relative">
-                    <label className="block text-gray-700 font-semibold mb-2">
-                      <Home size={16} className="inline mr-2 text-[#00776e]" />
-                      {/* Project Type * */}
-                      Service *
-                    </label>
-                    <select
-                      name="service"
-                      required
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#00776e] focus:outline-none transition-colors"
-                    >
-                      <option value="">Select project type</option>
-                      {SERVICES.map((service, index) => (
-                        <option key={index} value={service.name}>
-                          {service.name}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
+                  <form action={handleFormSubmit} className="space-y-5">
+                    {/* Property Type */}
+                    {/* <div>
+                      <label className="block text-gray-700 font-medium mb-3">
+                        Property type
+                      </label>
+                      <div className="flex items-center gap-2.5 flex-wrap">
+                        {propertyTypes.map((type) => (
+                          <button
+                            key={type}
+                            type="button"
+                            onClick={() => setSelectedPropertyType(type)}
+                            className={`p-3 border rounded-lg text-sm text-left transition-colors ${
+                              selectedPropertyType === type
+                                ? "border-teal-600 bg-teal-50 text-teal-700"
+                                : "border-gray-300 hover:border-gray-400"
+                            }`}
+                          >
+                            {type}
+                          </button>
+                        ))}
+                      </div>
+                    </div> */}
 
-                {/* Project Details */}
-                {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="relative">
-                    <label className="block text-gray-700 font-semibold mb-2">
-                      Budget Range
-                    </label>
-                    <select
-                      name="budget"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#00776e] focus:outline-none transition-colors"
-                    >
-                      <option value="">Select budget range</option>
-                      {budgetRanges.map((range, index) => (
-                        <option key={index} value={range}>
-                          {range}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+                    {/* Name */}
+                    <div className="flex items-center flex-wrap gap-2.5">
+                      <div className="w-full">
+                        <label className="block text-gray-700 font-medium mb-3">
+                          Full Name *
+                        </label>
+                        <input
+                          name="name"
+                          type="text"
+                          required
+                          placeholder="Full name *"
+                          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-teal-600 transition-colors"
+                        />
+                      </div>
+                      <div className="w-full">
+                        <label className="block text-gray-700 font-medium mb-3">
+                          Mobile Number *
+                        </label>
+                        <input
+                          pattern="^\d{10}$"
+                          name="phone"
+                          required
+                          placeholder="Mobile Number *"
+                          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-teal-600 transition-colors"
+                        />
+                      </div>
+                    </div>
 
-                  <div className="relative">
-                    <label className="block text-gray-700 font-semibold mb-2">
-                      <Calendar
-                        size={16}
-                        className="inline mr-2 text-[#00776e]"
+                    {/* Property Location */}
+                    <div className="flex items-center flex-wrap gap-2.5">
+                      <div className="w-full">
+                        <label className="block text-gray-700 font-medium mb-3">
+                          Services *
+                        </label>
+                        <div className="w-full p-3 border border-gray-300 rounded-lg text-left flex items-center justify-between hover:border-gray-400 transition-colors">
+                          <select
+                            name="service"
+                            required
+                            className="w-full outline-none"
+                          >
+                            {SERVICES.map((item) => (
+                              <option key={item.id}>{item.name}</option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+                      <div className="w-full">
+                        <label className="block text-gray-700 font-medium mb-3">
+                          Location *
+                        </label>
+                        {/* <div className="relative">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setIsLocationDropdownOpen(!isLocationDropdownOpen)
+                          }
+                          className="w-full p-3 border border-gray-300 rounded-lg text-left flex items-center justify-between hover:border-gray-400 transition-colors"
+                        >
+                          <div className="flex items-center gap-2">
+                            <Home size={16} className="text-gray-500" />
+                            <span
+                              className={
+                                selectedLocation
+                                  ? "text-gray-900"
+                                  : "text-red-500"
+                              }
+                            >
+                              {selectedLocation || "Please select a location"}
+                            </span>
+                          </div>
+                          <ChevronDown size={20} className="text-gray-500" />
+                        </button>
+                        {isLocationDropdownOpen && (
+                          <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg z-10 mt-1">
+                            {locations.map((location) => (
+                              <button
+                                key={location}
+                                type="button"
+                                onClick={() => {
+                                  setSelectedLocation(location);
+                                  setIsLocationDropdownOpen(false);
+                                }}
+                                className="w-full p-3 text-left hover:bg-gray-50 first:rounded-t-lg last:rounded-b-lg transition-colors"
+                              >
+                                {location}
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div> */}
+                        <div className="w-full p-3 border border-gray-300 rounded-lg text-left flex items-center justify-between hover:border-gray-400 transition-colors">
+                          <select
+                            name="location"
+                            required
+                            className="w-full outline-none"
+                          >
+                            {locations.map((item, index) => (
+                              <option key={index}>{item}</option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <textarea
+                      name="message"
+                      placeholder="Message..."
+                      className="flex-1 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-teal-600 transition-colors"
+                      rows={5}
+                    ></textarea>
+
+                    {/* WhatsApp Updates */}
+                    {/* <div className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="whatsapp"
+                        checked={whatsappUpdates}
+                        onChange={(e) => setWhatsappUpdates(e.target.checked)}
+                        className="w-4 h-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500"
                       />
-                      Timeline
-                    </label>
-                    <select
-                      name="timeline"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#00776e] focus:outline-none transition-colors"
+                      <label
+                        htmlFor="whatsapp"
+                        className="text-gray-700 text-sm flex items-center gap-1"
+                      >
+                        Yes, send me updates via WhatsApp.
+                        <span className="text-green-600 font-bold">✓</span>
+                      </label>
+                    </div> */}
+
+                    {/* Submit Button */}
+                    <button
+                      type="submit"
+                      className="w-full flex items-center justify-center bg-red-700 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-800 transition-colors text-lg"
                     >
-                      <option value="">Select timeline</option>
-                      {timelineOptions.map((timeline, index) => (
-                        <option key={index} value={timeline}>
-                          {timeline}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div> */}
+                      {isPending ? (
+                        <LoaderCircle className="animate-spin" />
+                      ) : (
+                        "Book a Free Consultation"
+                      )}
+                    </button>
 
-                {/* Address */}
-                <div className="relative">
-                  <label className="block text-gray-700 font-semibold mb-2">
-                    Project Address
-                  </label>
-                  <input
-                    type="text"
-                    name="address"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#00776e] focus:outline-none transition-colors"
-                    placeholder="Enter project address"
-                  />
+                    {/* Terms */}
+                    <p className="text-xs text-gray-500 text-center">
+                      By submitting, you consent to{" "}
+                      <a href="#" className="text-teal-600 hover:underline">
+                        privacy policy
+                      </a>{" "}
+                      and{" "}
+                      <a href="#" className="text-teal-600 hover:underline">
+                        terms of use
+                      </a>
+                    </p>
+                  </form>
                 </div>
-
-                {/* Project Description */}
-                <div className="relative">
-                  <label className="block text-gray-700 font-semibold mb-2">
-                    <FileText
-                      size={16}
-                      className="inline mr-2 text-[#00776e]"
-                    />
-                    {/* Project Description */}
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#00776e] focus:outline-none transition-colors resize-none"
-                    placeholder="Tell us about your vision, style preferences, specific requirements, or any other details..."
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <button
-                    type="button"
-                    onClick={handleCloseDialog}
-                    className="flex-1 px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-semibold"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    className="flex-1 bg-gradient-to-r from-[#00776e] to-[#005a53] hover:from-[#005a53] hover:to-[#00776e] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center"
-                  >
-                    {isPending ? (
-                      <LoaderCircle size={18} className="animate-spin" />
-                    ) : (
-                      <>
-                        <Send size={18} className="mr-2" />
-                        Submit Quote Request
-                      </>
-                    )}
-                  </button>
-                </div>
-
-                {/* Note */}
-                <div className="bg-gradient-to-r from-[#00776e]/5 to-[#005a53]/5 p-4 rounded-lg border-l-4 border-[#00776e]">
-                  <p className="text-sm text-gray-600">
-                    <strong className="text-[#00776e]">Note:</strong> We&apos;ll
-                    review your request and get back to you within 24 hours with
-                    a detailed quote and consultation schedule.
-                  </p>
-                </div>
-              </form>
+              </div>
             </div>
           </DialogWrapper>
         </AOSProvider>

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import ServiceGallery from "./ServiceGallery";
 import OpenGetQuoteDialog from "@/components/Utils/OpenGetQuoteDialog";
 import { SERVICES } from "@/constant";
+import Button from "@/components/Button";
 
 interface IProps {
   params: Promise<{ service_id: string | undefined }>;
@@ -119,7 +120,7 @@ export default async function page({ params }: IProps) {
               </div>
 
               {/* Pricing */}
-              <div className="mt-8 p-6 bg-gradient-to-r from-[#00776e] to-[#00776e]/90 rounded-xl text-white">
+              <div className="mt-8 p-6 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl text-white">
                 <div className="flex justify-between items-center">
                   <div>
                     <p className="text-sm opacity-90">Starting from</p>
@@ -141,7 +142,7 @@ export default async function page({ params }: IProps) {
           </div>
 
           {/* Right Side - Contact Form */}
-          <DetailsPageForm currentServiceName = {singleService.name}/>
+          <DetailsPageForm currentServiceName={singleService.name} />
         </div>
 
         {/* Contact Details Section */}
@@ -195,9 +196,10 @@ export default async function page({ params }: IProps) {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <OpenGetQuoteDialog isOpen>
-              <button className="bg-white text-[#00776e] hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-colors">
+              {/* <button className="bg-white text-[#00776e] hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-colors">
                 Get Quote
-              </button>
+              </button> */}
+              <Button>Get Quote</Button>
             </OpenGetQuoteDialog>
             {/* <button className="border-2 border-white hover:bg-white hover:text-[#00776e] font-semibold py-3 px-8 rounded-lg transition-colors">
               Schedule Visit

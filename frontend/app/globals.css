@@ -16,9 +16,9 @@ html {
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-jost: var(--font-jost);
+  /* --font-jost: var(--font-jost);
 
-  --font-libre: var(--libre-caslon-text);
+  --font-libre: var(--libre-caslon-text); */
 
   --color-primary: #00776e;
   --color-secondary: #ab6447;
@@ -332,3 +332,25 @@ button {
   }
 }
 /* ASIHANA END */
+
+/*SCROLLBAR CSS*/
+/* width */
+.nav_drop_down::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+.nav_drop_down::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.nav_drop_down::-webkit-scrollbar-thumb {
+  background: #f1d258;
+}
+
+/* Handle on hover */
+.nav_drop_down::-webkit-scrollbar-thumb:hover {
+  background: #f1d258a8;
+}
+/*SCROLLBAR CSS*/

@@ -10,9 +10,8 @@ export async function handleGetQuoteDialogContactForm(formData: FormData) {
       html: `
         <h3>User Name : ${formData.get("name")}</h3>
         <h3>User Contact Number : ${formData.get("phone")}</h3>
-        <h3>User Email : ${formData.get("email")}</h3>
         <h3>Requrest Service : ${formData.get("service")}</h3>
-        <h3>User Address : ${formData.get("address")}</h3>
+        <h3>Location : ${formData.get("location")}</h3>
         <h3>User Message : ${formData.get("message")}</h3>
       `,
     });

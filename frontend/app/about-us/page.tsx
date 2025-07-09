@@ -115,21 +115,23 @@ const AboutUs: React.FC = () => {
                 </h1>
                 <p className="text-lg text-gray-600 mb-6">
                   Green Space is the best interior designer in Kolkata, West
-                  Bengal. We offer various types of Interior Design Services
-                  like Residential Interior Design, Office Interior Design,
-                  Kitchen Interior Design, and many other services. We are
-                  working in this industry from the last 15+ years. Also, we
-                  completed more than 225+ projects which include many types of
-                  home interior designing, kitchen interior designing, retail
-                  store designing, etc.
+                  Bengal. For over 15 years, we have been transforming ordinary
+                  spaces into beautiful, functional homes and offices that feel
+                  timeless and personal. From stylish kitchens to inspiring
+                  retail stores, we handle every project with fresh ideas and
+                  smooth execution.
                 </p>
                 <p className="text-lg text-gray-600 mb-8">
-                  Green Space is an experienced and highly regarded studio of
-                  interior designers, specializing in both residential and
-                  commercial design. Whether you need a quick refresh of
-                  furniture and paint colors, or an extensive whole-house
-                  renovation, we can provide the expertise to make sure the
-                  project runs smoothly and gives you the best results possible.
+                  Green Space is the best interior designer in Kolkata, West
+                  Bengal. For over 15 years, we have been transforming ordinary
+                  spaces into beautiful, functional homes and offices that feel
+                  timeless and personal. From stylish kitchens to inspiring
+                  retail stores, we handle every project with fresh ideas and
+                  smooth execution. With more than 225 successful projects, our
+                  experienced team knows how to plan every detail carefully,
+                  whether you want a quick update or a complete renovation. We
+                  work closely with you to ensure everything matches your taste,
+                  budget and lifestyle perfectly.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   {/*<button className="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors duration-300">

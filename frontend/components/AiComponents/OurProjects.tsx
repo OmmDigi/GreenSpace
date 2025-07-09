@@ -19,6 +19,7 @@ import { useSearchParams } from "next/navigation";
 import CustomLinkProgress from "../CustomLinkProgress";
 import { PROJECTS } from "@/data/projects";
 import HandleCustomGalleryDialog from "../Dialogs/HandleCustomGalleryDialog";
+import OpenGetQuoteDialog from "../Utils/OpenGetQuoteDialog";
 
 export default function OurProjects() {
   SwiperCore.use([Navigation, Pagination]);
@@ -100,7 +101,7 @@ export default function OurProjects() {
               href={"?type=completed-projects"}
               className="shrink-0"
             >
-              <Button
+              {/* <Button
                 className={cn(
                   "hover:!translate-y-0",
                   projectType === "completed-projects"
@@ -108,10 +109,16 @@ export default function OurProjects() {
                     : "bg-transparent border border-teal-600 text-black hover:text-white"
                 )}
               >
-                <CustomLinkProgress className="flex items-center gap-2.5">
-                  Finished Projects
-                </CustomLinkProgress>
-              </Button>
+                
+              </Button> */}
+              <div className="space-y-1.5">
+                <button className="font-semibold text-xl">
+                  <CustomLinkProgress className="flex items-center gap-2.5">
+                    Finished Projects
+                  </CustomLinkProgress>
+                </button>
+                <div className="w-full h-1 bg-red-200 rounded-full"></div>
+              </div>
             </CustomLink>
             {/* <CustomLink
               withoutProgress={true}
@@ -201,22 +208,27 @@ export default function OurProjects() {
                       </div>
 
                       {/* Content */}
-                      <div className="p-6">
-                        <h3 className="font-bold text-lg text-gray-900 mb-2 line-clamp-1 group-hover:text-[#00776d] transition-colors">
-                          {item.title}
-                        </h3>
-                        <div className="flex items-center justify-between">
-                          <span className="text-gray-500 text-sm">
-                            {item.tag}
-                          </span>
-                          {/* <Link
+                      <div className="p-6 flex items-center justify-between">
+                        <div>
+                          <h3 className="font-bold text-lg text-gray-900 mb-2 line-clamp-1 group-hover:text-[#00776d] transition-colors">
+                            {item.title}
+                          </h3>
+                          <div className="flex items-center justify-between">
+                            <span className="text-gray-500 text-sm">
+                              {item.tag}
+                            </span>
+                            {/* <Link
                         href={`/gallery/${item.id}`}
                         className="text-[#00776d] font-medium text-sm hover:underline flex items-center gap-1"
                       >
                         View Details
                         <ArrowRight size={14} />
                       </Link> */}
+                          </div>
                         </div>
+                        <OpenGetQuoteDialog isOpen>
+                          <Button>Get Quote</Button>
+                        </OpenGetQuoteDialog>
                       </div>
                     </div>
                   </HandleCustomGalleryDialog>

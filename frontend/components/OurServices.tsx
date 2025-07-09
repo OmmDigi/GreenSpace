@@ -15,11 +15,11 @@ export default function OurServices() {
   SwiperCore.use([Navigation]);
 
   const swiperRef = useRef<SwiperClass | null>(null);
-  const [sliderPreviewView, setSliderPreviewView] = useState(4);
+  const [sliderPreviewView, setSliderPreviewView] = useState(3);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setSliderPreviewView(window.innerWidth <= 800 ? 1 : 4);
+      setSliderPreviewView(window.innerWidth <= 800 ? 1 : 3);
     }
   }, []);
 
@@ -45,33 +45,32 @@ export default function OurServices() {
         {SERVICES.map((service, index) => (
           <SwiperSlide
             key={service.id}
-            className="flex-center flex-col relative min-h-[19rem] w-48 overflow-hidden max-sm:w-full z-10"
+            className="flex-center flex-col relative aspect-video min-h-[19rem] overflow-hidden max-sm:w-full z-10"
           >
-            <div
+            <Image
+              className="w-full h-full object-cover"
+              src={service.image}
+              alt="Service Image"
+              height={1200}
+              width={1200}
+            />
+            <div className="absolute bottom-0 right-0 left-0 flex items-end z-0 px-4 bg-gradient-to-t from-[#0000002f] to-[#0000008a]">
+              <h2 className="font-[400] tracking-wider w-full text-lg text-white py-3.5">
+                {service.name}
+              </h2>
+            </div>
+            <Link href={`/services/${service.id}`}>
+              <button className="size-10  absolute right-0 top-0 bg-secondary flex items-center justify-center z-10">
+                <ArrowUpRight size={18} color="#fff" />
+              </button>
+            </Link>
+            {/* <div
               data-aos="fade-up"
               data-aos-delay={index * 200}
-              className="block  min-h-[19rem]"
+              className="block"
             >
-              <div className="overflow-hidden relative w-full  min-h-[19rem]">
-                <Image
-                  className="w-full min-h-[19rem] object-cover"
-                  src={service.image}
-                  alt="Service Image"
-                  height={1200}
-                  width={1200}
-                />
-                <div className="absolute inset-0 bg-[#00776d0c] flex items-end z-0">
-                  <h2 className="font-[400] tracking-wider bg-[#00776da6] backdrop-blur-3xl w-full text-lg text-white text-center py-3.5">
-                    {service.name}
-                  </h2>
-                </div>
-                <Link href={`/services/${service.id}`}>
-                  <button className="size-10  absolute right-0 top-0 bg-secondary flex items-center justify-center z-10">
-                    <ArrowUpRight size={18} color="#fff" />
-                  </button>
-                </Link>
-              </div>
-            </div>
+              
+            </div> */}
           </SwiperSlide>
         ))}
       </Swiper>

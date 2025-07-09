@@ -16,8 +16,8 @@ export default function Header() {
 
   return (
     <>
-      <div>
-        <div className="wrapper flex items-center justify-between py-3.5">
+      <div className="sticky top-0 bg-white z-50 py-2.5">
+        <div className="wrapper flex items-center justify-between">
           <Link href="/">
             <Image
               className="w-[12rem]"
@@ -37,9 +37,9 @@ export default function Header() {
         </MobileSideBar> */}
 
           <OpenGetQuoteDialog isOpen className="animation-up-down">
-            <Button className="max-sm:hidden">
+            <Button className="max-sm:hidden py-3.5 px-5 text-sm rounded-md">
               <Headset size={15} />
-              Booking & Consultation
+              Free Consultation
             </Button>
           </OpenGetQuoteDialog>
 
