@@ -11,6 +11,9 @@ import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import HandleCustomGalleryDialog from "@/components/Dialogs/HandleCustomGalleryDialog";
 import { cn } from "@/utils/cn";
 import Button from "@/components/Button";
+import OpenGetQuoteDialog from "@/components/Utils/OpenGetQuoteDialog";
+import { setGetQuoteDialog } from "@/redux/slice/getQuoteDialogSlice";
+import { useDispatch } from "react-redux";
 
 interface ImageSliderProps {
   images: {
@@ -37,6 +40,8 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
   },
 }) => {
   SwiperCore.use([Navigation]);
+
+  const dispatch = useDispatch();
 
   const swiperRef = useRef<SwiperClass | null>(null);
 
@@ -101,11 +106,20 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
                     </div>
                   </div>
                   {image.title && (
-                    <div className="p-3 flex items-center justify-between">
+                    <div className="p-3 flex items-center justify-between max-sm:flex-col">
                       <h3 className="text-base font-medium text-gray-800 truncate">
                         {image.title}
                       </h3>
-                      <Button>Get Quote</Button>
+                      {/* <OpenGetQuoteDialog isOpen> */}
+                      <Button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          dispatch(setGetQuoteDialog({ isOpen: true }));
+                        }}
+                      >
+                        Get Quote
+                      </Button>
+                      {/* </OpenGetQuoteDialog> */}
                     </div>
                   )}
                 </div>

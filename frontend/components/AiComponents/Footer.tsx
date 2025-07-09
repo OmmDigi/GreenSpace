@@ -5,19 +5,11 @@ import { SERVICES } from "@/constant";
 
 const FOOTER_LINKS = [
   {
-    heading: "Usefull Links",
+    heading: "Quick Links",
     links: [
       {
         text: "Home",
         slug: "/",
-      },
-      {
-        text: "Design Gallery",
-        slug: "/design-gallery",
-      },
-      {
-        text: "About Us",
-        slug: "/about-us",
       },
       {
         text: "Customize Kitchens",
@@ -27,20 +19,54 @@ const FOOTER_LINKS = [
         text: "Site Services",
         slug: "/site-services",
       },
+      {
+        text: "Blogs",
+        slug: "/blogs",
+      },
+      {
+        text: "About Us",
+        slug: "/about-us",
+      },
+      {
+        text: "Career",
+        slug: "/career",
+      },
+      {
+        text: "Why Green Space",
+        slug: "/why-green-space",
+      },
+      {
+        text: "Faq",
+        slug: "/faq",
+      },
+      {
+        text: "Contact Us",
+        slug: "/contact-us",
+      },
+      {
+        text: "Refer And Earn",
+        slug: "/refer-and-earn",
+      },
+      {
+        text: "Emi Options",
+        slug: "/emi-options",
+      },
     ],
   },
   {
     heading: "Design Gallery",
     links: SERVICES.map((item) => ({
       text: item.name,
-      slug: `/design-gallery?category=${item.id}`,
+      slug: `/services/${item.id}`,
     })),
   },
 ];
 
 export default function Footer() {
   return (
-    <footer className={cn("bg-gradient-to-r from-[#05b1a2] to-[#00524b] text-white")}>
+    <footer
+      className={cn("bg-gradient-to-r from-[#05b1a2] to-[#00524b] text-white")}
+    >
       <div className={cn("container mx-auto px-4 py-12")}>
         <div className={cn("text-center mb-8")}>
           <h2 className={cn("text-2xl font-bold mb-2")}>

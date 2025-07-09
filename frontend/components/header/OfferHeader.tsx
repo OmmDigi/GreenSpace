@@ -3,6 +3,7 @@
 import { OFFER_LISTS } from "@/constant";
 import { cn } from "@/utils/cn";
 import { useEffect, useState } from "react";
+import OpenGetQuoteDialog from "../Utils/OpenGetQuoteDialog";
 
 export default function OfferHeader() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -27,11 +28,15 @@ export default function OfferHeader() {
             className={cn(
               "font-[400] text-lg text-white flex flex-col items-center justify-center text-center absolute inset-0",
               "",
-              currentIndex === index ? "translate-y-0" : "translate-y-full transition-all duration-700",
-              "max-sm:text-xs" 
+              currentIndex === index
+                ? "translate-y-0"
+                : "translate-y-full transition-all duration-700",
+              "max-sm:text-xs"
             )}
           >
-            <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
+            <OpenGetQuoteDialog isOpen={true}>
+              <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
+            </OpenGetQuoteDialog>
           </li>
         ))}
       </ul>

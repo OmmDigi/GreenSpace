@@ -198,13 +198,6 @@ const finishTypeOptions: IFinishTypeInfo[] = [
         filterType: "image",
         filterValue: "/customize-kitchen/acrylics/tex7.webp",
       },
-      {
-        id: "8",
-        src: "/customize-kitchen/acrylics/8.webp",
-        alt: "",
-        filterType: "image",
-        filterValue: "/customize-kitchen/acrylics/tex8.jpg",
-      },
     ],
   },
 ];
