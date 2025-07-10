@@ -87,22 +87,46 @@ export interface IJObList {
   responsibilities: string[];
 }
 
-export interface BlogPost {
+export interface IBlogList {
   id: number;
   title: string;
   slug: string;
-  excerpt: string;
-  content: string;
   date: string;
-  featuredImage: string | null;
+  thumbnail: string | null;
+  short_description: string;
+  categories_name: string[];
+  categories_id: number[];
+}
+
+export interface ISingleBlog extends IBlogList {
+  content: {
+    rendered: string;
+  };
+
   tags: string[];
-  totalViews: number;
-  related: RelatedBlog[];
+  rankmath_meta: {
+    focus_keyword: string;
+    seo_title: string;
+    seo_description: string;
+    canonical_url: string;
+    robots_meta: string;
+    advanced_robots: string;
+    og_title: string;
+    og_description: string;
+    og_image: string;
+    twitter_title: string;
+    twitter_description: string;
+    twitter_image: string;
+    breadcrumb_title: string;
+    pillar_content: string;
+    cornerstone_content: string;
+    meta_keywords: string;
+  };
 }
 
 export interface RelatedBlog {
   title: string;
   slug: string;
-  date : string;
+  date: string;
   featuredImage: string | null;
 }

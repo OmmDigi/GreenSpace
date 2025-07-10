@@ -14,6 +14,8 @@ export default function Banner() {
   const touchEndX = useRef<number | null>(null);
   const dispatch = useDispatch();
 
+  const intervelId = useRef<NodeJS.Timeout | null>(null);
+
   const [device, setDevice] = useState<"desktop" | "mobile">("desktop");
 
   useEffect(() => {
@@ -67,11 +69,34 @@ export default function Banner() {
     touchEndX.current = null;
   };
 
+  const startTimer = () => {
+    intervelId.current = setInterval(() => {
+      onNextBannerClick();
+    }, 4000);
+  };
+
+  const clearTimer = () => {
+    if (intervelId.current) {
+      clearInterval(intervelId.current);
+    }
+  };
+
+  useEffect(() => {
+    startTimer();
+    return () => clearTimer();
+  }, []);
+
   return (
     <section
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
+      onMouseEnter={() => {
+        clearTimer();
+      }}
+      onMouseLeave={() => {
+        startTimer();
+      }}
       className="relative"
     >
       <div className="flex w-full aspect-[3/1.2] max-sm:aspect-[4/5] cursor-pointer">

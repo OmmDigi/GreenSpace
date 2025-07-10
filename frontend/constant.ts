@@ -1,4 +1,4 @@
-import { Category, GalleryItem, INav } from "./types";
+import { INav } from "./types";
 
 export const OFFER_LISTS = [
   {
@@ -281,6 +281,26 @@ export const SERVICES = [
         <p>From grand living areas to cosy bedrooms, a stylish kitchen and a peaceful balcony, every part of your home is planned with care and comfort in mind. We focus on thoughtful details and practical layouts so you have room to relax, celebrate and create memories for years to come.</p>
         <br />
         <p>Come home to a 3 BHK that brings your family closer and gives you the luxury of space done right with Green Space.</p>
+    `,
+    },
+  },
+  {
+    id: "mosquito-sliding-nets",
+    name: "Mosquito Sliding Nets",
+    image: "/Services/MosquitoSlidingNets.jpg",
+    singlePageInfo: {
+      heading: "Mosquito Sliding Nets",
+      fetcherImage: "/Services/MosquitoSlidingNets.jpg",
+      fetcherVideo: null,
+      priceStarting: "₹2,50,000",
+      description: `
+        <p>Keep Your Home Peaceful and Pest-Free with Green Space’s Mosquito Sliding Nets</p>
+        <br />
+        <p>Your home should feel safe and comfortable, day and night. With Green Space’s mosquito sliding nets, you can enjoy fresh air without worrying about insects disturbing your peace.</p>
+        <br />
+        <p>Designed for windows, balconies and doors, these sliding nets are easy to use, sturdy and blend in beautifully with your interiors. No more constant buzzing or sleepless nights, just clean air and a healthier living space for your family.</p>
+        <br />
+        <p>Protect your loved ones while keeping your home looking neat and stylish with Green Space’s smart mosquito net solutions.</p>
     `,
     },
   },

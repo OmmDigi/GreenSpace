@@ -120,7 +120,7 @@ export default async function page({ params }: IProps) {
               </div>
 
               {/* Pricing */}
-              <div className="mt-8 p-6 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl text-white">
+              <div className="mt-8 p-6 bg-gradient-to-r from-yellow-600 to-yellow-500 rounded-xl text-white">
                 <div className="flex justify-between items-center">
                   <div>
                     <p className="text-sm opacity-90">Starting from</p>

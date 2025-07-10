@@ -1,31 +1,10 @@
-import { Calendar, User, ChevronRight } from "lucide-react";
+import { Calendar, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 import axios from "axios";
-import https from "https";
 import Link from "next/link";
-import { formatDate } from "@/utils/formatDate";
-
-const httpsAgent = new https.Agent({
-  rejectUnauthorized: false, // ❗ Bypasses SSL certificate verification
-});
-
-type BlogPost = {
-  id: number;
-  slug: string;
-  title: { rendered: string };
-  excerpt: { rendered: string };
-  date: string;
-  _embedded?: {
-    author?: { name: string }[];
-    "wp:featuredmedia"?: { source_url: string }[];
-    "wp:term"?: Array<
-      Array<{
-        name: string;
-      }>
-    >;
-  };
-};
+import { IBlogList } from "@/types";
+import Pagination from "@/components/Pagination";
 
 const BlogListing: React.FC = async () => {
   // const [currentPage, setCurrentPage] = useState(1);
@@ -58,10 +37,11 @@ const BlogListing: React.FC = async () => {
   //   startIndex,
   //   startIndex + postsPerPage
   // );
-  const blogs = await axios.get<BlogPost[]>(
-    "https://crm.greenspaceinterior.in/wp-json/wp/v2/posts?_embed&per_page=12",
-    { httpsAgent }
+  const blogs = await axios.get<IBlogList[]>(
+    `${process.env.CRM_HOST}/wp-json/custom/v1/posts?per_page=12`
   );
+
+  const totlaPages = Number(blogs.headers["x-wp-totalpages"]);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -70,7 +50,7 @@ const BlogListing: React.FC = async () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=800&fit=crop"
+            src="/BlogPageFetcher.jpg"
             alt="Interior Design Blog"
             className="w-full h-full object-cover"
             height={1920}
@@ -92,7 +72,7 @@ const BlogListing: React.FC = async () => {
           <div className="text-center">
             <div className="mb-6">
               <span className="inline-block px-4 py-2 bg-yellow-500 text-black font-semibold rounded-full text-sm mb-4">
-                Interior Design Blog
+                {/* Interior Design Blog */}
               </span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -103,14 +83,6 @@ const BlogListing: React.FC = async () => {
               Discover the latest trends, expert insights, and creative ideas to
               transform your space into something extraordinary
             </p>
-            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Get Free Consultation
-              </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-teal-600 font-bold py-3 px-8 rounded-lg transition-all duration-300">
-                View Our Work
-              </button>
-            </div> */}
           </div>
         </div>
 
@@ -167,46 +139,44 @@ const BlogListing: React.FC = async () => {
               <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                 <div className="relative h-48">
                   <Image
-                    src={
-                      blog._embedded?.["wp:featuredmedia"]?.[0].source_url ||
-                      "/placeholder_background.jpg"
-                    }
+                    src={blog.thumbnail ?? "/placeholder_background.jpg"}
                     alt="Featured"
                     className="object-cover"
                     fill
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      {/* {post.category} */}
-                      {blog._embedded?.["wp:term"]?.[0]?.[0].name}
+                      {blog.categories_name[0]}
                     </span>
                   </div>
                 </div>
 
                 <div className="p-6">
                   <h2
-                    dangerouslySetInnerHTML={{
-                      __html: `${blog.title.rendered}`,
-                    }}
+                    // dangerouslySetInnerHTML={{
+                    //   __html: `${blog.title.rendered}`,
+                    // }}
                     className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-teal-600 transition-colors"
-                  ></h2>
+                  >
+                    {blog.title}
+                  </h2>
 
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: `${blog.excerpt.rendered}`,
+                      __html: `${blog.short_description}`,
                     }}
                     className="text-gray-600 mb-4 line-clamp-3"
                   ></p>
 
                   <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                     <div className="flex items-center gap-4">
-                      <div className="flex items-center gap-1">
+                      {/* <div className="flex items-center gap-1">
                         <User className="h-4 w-4" />
                         <span>{blog._embedded?.author?.[0]?.name}</span>
-                      </div>
+                      </div> */}
                       <div className="flex items-center gap-1">
                         <Calendar className="h-4 w-4" />
-                        <span>{formatDate(blog.date)}</span>
+                        <span>{blog.date}</span>
                       </div>
                     </div>
                     {/* <span className="text-teal-600 font-medium">
@@ -225,43 +195,7 @@ const BlogListing: React.FC = async () => {
         </div>
 
         {/* Pagination */}
-        {/* {totalPages > 1 && (
-          <div className="flex justify-center items-center gap-2">
-            <button
-              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-              disabled={currentPage === 1}
-              className="flex items-center gap-1 px-4 py-2 text-gray-600 hover:text-teal-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            >
-              <ChevronLeft className="h-4 w-4" />
-              Previous
-            </button>
-
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <button
-                key={page}
-                onClick={() => setCurrentPage(page)}
-                className={`px-4 py-2 rounded-lg transition-colors ${
-                  currentPage === page
-                    ? "bg-teal-600 text-white"
-                    : "text-gray-600 hover:bg-teal-50 hover:text-teal-600"
-                }`}
-              >
-                {page}
-              </button>
-            ))}
-
-            <button
-              onClick={() =>
-                setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-              }
-              disabled={currentPage === totalPages}
-              className="flex items-center gap-1 px-4 py-2 text-gray-600 hover:text-teal-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            >
-              Next
-              <ChevronRight className="h-4 w-4" />
-            </button>
-          </div>
-        )} */}
+        <Pagination page={1} totalPage={totlaPages} />
       </div>
 
       {/* Call to Action Section */}

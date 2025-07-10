@@ -16,7 +16,7 @@ import CustomLink from "../CustomLink";
 import Button from "../Button";
 import { useSearchParams } from "next/navigation";
 import CustomLinkProgress from "../CustomLinkProgress";
-import { PROJECTS } from "@/data/projects";
+import { IProjects, PROJECTS } from "@/data/projects";
 import HandleCustomGalleryDialog from "../Dialogs/HandleCustomGalleryDialog";
 import OpenGetQuoteDialog from "../Utils/OpenGetQuoteDialog";
 
@@ -25,11 +25,21 @@ export default function OurProjects() {
   const swiperRef = useRef<SwiperClass | null>(null);
   const [sliderPreviewView, setSliderPreviewView] = useState(2.5);
 
+  const [projectsToShow, setProjectToShow] = useState<IProjects[]>([]);
+
   const searchParams = useSearchParams();
 
   const projectType = searchParams.get("type") || "completed-projects";
-  const projectsToShow =
-    PROJECTS.find((item) => item.service_id === projectType)?.projects || [];
+
+  useEffect(() => {
+    PROJECTS.forEach((item) => {
+      item.projects.forEach((eItem) => {
+        if (eItem.tag?.includes("Completed Project")) {
+          setProjectToShow((prev) => [...prev, eItem]);
+        }
+      });
+    });
+  }, [projectType]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -158,7 +168,7 @@ export default function OurProjects() {
               }}
             >
               {projectsToShow.map((item, index) => (
-                <SwiperSlide key={item.id}>
+                <SwiperSlide key={index}>
                   <HandleCustomGalleryDialog
                     isOpen={true}
                     galleryItem={projectsToShow.map((item) => ({
@@ -225,7 +235,10 @@ export default function OurProjects() {
                       </Link> */}
                           </div>
                         </div>
-                        <OpenGetQuoteDialog isOpen>
+                        <OpenGetQuoteDialog
+                          isOpen
+                          onClick={(e) => e.stopPropagation()}
+                        >
                           <Button>Get Quote</Button>
                         </OpenGetQuoteDialog>
                       </div>

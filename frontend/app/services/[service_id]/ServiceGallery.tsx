@@ -76,10 +76,9 @@ const ServiceGallery = ({ service_id }: IProps) => {
           <ImageSlider
             images={serviceImages}
             previews={{
-              desktop: 2,
+              desktop: 3,
               mobile: 1,
             }}
-            itemClassName="!min-h-[10rem]"
           />
         </div>
 

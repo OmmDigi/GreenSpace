@@ -79,7 +79,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
             <SwiperSlide
               key={image.id}
               className={cn(
-                "flex-center flex-col relative min-h-[19rem] w-48 overflow-hidden max-sm:w-full z-10",
+                "flex-center flex-col relative min-h-[18rem] max-h-[18rem] w-48 overflow-hidden max-sm:w-full z-10",
                 itemClassName
               )}
             >
@@ -89,7 +89,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
                 galleryItem={images}
               >
                 <div className="relative overflow-hidden rounded-lg bg-white shadow-md">
-                  <div className="aspect-square relative">
+                  <div className="aspect-[3/2] relative">
                     <Image
                       src={image.src}
                       alt={image.alt}
@@ -111,6 +111,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
                       </h3>
                       {/* <OpenGetQuoteDialog isOpen> */}
                       <Button
+                        className="!py-2 !px-5 !text-sm"
                         onClick={(e) => {
                           e.stopPropagation();
                           dispatch(setGetQuoteDialog({ isOpen: true }));
