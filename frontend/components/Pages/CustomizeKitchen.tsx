@@ -89,59 +89,59 @@ const finishTypeOptions: IFinishTypeInfo[] = [
     typeInfo: [
       {
         id: "1",
-        src: "/customize-kitchen/veneers/1.webp",
+        src: "/customize-kitchen/veneers-new/1.webp",
         alt: "",
         filterType: "image",
-        filterValue: "/customize-kitchen/veneers/tex1.jpg",
+        filterValue: "/customize-kitchen/veneers-new/tex1.jpg",
       },
       {
         id: "2",
-        src: "/customize-kitchen/veneers/2.webp",
+        src: "/customize-kitchen/veneers-new/2.webp",
         alt: "",
         filterType: "image",
         filterValue: "/customize-kitchen/veneers/tex2.webp",
       },
       {
         id: "3",
-        src: "/customize-kitchen/veneers/3.webp",
+        src: "/customize-kitchen/veneers-new/3.webp",
         alt: "",
         filterType: "image",
-        filterValue: "/customize-kitchen/veneers/tex3.jpg",
+        filterValue: "/customize-kitchen/veneers-new/tex3.jpg",
       },
       {
         id: "4",
         src: "/customize-kitchen/veneers/4.webp",
         alt: "",
         filterType: "image",
-        filterValue: "/customize-kitchen/veneers/tex4.jpg",
+        filterValue: "/customize-kitchen/veneers-new/tex4.jpg",
       },
       {
         id: "5",
-        src: "/customize-kitchen/veneers/5.webp",
+        src: "/customize-kitchen/veneers-new/5.webp",
         alt: "",
         filterType: "image",
-        filterValue: "/customize-kitchen/veneers/tex5.jpg",
+        filterValue: "/customize-kitchen/veneers-new/tex5.jpg",
       },
       {
         id: "6",
-        src: "/customize-kitchen/veneers/6.webp",
+        src: "/customize-kitchen/veneers-new/6.webp",
         alt: "",
         filterType: "image",
-        filterValue: "/customize-kitchen/veneers/tex6.jpg",
+        filterValue: "/customize-kitchen/veneers-new/tex6.jpg",
       },
       {
         id: "7",
-        src: "/customize-kitchen/veneers/7.webp",
+        src: "/customize-kitchen/veneers-new/7.webp",
         alt: "",
         filterType: "image",
-        filterValue: "/customize-kitchen/veneers/tex7.jpg",
+        filterValue: "/customize-kitchen/veneers-new/tex7.webp",
       },
       {
         id: "8",
-        src: "/customize-kitchen/veneers/8.webp",
+        src: "/customize-kitchen/veneers-new/8.webp",
         alt: "",
         filterType: "image",
-        filterValue: "/customize-kitchen/veneers/tex8.jpg",
+        filterValue: "/customize-kitchen/veneers-new/tex8.webp",
       },
     ],
   },
@@ -342,7 +342,7 @@ const CustomizeKitchen: React.FC = () => {
           {/* Kitchen Display */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-lg overflow-hidden space-y-3.5">
-              <div className="relative w-full aspect-video">
+              <div className="relative w-full aspect-[16/10]">
                 {/* Main kitchen image would go here */}
                 {finishTypeOptions[finishTypeIndex].typeInfo.map(
                   (item, index) => (
