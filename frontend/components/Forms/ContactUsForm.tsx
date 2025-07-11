@@ -151,7 +151,7 @@ export default function ContactUsForm() {
             <Button
               type="submit"
               loading={isPending}
-              className="w-full items-center justify-center px-6 py-4 rounded-lg text-white font-medium transition-opacity"
+              className="w-full items-center justify-center px-6 py-4 rounded-lg text-black font-medium transition-opacity"
               style={{ backgroundColor: "#00776e" }}
             >
               <Send className="w-5 h-5 mr-2" />

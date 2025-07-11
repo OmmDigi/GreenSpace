@@ -54,11 +54,45 @@ const FOOTER_LINKS = [
     ],
   },
   {
-    heading: "Design Gallery",
+    heading: "Services",
     links: SERVICES.map((item) => ({
       text: item.name,
       slug: `/services/${item.id}`,
     })),
+  },
+  {
+    heading: "Contact Details",
+    links: [
+      {
+        text: "+91 98765 43210",
+        slug: "tel:+91 98765 43210",
+      },
+      {
+        text: "info@greenspaceinterior.com",
+        slug: "mailto:info@greenspaceinterior.com",
+      },
+      {
+        text: "Maheshtala, Kolkata",
+        slug: "#",
+      },
+    ],
+  },
+  {
+    heading: "Social Media",
+    links: [
+      {
+        text: "Facebook",
+        slug: "https://www.facebook.com/greenspaceinterior2023/",
+      },
+      {
+        text: "Instagram",
+        slug: "https://www.instagram.com/greenspaceinterior23",
+      },
+      {
+        text: "YouTube",
+        slug: "#",
+      },
+    ],
   },
 ];
 

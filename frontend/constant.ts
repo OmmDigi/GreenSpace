@@ -287,10 +287,10 @@ export const SERVICES = [
   {
     id: "mosquito-sliding-nets",
     name: "Mosquito Sliding Nets",
-    image: "/Services/MosquitoSlidingNets.jpg",
+    image: "/Services/MosquitoSlidingNets.webp",
     singlePageInfo: {
       heading: "Mosquito Sliding Nets",
-      fetcherImage: "/Services/MosquitoSlidingNets.jpg",
+      fetcherImage: "/Services/MosquitoSlidingNets.webp",
       fetcherVideo: null,
       priceStarting: "₹2,50,000",
       description: `
@@ -301,6 +301,47 @@ export const SERVICES = [
         <p>Designed for windows, balconies and doors, these sliding nets are easy to use, sturdy and blend in beautifully with your interiors. No more constant buzzing or sleepless nights, just clean air and a healthier living space for your family.</p>
         <br />
         <p>Protect your loved ones while keeping your home looking neat and stylish with Green Space’s smart mosquito net solutions.</p>
+    `,
+    },
+  },
+
+  {
+    id: "invisible-grills",
+    name: "Invisible Grills",
+    image: "/Services/InvisibleGrills.webp",
+    singlePageInfo: {
+      heading: "Invisible Grills",
+      fetcherImage: "/Services/InvisibleGrills.webp",
+      fetcherVideo: null,
+      priceStarting: "₹2,50,000",
+      description: `
+        <p>Safe Homes, Clear Views with Green Space’s Invisible Grills</p>
+        <br />
+        <p>Your family’s safety should never hide your view. With Green Space’s invisible grills, you get the best of both, strong protection for your windows and balconies, and an open view that keeps your home feeling light and free.</p>
+        <br />
+        <p>Perfect for homes in Kolkata, these grills are sturdy yet subtle. They keep kids and pets safe without blocking sunlight or making your rooms feel closed in. Easy to maintain and sleek in design, they add safety without taking away your home’s beauty.</p>
+        <br />
+        <p>Enjoy peace of mind and an open view every day with Green Space’s invisible grill solutions.</p>
+    `,
+    },
+  },
+  {
+    id: "upvc-doors-windows",
+    name: "UPVC doors & windows",
+    image: "/Services/UPVCdoorswindows.jpg",
+    singlePageInfo: {
+      heading: "UPVC doors & windows",
+      fetcherImage: "/Services/UPVCdoorswindows.jpg",
+      fetcherVideo: null,
+      priceStarting: "₹2,50,000",
+      description: `
+        <p>Strong, Stylish and Long-Lasting UPVC Doors and Windows by Green Space</p>
+        <br />
+        <p>Your doors and windows do more than just open and close. They keep your home safe, quiet and comfortable through every season. With Green Space’s UPVC doors and windows, you get strength, smooth design and easy upkeep, all in one.</p>
+        <br />
+        <p>Perfect for Kolkata’s changing weather, our UPVC solutions help keep heat, noise and dust out while letting in fresh air and natural light. From sliding windows to sturdy doors, every piece is made to last and blend beautifully with your interiors.</p>
+        <br />
+        <p>Add peace of mind and style to your home with UPVC doors and windows from Green Space.</p>
     `,
     },
   },

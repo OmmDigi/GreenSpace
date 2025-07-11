@@ -218,7 +218,7 @@ const AboutUs: React.FC = () => {
                   <Users className="w-8 h-8" />
                 </div>
                 <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
-                  <Counter to={250} /> +
+                  <Counter to={225} /> +
                 </div>
                 <div className="text-teal-100 font-medium">Happy Clients</div>
               </div>

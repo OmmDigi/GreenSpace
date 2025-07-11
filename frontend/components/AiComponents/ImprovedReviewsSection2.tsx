@@ -78,7 +78,7 @@ export default function ImprovedReviewsSection2() {
               className="text-3xl font-bold mb-1"
               style={{ color: "#00776e" }}
             >
-              <Counter to={500} />+
+              <Counter to={225} />+
             </div>
             <div className="text-sm text-gray-600">Happy Customers</div>
           </div>

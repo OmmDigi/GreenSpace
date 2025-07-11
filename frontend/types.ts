@@ -130,3 +130,13 @@ export interface RelatedBlog {
   date: string;
   featuredImage: string | null;
 }
+
+export interface IMultipForm {
+  floorPlan: string;
+  budget: string;
+  requirements: string[];
+  name: string;
+  phone: string;
+  email: string;
+  location: string;
+}

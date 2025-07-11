@@ -33,12 +33,12 @@ export default async function page({ params }: IProps) {
           <div className="space-y-6">
             {/* Media Section */}
             <div>
-              <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-gray-900 shadow-2xl">
+              <div className="relative w-full aspect-[2/1.5] rounded-2xl overflow-hidden bg-gray-900 shadow-2xl">
                 <div>
                   <Image
                     src={singleService.image}
                     alt="Modern Living Room Design"
-                    className="size-full object-cover"
+                    className="size-full aspect-[2/1.5] object-cover"
                     height={1200}
                     width={1200}
                   />
@@ -142,7 +142,9 @@ export default async function page({ params }: IProps) {
           </div>
 
           {/* Right Side - Contact Form */}
-          <DetailsPageForm currentServiceName={singleService.name} />
+         <div className="sticky top-0">
+           <DetailsPageForm currentServiceName={singleService.name} />
+         </div>
         </div>
 
         {/* Contact Details Section */}

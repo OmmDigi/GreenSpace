@@ -71,13 +71,15 @@ const HeroSection = () => {
   return (
     <div className="bg-white">
       {/* Hero Section - Full Image with Overlaid Text */}
-      <Image
-        className="w-full"
-        src="/site-service/siteservicebanner.jpg"
-        alt="Site Service Page"
-        height={1920}
-        width={1080}
-      />
+      <OpenGetQuoteDialog isOpen>
+        <Image
+          className="w-full"
+          src="/site-service/siteservicebanner.jpg"
+          alt="Site Service Page"
+          height={1920}
+          width={1080}
+        />
+      </OpenGetQuoteDialog>
 
       {/* Three Services Section with Brown Background */}
       <div className="bg-gradient-to-r from-[#9e7d60] to-[#9e7d60]">

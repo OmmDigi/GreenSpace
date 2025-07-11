@@ -17,13 +17,39 @@ export default function page() {
         <DesignCarousel
           headingText="— Fabulous False Ceiling Designs To Suit Every Taste And Budget —"
           buttonText="Talk To Our Design Experts Today →"
-          images={[]}
+          images={[
+            {
+              src: "/Projects/false-ceiling/1.jpg",
+              alt: "False Ceiling",
+            },
+            {
+              src: "/Projects/false-ceiling/2.jpg",
+              alt: "False Ceiling",
+            },
+            {
+              src: "/Projects/false-ceiling/3.jpg",
+              alt: "False Ceiling",
+            },
+          ]}
         />
 
         <DesignCarousel
           headingText="— Painting Solutions To Match Your Style —"
           buttonText="Book A Free Consultation →"
-          images={[]}
+          images={[
+            {
+              src: "/Projects/painting-solutions/1.jpg",
+              alt: "Painting Solutions",
+            },
+            {
+              src: "/Projects/painting-solutions/2.jpg",
+              alt: "Painting Solutions",
+            },
+            {
+              src: "/Projects/painting-solutions/3.jpg",
+              alt: "Painting Solutions",
+            },
+          ]}
         />
 
         <DesignCarousel
@@ -35,13 +61,39 @@ export default function page() {
         <DesignCarousel
           headingText="— Electrical Services For Every Need —"
           buttonText="Get A Free Quote Today →"
-          images={[]}
+          images={[
+            {
+              src: "/Projects/electrical-services/1.jpg",
+              alt: "Electrical Services",
+            },
+            {
+              src: "/Projects/electrical-services/2.jpg",
+              alt: "Electrical Services",
+            },
+            {
+              src: "/Projects/electrical-services/3.jpg",
+              alt: "Electrical Services",
+            },
+          ]}
         />
 
         <DesignCarousel
           headingText="— Shower Partition Designs —"
           buttonText="Meet Our Designer →"
-          images={[]}
+          images={[
+            {
+              src: "/Projects/showe-partition/1.jpg",
+              alt: "Shower Partition",
+            },
+            {
+              src: "/Projects/showe-partition/2.jpg",
+              alt: "Shower Partition",
+            },
+            {
+              src: "/Projects/showe-partition/3.jpg",
+              alt: "Shower Partition",
+            },
+          ]}
         />
       </div>
 

@@ -14,6 +14,7 @@ import { OurClients } from "@/components/OurClients";
 import { OurChannelPartners } from "@/components/OurChannelPartners";
 import WhyChooseSection from "@/components/WhyChooseSection";
 import WhyGreenSpace from "@/components/WhyGreenSpace";
+import MultiStepForm from "@/components/MultiStepForm";
 
 export default function Home() {
   return (
@@ -135,6 +136,8 @@ export default function Home() {
       </section> */}
 
         <WhyGreenSpace />
+
+        <MultiStepForm />
 
         <ImprovedReviewsSection2 />
 
