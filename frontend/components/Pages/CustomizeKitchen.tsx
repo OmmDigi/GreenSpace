@@ -99,7 +99,7 @@ const finishTypeOptions: IFinishTypeInfo[] = [
         src: "/customize-kitchen/veneers-new/2.webp",
         alt: "",
         filterType: "image",
-        filterValue: "/customize-kitchen/veneers-new/tex2.webp",
+        filterValue: "/customize-kitchen/veneers-new/tex2.jpg",
       },
       {
         id: "3",
