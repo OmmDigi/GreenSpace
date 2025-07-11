@@ -47,13 +47,15 @@ export default function OurServices() {
             key={service.id}
             className="flex-center flex-col relative aspect-video min-h-[19rem] overflow-hidden max-sm:w-full z-10"
           >
-            <Image
-              className="w-full h-full object-cover"
-              src={service.image}
-              alt="Service Image"
-              height={1200}
-              width={1200}
-            />
+            <Link href={`/services/${service.id}`}>
+              <Image
+                className="w-full h-full object-cover"
+                src={service.image}
+                alt="Service Image"
+                height={1200}
+                width={1200}
+              />
+            </Link>
             <div className="absolute bottom-0 right-0 left-0 flex items-end z-0 px-4 bg-gradient-to-t from-[#0000002f] to-[#0000008a]">
               <h2 className="font-[400] tracking-wider w-full text-lg text-white py-3.5">
                 {service.name}

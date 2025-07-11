@@ -174,7 +174,7 @@ export default function Footer() {
               href="https://ommdigitalsolution.com/"
               className="underline"
             >
-              OMM DIGITAL Pvt Ltd
+              Omm Digital Solution Pvt. Ltd.
             </Link>
           </div>
         </div>

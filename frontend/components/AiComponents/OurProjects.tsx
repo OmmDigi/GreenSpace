@@ -19,6 +19,7 @@ import CustomLinkProgress from "../CustomLinkProgress";
 import { IProjects, PROJECTS } from "@/data/projects";
 import HandleCustomGalleryDialog from "../Dialogs/HandleCustomGalleryDialog";
 import OpenGetQuoteDialog from "../Utils/OpenGetQuoteDialog";
+import Link from "next/link";
 
 export default function OurProjects() {
   SwiperCore.use([Navigation, Pagination]);
@@ -207,12 +208,12 @@ export default function OurProjects() {
 
                         {/* Hover Content */}
                         <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                          <div className="flex items-center justify-between mb-2">
+                          <Link onClick={(e) => e.stopPropagation()} href={`/services/${item.service_id}`} className="flex items-center justify-between mb-2">
                             <span className="text-sm text-gray-200">
-                              {item.tag}
+                              Open {item.title} Service
                             </span>
                             <ArrowRight size={20} className="text-[#00776d]" />
-                          </div>
+                          </Link>
                         </div>
                       </div>
 
