@@ -132,8 +132,12 @@ const MultiStepForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="bg-white wrapper overflow-hidden w-full">
+    <div className="min-h-screen wrapper flex items-center justify-center p-4">
+      <div className="bg-white overflow-hidden w-full space-y-12">
+        <h2 className="text-4xl md:text-5xl text-center font-bold">
+          <span style={{ color: "#00776e" }}>Get</span>{" "}
+          <span className="relative">Quote</span>
+        </h2>
         <div className="grid grid-cols-2 gap-10 max-sm:grid-cols-1">
           {/* Left Side - Form */}
           <div>
@@ -160,9 +164,9 @@ const MultiStepForm = () => {
               {/* Step 1: Floor Plan */}
               {currentStep === 1 && (
                 <div className="animate-fade-in">
-                  <div className="flex items-center mb-6">
-                    <Home className="w-8 h-8 text-teal-500 mr-3" />
-                    <h2 className="text-3xl font-bold text-gray-800">
+                  <div className="flex items-center mb-6 gap-3.5">
+                    <Home className="text-teal-600 h-6 w-6" />
+                    <h2 className="text-xl font-bold text-gray-800">
                       Your Floor Plan
                     </h2>
                   </div>
@@ -198,7 +202,7 @@ const MultiStepForm = () => {
               {currentStep === 2 && (
                 <div className="animate-fade-in">
                   <div className="flex items-center mb-6">
-                    <DollarSign className="w-8 h-8 text-teal-500 mr-3" />
+                    <DollarSign className="h-6 w-6 text-teal-500 mr-3" />
                     <h2 className="text-3xl font-bold text-gray-800">
                       Your Budget
                     </h2>
@@ -233,8 +237,8 @@ const MultiStepForm = () => {
               {currentStep === 3 && (
                 <div className="animate-fade-in">
                   <div className="flex items-center mb-6">
-                    <CheckSquare className="w-8 h-8 text-teal-500 mr-3" />
-                    <h2 className="text-3xl font-bold text-gray-800">
+                    <CheckSquare className="h-6 w-6 text-teal-500 mr-3" />
+                    <h2 className="text-xl font-bold text-gray-800">
                       Requirements
                     </h2>
                   </div>
@@ -266,8 +270,8 @@ const MultiStepForm = () => {
               {currentStep === 4 && (
                 <div className="animate-fade-in">
                   <div className="flex items-center mb-6">
-                    <User className="w-8 h-8 text-teal-500 mr-3" />
-                    <h2 className="text-3xl font-bold text-gray-800">
+                    <User className="h-6 w-6 text-teal-500 mr-3" />
+                    <h2 className="text-xl font-bold text-gray-800">
                       Contact Details
                     </h2>
                   </div>

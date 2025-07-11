@@ -91,13 +91,13 @@ export default function WhyGreenSpace() {
           </div>
         </div>
 
-        <ul className="flex items-center justify-center relative max-sm:justify-start max-sm:gap-5">
+        <ul className="flex items-center overflow-x-auto justify-center relative max-sm:justify-start max-sm:gap-5">
           {TABS.map((item, index) => (
             <li key={item.id} className="grow shrink-0">
               <div
                 className={cn(
-                  "relative flex items-center justify-center max-sm:w-full max-sm:p-1.5 max-sm:px-3.5 max-sm:rounded-2xl",
-                  currentTabIndex === index ? "max-sm:bg-yellow-400" : ""
+                  "relative flex items-center justify-center max-sm:w-full max-sm:p-1.5 max-sm:px-3.5 max-sm:rounded-md",
+                  currentTabIndex === index ? "max-sm:bg-yellow-400" : "max-sm:border max-sm:border-yellow-400"
                 )}
               >
                 <button

@@ -5,6 +5,13 @@ import { SERVICES } from "@/constant";
 
 const FOOTER_LINKS = [
   {
+    heading: "Services",
+    links: SERVICES.map((item) => ({
+      text: item.name,
+      slug: `/services/${item.id}`,
+    })),
+  },
+  {
     heading: "Quick Links",
     links: [
       {
@@ -52,13 +59,6 @@ const FOOTER_LINKS = [
         slug: "/emi-options",
       },
     ],
-  },
-  {
-    heading: "Services",
-    links: SERVICES.map((item) => ({
-      text: item.name,
-      slug: `/services/${item.id}`,
-    })),
   },
   {
     heading: "Contact Details",
@@ -111,9 +111,9 @@ export default function Footer() {
           </OpenGetQuoteDialog>
         </div>
 
-        <div className={cn("grid md:grid-cols-5 gap-8 text-sm")}>
+        <div className="grid md:grid-cols-4 gap-8 text-sm max-sm:grid-cols-2">
           {FOOTER_LINKS.map((links, index) => (
-            <div key={index}>
+            <div key={index} className={index === 0 ? "max-sm:order-3" : index === 1 ? "max-sm:order-4" : index === 2 ? "max-sm:order-1" : "max-sm:order-2"}>
               <h3 className={cn("font-semibold mb-4")}>{links.heading}</h3>
               <ul className={cn("space-y-2 text-teal-100")}>
                 {links.links.map((item, index) => (

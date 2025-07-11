@@ -12,7 +12,7 @@ export default function VideoViewSection() {
   return (
     <div className="relative group/videopart min-w-[60%] h-full max-w-[60%] overflow-hidden max-sm:w-full max-sm:max-w-max">
       <Image
-        className="size-full max-h-[35rem] min-h-[35rem] object-cover transition-all duration-700"
+        className="size-full max-h-[35rem] min-h-[35rem] object-cover transition-all duration-700 max-sm:aspect-video max-sm:min-h-auto"
         src={"/our-works.jpg"}
         alt="Our Works"
         height={1200}

@@ -50,9 +50,9 @@ export default function Header() {
             className="lg:hidden p-2 rounded-lg hover:bg-amber-50 transition-colors duration-200 relative overflow-hidden group"
             aria-label="Toggle mobile menu"
           >
-            <div className="bg-amber-300/20 w-[60%] h-[100%] rotate-[45deg] absolute transition-all duration-[800ms] group-hover:left-[100%]"></div>
+            {/* <div className="bg-amber-300/20 w-[60%] h-[100%] rotate-[45deg] absolute transition-all duration-[800ms] group-hover:left-[100%]"></div> */}
             <Menu
-              size={24}
+              size={28}
               className={cn(
                 "text-gray-700 transition-transform duration-300 relative z-10"
               )}

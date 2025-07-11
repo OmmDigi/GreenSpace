@@ -22,6 +22,7 @@ export default function Home() {
       <div className="space-y-16">
         <Banner />
         <WhyChooseSection />
+        <MultiStepForm />
         <AboutUsSection />
 
         <ScrollText />
@@ -61,7 +62,7 @@ export default function Home() {
         <section data-aos="fade-up" className="font-jost">
           <div className="flex items-start max-h-[35rem] min-h-[35rem] overflow-hidden max-sm:flex-col max-sm:max-h-max">
             <VideoViewSection />
-            <div className="bg-primary relative min-w-[40%] min-h-[35rem] p-10 flex flex-col justify-center">
+            <div className="bg-primary relative min-w-[40%] min-h-[35rem] p-10 flex flex-col justify-center max-sm:min-h-[28rem]">
               <h2
                 data-aos="fade-left"
                 className="font-semibold text-2xl tracking-wider !text-white"
@@ -136,8 +137,6 @@ export default function Home() {
       </section> */}
 
         <WhyGreenSpace />
-
-        <MultiStepForm />
 
         <ImprovedReviewsSection2 />
 

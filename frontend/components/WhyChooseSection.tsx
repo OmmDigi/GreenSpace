@@ -2,8 +2,6 @@
 
 import React from "react";
 import { Shield, DollarSign, Home, Truck } from "lucide-react";
-import Button from "./Button";
-import OpenGetQuoteDialog from "./Utils/OpenGetQuoteDialog";
 
 const WhyChooseSection: React.FC = () => {
   const features = [
@@ -59,7 +57,7 @@ const WhyChooseSection: React.FC = () => {
         </div> */}
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8 lg:gap-8 mb-16">
           {features.map((feature, index) => (
             <div
               key={index}
@@ -82,12 +80,12 @@ const WhyChooseSection: React.FC = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors duration-300">
+                <h3 className="text-xl max-sm:text-sm font-bold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors duration-300">
                   {feature.title}
                 </h3>
 
                 {/* Subtitle */}
-                <h4 className="text-sm font-semibold text-[#eeca45] mb-3 uppercase tracking-wide">
+                <h4 className="text-sm max-sm:text-sm font-semibold text-[#eeca45] mb-3 uppercase tracking-wide">
                   {feature.subtitle}
                 </h4>
 
@@ -107,7 +105,7 @@ const WhyChooseSection: React.FC = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <OpenGetQuoteDialog isOpen className="inline-block">
             <Button>
               Get Free Consultation
@@ -116,7 +114,7 @@ const WhyChooseSection: React.FC = () => {
               </span>
             </Button>
           </OpenGetQuoteDialog>
-        </div>
+        </div> */}
       </div>
 
       {/* Custom CSS for animations */}

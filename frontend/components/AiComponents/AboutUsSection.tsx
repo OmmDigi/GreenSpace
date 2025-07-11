@@ -13,12 +13,12 @@ import Link from "next/link";
 
 export default function AboutUsSection() {
   return (
-    <section className="py-0 lg:py-0 bg-gradient-to-br from-slate-50 to-white">
+    <section className="pt-6 bg-gradient-to-br from-slate-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 max-sm:mb-2.5">
           <div className="inline-block">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#00776e]/10 to-[#ab6447]/10 rounded-full mb-6">
+            <div className="hidden items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#00776e]/10 to-[#ab6447]/10 rounded-full mb-6">
               <BadgeInfo className="w-5 h-5 text-[#00776e]" />
               <span className="text-[#00776e] font-medium">About Us</span>
             </div>
@@ -112,7 +112,7 @@ export default function AboutUsSection() {
             </div>
 
             {/* Statistics Grid */}
-            <div className="grid grid-cols-3 gap-6  max-sm:grid-cols-1">
+            <div className="grid grid-cols-3 gap-6 max-sm:gap-3">
               <div
                 data-aos="fade-up"
                 data-aos-delay="300"

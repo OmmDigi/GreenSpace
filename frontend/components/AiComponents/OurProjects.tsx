@@ -69,7 +69,7 @@ export default function OurProjects() {
 
   return (
     <>
-      <section className="w-full bg-gradient-to-b from-gray-50 to-white">
+      <section className="w-full">
         <div className="container mx-auto px-4 max-w-7xl">
           {/* Section Header */}
           <div className="text-center">
@@ -126,7 +126,7 @@ export default function OurProjects() {
                     Finished Projects
                   </CustomLinkProgress>
                 </button>
-                <div className="w-full h-1 bg-red-200 rounded-full"></div>
+                <div className="w-full h-1 bg-yellow-300 rounded-full"></div>
               </div>
             </CustomLink>
             {/* <CustomLink
@@ -217,7 +217,7 @@ export default function OurProjects() {
                       </div>
 
                       {/* Content */}
-                      <div className="p-6 flex items-center justify-between">
+                      <div className="p-6 flex items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-y-5">
                         <div>
                           <h3 className="font-bold text-lg text-gray-900 mb-2 line-clamp-1 group-hover:text-[#00776d] transition-colors">
                             {item.title}
@@ -239,7 +239,7 @@ export default function OurProjects() {
                           isOpen
                           onClick={(e) => e.stopPropagation()}
                         >
-                          <Button>Get Quote</Button>
+                          <Button className="max-sm:py-4 max-sm:text-sm">Get Quote</Button>
                         </OpenGetQuoteDialog>
                       </div>
                     </div>
