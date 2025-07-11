@@ -91,7 +91,7 @@ export default function WhyGreenSpace() {
           </div>
         </div>
 
-        <ul className="flex items-center overflow-x-auto justify-center relative max-sm:justify-start max-sm:gap-5">
+        <ul className="flex items-center max-sm:overflow-x-auto justify-center relative max-sm:justify-start max-sm:gap-5">
           {TABS.map((item, index) => (
             <li key={item.id} className="grow shrink-0">
               <div
