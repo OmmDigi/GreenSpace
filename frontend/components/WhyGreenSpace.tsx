@@ -43,7 +43,43 @@ const TABS = [
     text: "Easy EMI options",
     image: "/why-us/whyUs4.webp",
     btnText: "Avail Attractive EMIs",
-    content: `<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 30px; font-weight: 400; color: rgb(34, 34, 34); font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(248, 248, 248); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" id="isPasted"><span style="box-sizing: border-box; font-weight: 400;">We have partnered with reputable lenders to make your interiors decision easier.</span></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 30px; font-weight: 400; color: rgb(34, 34, 34); font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(248, 248, 248); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="box-sizing: border-box; font-weight: 400;">EMIs can be split over 36 months and kick in after only a 20% payment (5% and 15%)</span></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 30px; font-weight: 400; color: rgb(34, 34, 34); font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(248, 248, 248); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><b style="box-sizing: border-box; font-weight: bolder;">Sample EMIs (monthly for 36 months):</b><span style="box-sizing: border-box; font-weight: 400;">&nbsp;</span></p><ol style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(102, 102, 102); font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(248, 248, 248); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><li style="box-sizing: border-box;"><span style="box-sizing: border-box; font-weight: 400;"><span style="box-sizing: border-box; font-weight: 400;">Kitchen costing 1.5 lakhs &ndash; ₹4,667</span></span></li><li style="box-sizing: border-box;">1BHK costing 3.5 lakhs<span style="box-sizing: border-box; font-weight: 400;">&nbsp;&ndash;</span> ₹10,889</li><li style="box-sizing: border-box;">2BHK costing 5 lakhs &ndash; ₹15,556</li><li style="box-sizing: border-box;">3BHK costing 7 lakhs<span style="box-sizing: border-box; font-weight: 400;">&nbsp;&ndash;</span> ₹21,778</li></ol>`,
+    content: `<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 30px; font-weight: 400; color: rgb(34, 34, 34); font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(248, 248, 248); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"
+  id="isPasted"><span style="box-sizing: border-box; font-weight: 400;">We have
+    partnered with reputable lenders to make your interiors decision
+    easier.</span></p>
+<p
+  style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 30px; font-weight: 400; color: rgb(34, 34, 34); font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(248, 248, 248); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+  <span style="box-sizing: border-box; font-weight: 400;">EMIs can be split over
+    36 months and kick in after only a 20% payment (5% and 15%)</span></p>
+<p
+  style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 30px; font-weight: 400; color: rgb(34, 34, 34); font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(248, 248, 248); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+  <b style="box-sizing: border-box; font-weight: bolder;">Sample EMIs (monthly
+    for 36 months):</b><span
+    style="box-sizing: border-box; font-weight: 400;">&nbsp;</span></p>
+<ol
+  style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(102, 102, 102); font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(248, 248, 248); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+  <li style="box-sizing: border-box;"><span
+      style="box-sizing: border-box; font-weight: 400;"><span
+        style="box-sizing: border-box; font-weight: 400;">Kitchen costing 1.5
+        lakhs &ndash; ₹4,667 (Approx)</span></span></li>
+  <li style="box-sizing: border-box;">1BHK costing 3.5 lakhs<span
+      style="box-sizing: border-box; font-weight: 400;">&nbsp;&ndash;</span>
+    ₹10,889&nbsp;<span style="box-sizing: border-box; font-weight: 400;"
+      id="isPasted"><span
+        style="box-sizing: border-box; font-weight: 400;">(Approx)</span></span>
+  </li>
+  <li style="box-sizing: border-box;">2BHK costing 5 lakhs &ndash;
+    ₹15,556&nbsp;<span style="box-sizing: border-box; font-weight: 400;"
+      id="isPasted"><span
+        style="box-sizing: border-box; font-weight: 400;">(Approx)</span></span>
+  </li>
+  <li style="box-sizing: border-box;">3BHK costing 7 lakhs<span
+      style="box-sizing: border-box; font-weight: 400;">&nbsp;&ndash;</span>
+    ₹21,778&nbsp;<span style="box-sizing: border-box; font-weight: 400;"
+      id="isPasted"><span
+        style="box-sizing: border-box; font-weight: 400;">(Approx)</span></span>
+  </li>
+</ol>`,
   },
   {
     id: "5",

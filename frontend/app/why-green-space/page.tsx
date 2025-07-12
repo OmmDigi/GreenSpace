@@ -139,7 +139,7 @@ const WhyChooseUs: React.FC = () => {
               <Image
                 className="size-full"
                 src={"/whyChooseUsSideImage.jpg"}
-                alt="Why Green Space Image"
+                alt="Why Green Space Interior Image"
                 height={1280}
                 width={1280}
               />

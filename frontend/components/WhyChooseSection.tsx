@@ -47,7 +47,7 @@ const WhyChooseSection: React.FC = () => {
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
             Why Choose{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#eeca45] to-[#d4b139]">
-              Green Space
+              Green Space Interior
             </span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">

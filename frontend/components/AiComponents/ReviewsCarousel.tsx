@@ -23,14 +23,14 @@ const reviews: {
     name: "Mr Amit Das",
     location: "Kolkata",
     review:
-      "Green Space had a collection of creative designs and our search for a home interior firm ended here. We were happy with flawless execution and timely customer interaction. I am very happy to hire them. They are the best Interior Designer in Kolkata. Highly recommended.",
+      "Green Space Interior had a collection of creative designs and our search for a home interior firm ended here. We were happy with flawless execution and timely customer interaction. I am very happy to hire them. They are the best Interior Designer in Kolkata. Highly recommended.",
     rating: 5,
     image: "/happy-customer.png",
   },
   {
     id: 2,
     name: "Mr. Veerinder Kumar",
-    review: `If you are finding a perfect interior designer in Kolkata, then I will suggest you choose Green Space. I hired them to design my 2BHK flat in Kolkata from Google. They respond very quickly and send me a perfect quotation for my flat interior design. They are the cheapest interior designer in Kolkata.`,
+    review: `If you are finding a perfect interior designer in Kolkata, then I will suggest you choose Green Space Interior. I hired them to design my 2BHK flat in Kolkata from Google. They respond very quickly and send me a perfect quotation for my flat interior design. They are the cheapest interior designer in Kolkata.`,
     rating: 5,
     image: "/happy-customer.png",
     location: "Kolkata",
@@ -38,7 +38,7 @@ const reviews: {
   {
     id: 3,
     name: "Mr. Arpan Biswas",
-    review: `We hired Green Space for our home interiors. The project manager was very responsive. They took our requests to a desirable conclusion. It has been a value for money outcome, with good finishes as promised. So, if you are looking for an interior designer in Kolkata, then contact them.`,
+    review: `We hired Green Space Interior for our home interiors. The project manager was very responsive. They took our requests to a desirable conclusion. It has been a value for money outcome, with good finishes as promised. So, if you are looking for an interior designer in Kolkata, then contact them.`,
     rating: 5,
     image: "/happy-customer.png",
     location: "Kolkata",
@@ -46,7 +46,7 @@ const reviews: {
   {
     id: 4,
     name: "Mrs. Samriddhi Pul",
-    review: `I am looking for an interior designer to design my flat, then I found Green Space on Google. I called them and they respond very quickly. Also, they send me a quotation very quickly, which matches with my budget. I am very happy to hire them. I am fully satisfied with their service.`,
+    review: `I am looking for an interior designer to design my flat, then I found Green Space Interior on Google. I called them and they respond very quickly. Also, they send me a quotation very quickly, which matches with my budget. I am very happy to hire them. I am fully satisfied with their service.`,
     rating: 5,
     image: "/happy-customer.png",
     location: "Kolkata",

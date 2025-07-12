@@ -143,7 +143,7 @@ const ServiceComparisonSection = () => {
               </div>
               <div className="col-span-2 px-4 py-4 text-center">
                 <div className="bg-teal-600 text-white px-3 py-2 rounded-lg font-semibold text-sm">
-                  Green Space Services
+                  Green Space Interior Services
                 </div>
               </div>
               <div className="col-span-3 px-6 py-4"></div>
@@ -293,7 +293,7 @@ const ServiceComparisonSection = () => {
 
                       <div>
                         <div className="text-xs font-medium text-teal-600 mb-2">
-                          GREEN SPACE
+                          GREEN SPACE INTERIOR
                         </div>
                         <div
                           className={`w-8 h-8 mx-auto rounded-lg flex items-center justify-center ${getColumnBg(

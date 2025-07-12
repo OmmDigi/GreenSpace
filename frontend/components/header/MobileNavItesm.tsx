@@ -143,7 +143,7 @@ function MobileSidebar({ isOpen, onClose }: IMobileSidebarProps) {
               src={"/logo.png"}
               height={500}
               width={500}
-              alt="Green Space Logo"
+              alt="Green Space Interior Logo"
             />
 
             <button

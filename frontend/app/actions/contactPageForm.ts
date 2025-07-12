@@ -6,7 +6,7 @@ export async function contactPageForm(formData: FormData) {
   try {
     await sendMail({
       title: `Contact Us Page Form Enquiry`,
-      subject: "Enquiry From Contact Us Page Green Space",
+      subject: "Enquiry From Contact Us Page Green Space Interior",
       html: `
         <h3>Name : ${formData.get("name")}</h3>
         <h3>Email : ${formData.get("email")}</h3>

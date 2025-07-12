@@ -26,7 +26,7 @@ export default function MobileSideBar({ children }: IProps) {
         <div>
           <Image
             className="w-[10rem]"
-            alt="Green Space Logo"
+            alt="Green Space Interior Logo"
             src={"/logo.png"}
             height={200}
             width={200}

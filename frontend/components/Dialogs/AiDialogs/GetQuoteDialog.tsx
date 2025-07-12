@@ -125,7 +125,7 @@ const GetQuoteDialog = () => {
 
                 <Image
                   src={"/popupHeaderMobile.png"}
-                  alt="Green Space Offer"
+                  alt="Green Space Interior Offer"
                   height={720}
                   width={1280}
                   className="hidden max-sm:block"

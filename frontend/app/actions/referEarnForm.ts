@@ -7,7 +7,7 @@ export async function referEarnForm(formData: FormData) {
   const friendName = formData.get("friendName");
   try {
     await sendMail({
-      title: "Refer And Earn Form From Green Space",
+      title: "Refer And Earn Form From Green Space Interior",
       subject: `${yourName} Want To Refer ${friendName}`,
       html: `
         <h3>Refer From : ${yourName}</h3>

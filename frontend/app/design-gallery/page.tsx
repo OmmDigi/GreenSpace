@@ -148,9 +148,6 @@ export default async function GalleryPage({ searchParams }: IProps) {
                       Get Free Consultation
                     </button>
                   </OpenGetQuoteDialog>
-                  <button className="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-teal-600 transition-colors duration-300">
-                    View Our Services
-                  </button>
                 </div>
               </div>
             </div>

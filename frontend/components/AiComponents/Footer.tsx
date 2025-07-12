@@ -43,7 +43,7 @@ const FOOTER_LINKS: {
         slug: "/career",
       },
       {
-        text: "Why Green Space",
+        text: "Why Green Space Interior",
         slug: "/why-green-space",
       },
       {

@@ -114,7 +114,7 @@ const AboutUs: React.FC = () => {
                   About Our Story
                 </h1>
                 <p className="text-lg text-gray-600 mb-6">
-                  Green Space is the best interior designer in Kolkata, West
+                  Green Space Interior is the best interior designer in Kolkata, West
                   Bengal. For over 15 years, we have been transforming ordinary
                   spaces into beautiful, functional homes and offices that feel
                   timeless and personal. From stylish kitchens to inspiring
@@ -122,7 +122,7 @@ const AboutUs: React.FC = () => {
                   smooth execution.
                 </p>
                 <p className="text-lg text-gray-600 mb-8">
-                  Green Space is the best interior designer in Kolkata, West
+                  Green Space Interior is the best interior designer in Kolkata, West
                   Bengal. For over 15 years, we have been transforming ordinary
                   spaces into beautiful, functional homes and offices that feel
                   timeless and personal. From stylish kitchens to inspiring

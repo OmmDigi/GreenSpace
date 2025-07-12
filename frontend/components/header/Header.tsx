@@ -21,7 +21,7 @@ export default function Header() {
           <Link href="/">
             <Image
               className="w-[12rem]"
-              alt="Green Space Logo"
+              alt="Green Space Interior Logo"
               src={"/logo.png"}
               height={500}
               width={500}

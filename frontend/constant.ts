@@ -24,11 +24,11 @@ export const SERVICES = [
       priceStarting: "₹2,50,000",
       description: `
         <p>
-          Transform Your Cooking Space with Green Space’s Elegant Modular Kitchen Creations
+          Transform Your Cooking Space with Green Space Interior’s Elegant Modular Kitchen Creations
         </p>
         <br />
         <p>
-          Your kitchen is more than just a place to cook. It is where you start your day, share meals and create memories with family and friends. At Green Space, we make sure your kitchen feels right for you, stylish, practical and comfortable for daily use.
+          Your kitchen is more than just a place to cook. It is where you start your day, share meals and create memories with family and friends. At Green Space Interior, we make sure your kitchen feels right for you, stylish, practical and comfortable for daily use.
         </p>
         <br />
         <p>
@@ -52,13 +52,13 @@ export const SERVICES = [
       fetcherVideo: null,
       priceStarting: "₹2,50,000",
       description: `
-        <p>Breathe Life into Your Home with Green Space’s Signature Living Room Designs.</p>
+        <p>Breathe Life into Your Home with Green Space Interior’s Signature Living Room Designs.</p>
         <br />
-        <p>Your living room is where everyone comes together, so it should feel warm, stylish and truly welcoming. At Green Space, we make sure every design balances comfort with beauty, so you love spending time there every day.</p>
+        <p>Your living room is where everyone comes together, so it should feel warm, stylish and truly welcoming. At Green Space Interior, we make sure every design balances comfort with beauty, so you love spending time there every day.</p>
         <br />
         <p>From modern layouts and elegant textures to clever use of space, we create living rooms that match your taste and lifestyle. Whether you like a clean, minimal feel or a cosy, luxurious vibe, we turn ordinary rooms into inviting spaces where people want to sit, talk and relax.</p>
         <br />
-        <p>Let your living room show your style and make every moment feel special with Green Space.</p>
+        <p>Let your living room show your style and make every moment feel special with Green Space Interior.</p>
     `,
     },
   },
@@ -73,13 +73,13 @@ export const SERVICES = [
       fetcherVideo: null,
       priceStarting: "₹2,50,000",
       description: `
-        <p>Dream in Style with Green Space’s Exquisite Bedroom Designs.</p>
+        <p>Dream in Style with Green Space Interior’s Exquisite Bedroom Designs.</p>
         <br />
-        <p>Your bedroom should feel like your own private escape where you can unwind and wake up refreshed every day. At Green Space, we design bedrooms that feel calm, beautiful and truly yours.</p>
+        <p>Your bedroom should feel like your own private escape where you can unwind and wake up refreshed every day. At Green Space Interior, we design bedrooms that feel calm, beautiful and truly yours.</p>
         <br />
         <p>We focus on soft textures, smart storage and a look that matches your taste, whether you want it modern and sleek or warm and cosy. Every detail is planned so you sleep better, relax more and feel good in your own space.</p>
         <br />
-        <p>Make your bedroom the place you look forward to at the end of every day, with Green Space by your side.</p>
+        <p>Make your bedroom the place you look forward to at the end of every day, with Green Space Interior by your side.</p>
     `,
     },
   },
@@ -94,9 +94,9 @@ export const SERVICES = [
       fetcherVideo: null,
       priceStarting: "₹2,50,000",
       description: `
-        <p>Playful Meets Practical in Green Space’s Delightful Kids Bedroom Designs.</p>
+        <p>Playful Meets Practical in Green Space Interior’s Delightful Kids Bedroom Designs.</p>
         <br />
-        <p>Your child’s room should be more than just four walls. It should be a place where they dream, play and feel safe every day. At Green Space, we design kids’ bedrooms that are colourful, fun and smartly planned to grow with your child.</p>
+        <p>Your child’s room should be more than just four walls. It should be a place where they dream, play and feel safe every day. At Green Space Interior, we design kids’ bedrooms that are colourful, fun and smartly planned to grow with your child.</p>
         <br />
         <p>From cosy beds and playful themes to study corners and clever storage, we make sure every part of the room is practical and inspiring. It is a space for homework, games and big dreams, all in one.</p>
         <br />
@@ -115,13 +115,13 @@ export const SERVICES = [
       fetcherVideo: null,
       priceStarting: "₹2,50,000",
       description: `
-        <p>Smart. Stylish. Space-Saving. Green Space’s Custom Wardrobe Designs.</p>
+        <p>Smart. Stylish. Space-Saving. Green Space Interior’s Custom Wardrobe Designs.</p>
         <br />
-        <p>Keep your space tidy and beautiful with a wardrobe that works just the way you need it to. At Green Space, the best interior designer in Kolkata, we design wardrobes that make the most of every inch without compromising on style.</p>
+        <p>Keep your space tidy and beautiful with a wardrobe that works just the way you need it to. At Green Space Interior, the best interior designer in Kolkata, we design wardrobes that make the most of every inch without compromising on style.</p>
         <br />
         <p>Whether you want a walk-in closet, sleek sliding doors or a compact built-in, we plan every detail to suit your room and your routine. With smart storage ideas and quality finishes, your wardrobe stays organised and looks great for years to come.</p>
         <br />
-        <p>Make your storage simple, stylish and truly yours with Green Space.</p>
+        <p>Make your storage simple, stylish and truly yours with Green Space Interior.</p>
     `,
     },
   },
@@ -136,9 +136,9 @@ export const SERVICES = [
       fetcherVideo: null,
       priceStarting: "₹2,50,000",
       description: `
-        <p>Dine in Elegance with Green Space’s Bespoke Dining Room Designs.</p>
+        <p>Dine in Elegance with Green Space Interior’s Bespoke Dining Room Designs.</p>
         <br />
-        <p>Every meal should feel special, whether it is a cosy dinner with family or a celebration with friends. At Green Space, the best interior designer in Kolkata, we design dining rooms that bring people together in comfort and style.</p>
+        <p>Every meal should feel special, whether it is a cosy dinner with family or a celebration with friends. At Green Space Interior, the best interior designer in Kolkata, we design dining rooms that bring people together in comfort and style.</p>
         <br />
         <p>From warm lighting and elegant furniture to layouts that fit your space perfectly, we make sure your dining area feels welcoming and looks beautiful. Whether you prefer a relaxed family setup or a more formal, luxurious look, we shape it to match your taste and lifestyle.</p>
         <br />
@@ -157,13 +157,13 @@ export const SERVICES = [
       fetcherVideo: null,
       priceStarting: "₹2,50,000",
       description: `
-        <p>Bring Peace and Positivity Home with Green Space’s Serene Pooja Room Designs.</p>
+        <p>Bring Peace and Positivity Home with Green Space Interior’s Serene Pooja Room Designs.</p>
         <br />
-        <p>A pooja room is more than just a corner of your house. It is where you pause, find peace and feel connected to something greater. At Green Space, the best interior designer in Kolkata, we create pooja spaces that honour tradition while fitting beautifully into your modern home.</p>
+        <p>A pooja room is more than just a corner of your house. It is where you pause, find peace and feel connected to something greater. At Green Space Interior, the best interior designer in Kolkata, we create pooja spaces that honour tradition while fitting beautifully into your modern home.</p>
         <br />
         <p>Whether you have a small nook or a separate room, we plan it with care so it feels pure, calm and easy to maintain. From elegant wooden mandirs to marble backdrops and soft lighting, every detail adds to the sacred feeling you and your family cherish every day.</p>
         <br />
-        <p>Let your home hold a space that keeps blessings, faith and good energy alive with a pooja room designed by Green Space.</p>
+        <p>Let your home hold a space that keeps blessings, faith and good energy alive with a pooja room designed by Green Space Interior.</p>
     `,
     },
   },
@@ -177,13 +177,13 @@ export const SERVICES = [
       fetcherVideo: null,
       priceStarting: "₹2,50,000",
       description: `
-        <p>Maximize Every Inch with Green Space’s Innovative Space-Saving Designs.</p>
+        <p>Maximize Every Inch with Green Space Interior’s Innovative Space-Saving Designs.</p>
         <br />
-        <p>Make the most of every corner of your home with smart ideas that look good and work even better. At Green Space, the best interior designer in Kolkata, we design clever space-saving solutions that help you live comfortably without feeling cramped.</p>
+        <p>Make the most of every corner of your home with smart ideas that look good and work even better. At Green Space Interior, the best interior designer in Kolkata, we design clever space-saving solutions that help you live comfortably without feeling cramped.</p>
         <br />
         <p>From foldable furniture and hidden storage to layouts that do double duty, we plan every detail to keep your home tidy, open and stylish. Perfect for city living, these designs turn small spaces into practical, clutter-free zones you love coming back to.</p>
         <br />
-        <p>Discover how smart design can help you live more with less, only with Green Space.</p>
+        <p>Discover how smart design can help you live more with less, only with Green Space Interior.</p>
     `,
     },
   },
@@ -197,11 +197,11 @@ export const SERVICES = [
       fetcherVideo: null,
       priceStarting: "₹2,50,000",
       description: `
-        <p>Step In. Unwind. Feel Refreshed with Green Space’s Luxurious Bathroom Designs.</p>
+        <p>Step In. Unwind. Feel Refreshed with Green Space Interior’s Luxurious Bathroom Designs.</p>
         <br />
-        <p>Turn your bathroom into your own quiet escape with Green Space, the best interior designer in Kolkata, known for creating elegant and practical bathroom spaces. From modern minimal styles to spa-like comfort, every detail is planned with premium fittings, smart layouts and calming touches.</p>
+        <p>Turn your bathroom into your own quiet escape with Green Space Interior, the best interior designer in Kolkata, known for creating elegant and practical bathroom spaces. From modern minimal styles to spa-like comfort, every detail is planned with premium fittings, smart layouts and calming touches.</p>
         <br />
-        <p>Big or small, your bathroom should offer comfort, style and easy functionality every day. Start and end your day in a space that feels fresh and peaceful with a bathroom designed by Green Space.</p>
+        <p>Big or small, your bathroom should offer comfort, style and easy functionality every day. Start and end your day in a space that feels fresh and peaceful with a bathroom designed by Green Space Interior.</p>
     `,
     },
   },
@@ -215,9 +215,9 @@ export const SERVICES = [
       fetcherVideo: null,
       priceStarting: "₹2,50,000",
       description: `
-        <p>Turn Your Balcony into Your Favourite Corner with Green Space’s Thoughtful Designs.</p>
+        <p>Turn Your Balcony into Your Favourite Corner with Green Space Interior’s Thoughtful Designs.</p>
         <br />
-        <p>Give your balcony a fresh new life with Green Space, the best interior designer in Kolkata, trusted for beautiful and practical balcony designs. Whether you want a cosy reading spot, a small green garden or a stylish lounge corner, we make the most of every inch.</p>
+        <p>Give your balcony a fresh new life with Green Space Interior, the best interior designer in Kolkata, trusted for beautiful and practical balcony designs. Whether you want a cosy reading spot, a small green garden or a stylish lounge corner, we make the most of every inch.</p>
         <br />
         <p>With smart furniture, soft lighting and a touch of greenery, your balcony becomes your own little escape right at home. Step out, relax and enjoy the outdoors without leaving your door.</p>
     `,
@@ -236,7 +236,7 @@ export const SERVICES = [
       description: `
         <p>Smart Design. Stylish Living. Perfect for Your 1 BHK.</p>
         <br />
-        <p>Your first 1 BHK is more than just a house. It is your own space to relax, dream and build memories. At Green Space, the best interior designer in Kolkata, we make sure every corner feels special and works beautifully for you.</p>
+        <p>Your first 1 BHK is more than just a house. It is your own space to relax, dream and build memories. At Green Space Interior, the best interior designer in Kolkata, we make sure every corner feels special and works beautifully for you.</p>
         <br />
         <p>From smart layouts and clever storage to cosy bedrooms and a kitchen that makes cooking easy, we plan it all to help you enjoy every bit of your home. Even a small space can feel big when it is designed with care and warmth.</p>
         <br />
@@ -254,13 +254,13 @@ export const SERVICES = [
       fetcherVideo: null,
       priceStarting: "₹2,50,000",
       description: `
-        <p>Perfect Harmony of Space and Style in Green Space’s 2 BHK Flat Designs</p>
+        <p>Perfect Harmony of Space and Style in Green Space Interior’s 2 BHK Flat Designs</p>
         <br />
-        <p>A 2 BHK is where your everyday life finds space to grow. It is where you share laughter in the living room, unwind in peaceful bedrooms and enjoy meals cooked with love. At Green Space, the best interior designer in Kolkata, we shape every corner to feel open, welcoming and truly yours.</p>
+        <p>A 2 BHK is where your everyday life finds space to grow. It is where you share laughter in the living room, unwind in peaceful bedrooms and enjoy meals cooked with love. At Green Space Interior, the best interior designer in Kolkata, we shape every corner to feel open, welcoming and truly yours.</p>
         <br />
         <p>From cosy living spaces to smart kitchens and clever storage, we plan every detail so your home feels comfortable, practical and full of warmth. Even the smallest touches add up to a space that makes you feel proud and happy every day.</p>
         <br />
-        <p>Come home to a 2 BHK that holds your memories and makes space for many more with Green Space.</p>
+        <p>Come home to a 2 BHK that holds your memories and makes space for many more with Green Space Interior.</p>
     `,
     },
   },
@@ -274,13 +274,13 @@ export const SERVICES = [
       fetcherVideo: null,
       priceStarting: "₹2,50,000",
       description: `
-        <p>Luxury Redefined with Green Space’s Elegant 3 BHK Flat Designs.</p>
+        <p>Luxury Redefined with Green Space Interior’s Elegant 3 BHK Flat Designs.</p>
         <br />
-        <p>A 3 BHK is more than just extra rooms. It is where your family grows, where guests feel welcome and where you enjoy space to live life fully. At Green Space, the best interior designer in Kolkata, we design your 3 BHK to feel spacious, elegant and warm all at once.</p>
+        <p>A 3 BHK is more than just extra rooms. It is where your family grows, where guests feel welcome and where you enjoy space to live life fully. At Green Space Interior, the best interior designer in Kolkata, we design your 3 BHK to feel spacious, elegant and warm all at once.</p>
         <br />
         <p>From grand living areas to cosy bedrooms, a stylish kitchen and a peaceful balcony, every part of your home is planned with care and comfort in mind. We focus on thoughtful details and practical layouts so you have room to relax, celebrate and create memories for years to come.</p>
         <br />
-        <p>Come home to a 3 BHK that brings your family closer and gives you the luxury of space done right with Green Space.</p>
+        <p>Come home to a 3 BHK that brings your family closer and gives you the luxury of space done right with Green Space Interior.</p>
     `,
     },
   },
@@ -294,13 +294,13 @@ export const SERVICES = [
       fetcherVideo: null,
       priceStarting: "₹2,50,000",
       description: `
-        <p>Keep Your Home Peaceful and Pest-Free with Green Space’s Mosquito Sliding Nets</p>
+        <p>Keep Your Home Peaceful and Pest-Free with Green Space Interior’s Mosquito Sliding Nets</p>
         <br />
-        <p>Your home should feel safe and comfortable, day and night. With Green Space’s mosquito sliding nets, you can enjoy fresh air without worrying about insects disturbing your peace.</p>
+        <p>Your home should feel safe and comfortable, day and night. With Green Space Interior’s mosquito sliding nets, you can enjoy fresh air without worrying about insects disturbing your peace.</p>
         <br />
         <p>Designed for windows, balconies and doors, these sliding nets are easy to use, sturdy and blend in beautifully with your interiors. No more constant buzzing or sleepless nights, just clean air and a healthier living space for your family.</p>
         <br />
-        <p>Protect your loved ones while keeping your home looking neat and stylish with Green Space’s smart mosquito net solutions.</p>
+        <p>Protect your loved ones while keeping your home looking neat and stylish with Green Space Interior’s smart mosquito net solutions.</p>
     `,
     },
   },
@@ -315,13 +315,13 @@ export const SERVICES = [
       fetcherVideo: null,
       priceStarting: "₹2,50,000",
       description: `
-        <p>Safe Homes, Clear Views with Green Space’s Invisible Grills</p>
+        <p>Safe Homes, Clear Views with Green Space Interior’s Invisible Grills</p>
         <br />
-        <p>Your family’s safety should never hide your view. With Green Space’s invisible grills, you get the best of both, strong protection for your windows and balconies, and an open view that keeps your home feeling light and free.</p>
+        <p>Your family’s safety should never hide your view. With Green Space Interior’s invisible grills, you get the best of both, strong protection for your windows and balconies, and an open view that keeps your home feeling light and free.</p>
         <br />
         <p>Perfect for homes in Kolkata, these grills are sturdy yet subtle. They keep kids and pets safe without blocking sunlight or making your rooms feel closed in. Easy to maintain and sleek in design, they add safety without taking away your home’s beauty.</p>
         <br />
-        <p>Enjoy peace of mind and an open view every day with Green Space’s invisible grill solutions.</p>
+        <p>Enjoy peace of mind and an open view every day with Green Space Interior’s invisible grill solutions.</p>
     `,
     },
   },
@@ -335,13 +335,13 @@ export const SERVICES = [
       fetcherVideo: null,
       priceStarting: "₹2,50,000",
       description: `
-        <p>Strong, Stylish and Long-Lasting UPVC Doors and Windows by Green Space</p>
+        <p>Strong, Stylish and Long-Lasting UPVC Doors and Windows by Green Space Interior</p>
         <br />
-        <p>Your doors and windows do more than just open and close. They keep your home safe, quiet and comfortable through every season. With Green Space’s UPVC doors and windows, you get strength, smooth design and easy upkeep, all in one.</p>
+        <p>Your doors and windows do more than just open and close. They keep your home safe, quiet and comfortable through every season. With Green Space Interior’s UPVC doors and windows, you get strength, smooth design and easy upkeep, all in one.</p>
         <br />
         <p>Perfect for Kolkata’s changing weather, our UPVC solutions help keep heat, noise and dust out while letting in fresh air and natural light. From sliding windows to sturdy doors, every piece is made to last and blend beautifully with your interiors.</p>
         <br />
-        <p>Add peace of mind and style to your home with UPVC doors and windows from Green Space.</p>
+        <p>Add peace of mind and style to your home with UPVC doors and windows from Green Space Interior.</p>
     `,
     },
   },
@@ -490,7 +490,7 @@ export const NAV_ITEMS: INav[] = [
       },
       {
         id: "7-3",
-        name: "Why Green Space",
+        name: "Why Green Space Interior",
         slug: "/why-green-space",
       },
       {
