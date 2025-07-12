@@ -2,7 +2,7 @@ import { cn } from "@/utils/cn";
 import Link from "next/link";
 import OpenGetQuoteDialog from "../Utils/OpenGetQuoteDialog";
 import { SERVICES } from "@/constant";
-import { Facebook, Youtube, Instagram } from "lucide-react";
+import { Facebook, Youtube, Instagram, Phone, Mail, MessageCircle, MapPin } from "lucide-react";
 
 const FOOTER_LINKS: {
   heading: string;
@@ -59,7 +59,7 @@ const FOOTER_LINKS: {
         slug: "/refer-and-earn",
       },
       {
-        text: "Emi Options",
+        text: "EMI Options",
         slug: "/emi-options",
       },
     ],
@@ -68,16 +68,24 @@ const FOOTER_LINKS: {
     heading: "Contact Details",
     links: [
       {
-        text: "+91 98765 43210",
-        slug: "tel:+91 98765 43210",
+        text: "+91 9836 6776 69",
+        slug: "tel:+919836677669",
+        icon : <Phone size={15}/>
+      },
+      {
+        text: "+91 9804 2202 77",
+        slug: "tel:+919804220277",
+        icon : <MessageCircle size={15}/>
       },
       {
         text: "info@greenspaceinterior.com",
         slug: "mailto:info@greenspaceinterior.com",
+        icon : <Mail size={15} />
       },
       {
-        text: "Maheshtala, Kolkata",
+        text: "287/A, Shreema Housing Complex, Opposite Of Maruti Showroom, Jalkal, Maheshtala, Kolkata – 700141",
         slug: "#",
+        icon : <MapPin size={15}/>
       },
     ],
   },

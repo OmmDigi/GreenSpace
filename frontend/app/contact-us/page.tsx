@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Image from "next/image";
 import ContactUsPageForm from "./ContactUsPageForm";
+import OpenGetQuoteDialog from "@/components/Utils/OpenGetQuoteDialog";
 
 const ContactUs: React.FC = () => {
   return (
@@ -37,8 +38,8 @@ const ContactUs: React.FC = () => {
               <Phone className="text-teal-600 w-8 h-8" />
             </div>
             <h3 className="font-semibold text-gray-900 mb-2">Call Us</h3>
-            <p className="text-gray-600">+91 98765 43210</p>
-            <p className="text-gray-600">+91 87654 32109</p>
+            <p className="text-gray-600">+91 98366 77669</p>
+            <p className="text-gray-600">+91 98042 20277</p>
           </div>
 
           <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
@@ -55,8 +56,12 @@ const ContactUs: React.FC = () => {
               <MapPin className="text-teal-600 w-8 h-8" />
             </div>
             <h3 className="font-semibold text-gray-900 mb-2">Visit Us</h3>
-            <p className="text-gray-600">123 Design Street</p>
-            <p className="text-gray-600">Kolkata, West Bengal</p>
+            <p className="text-gray-600">
+              287/A, Shreema Housing Complex, Opposite Of Maruti Showroom
+            </p>
+            <p className="text-gray-600">
+              Jalkal, Maheshtala, Kolkata – 700141
+            </p>
           </div>
 
           <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
@@ -150,7 +155,8 @@ const ContactUs: React.FC = () => {
                   <MapPin className="w-16 h-16 text-teal-600 mx-auto mb-4" />
                   <p className="text-gray-600">Interactive Map</p>
                   <p className="text-sm text-gray-500">
-                    123 Design Street, Kolkata, West Bengal
+                    287/A, Shreema Housing Complex, Opposite Of Maruti Showroom,
+                    Jalkal, Maheshtala, Kolkata – 700141
                   </p>
                 </div>
               </div>
@@ -169,9 +175,11 @@ const ContactUs: React.FC = () => {
             Book a free consultation today and let us bring your dream space to
             life.
           </p>
-          <button className="bg-white text-teal-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-            Book Free Consultation
-          </button>
+          <OpenGetQuoteDialog isOpen>
+            <button className="bg-white text-teal-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              Book Free Consultation
+            </button>
+          </OpenGetQuoteDialog>
         </div>
       </div>
     </div>

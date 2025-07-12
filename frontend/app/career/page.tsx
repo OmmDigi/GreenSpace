@@ -1,4 +1,12 @@
-import { MapPin, Clock, Users, Award, Heart, Lightbulb } from "lucide-react";
+import {
+  MapPin,
+  Clock,
+  Users,
+  Award,
+  Heart,
+  Lightbulb,
+  ChevronRight,
+} from "lucide-react";
 import Button from "@/components/Button";
 import ApplyJobForm from "./ApplyJobForm";
 import Link from "next/link";
@@ -9,7 +17,7 @@ const CareerPage = () => {
       id: 1,
       title: "Senior Interior Designer",
       department: "Design",
-      location: "Mumbai, India",
+      location: "Kolkata, India",
       type: "Full-time",
       experience: "3-5 years",
       description:
@@ -33,7 +41,7 @@ const CareerPage = () => {
       id: 2,
       title: "Project Manager",
       department: "Operations",
-      location: "Delhi, India",
+      location: "Kolkata, India",
       type: "Full-time",
       experience: "2-4 years",
       description:
@@ -57,7 +65,7 @@ const CareerPage = () => {
       id: 3,
       title: "Junior Designer",
       department: "Design",
-      location: "Bangalore, India",
+      location: "Kolkata, India",
       type: "Full-time",
       experience: "0-2 years",
       description:
@@ -81,7 +89,7 @@ const CareerPage = () => {
       id: 4,
       title: "Sales Executive",
       department: "Sales",
-      location: "Chennai, India",
+      location: "Kolkata, India",
       type: "Full-time",
       experience: "1-3 years",
       description:
@@ -151,7 +159,7 @@ const CareerPage = () => {
                 View Open Positions
               </Link>
               <Link
-                href={"/"}
+                href={"/why-green-space"}
                 className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors"
               >
                 See What We Do
@@ -237,13 +245,10 @@ const CareerPage = () => {
 
                   <p className="text-gray-600 mb-4">{job.description}</p>
 
-                  {/* <button 
-                    onClick={() => setSelectedJob(selectedJob === job.id ? null : job.id)}
-                    className="flex items-center gap-2 text-green-600 hover:text-green-700 font-medium"
-                  >
-                    {selectedJob === job.id ? 'Hide Details' : 'View Details'}
-                    <ChevronRight className={`w-4 h-4 transition-transform ${selectedJob === job.id ? 'rotate-90' : ''}`} />
-                  </button> */}
+                  <Link href={`?position=${job.title}#applyJobForm`} className="flex items-center gap-2 text-green-600 hover:text-green-700 font-medium">
+                    Apply Job
+                    <ChevronRight className="w-4 h-4 transition-transform" />
+                  </Link>
 
                   {/* {selectedJob === job.id && (
                     <div className="mt-6 pt-6 border-t border-gray-200">
@@ -317,7 +322,7 @@ const CareerPage = () => {
                 <Button>Email HR Team</Button>
               </a>
               <a
-                href="tel:+91-9876543210"
+                href="tel:+919836677669"
                 // className="!bg-transparent"
                 // className="border-2 border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-600 hover:text-white transition-colors"
               >

@@ -3,8 +3,9 @@
 import Button from "@/components/Button";
 import { IJObList } from "@/types";
 import { Send } from "lucide-react";
-import { useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { applyJobForm } from "../actions/applyJobForm";
+import { useSearchParams } from "next/navigation";
 
 interface IProps {
   jobOpenings: IJObList[];
@@ -12,6 +13,17 @@ interface IProps {
 
 export default function ApplyJobForm({ jobOpenings }: IProps) {
   const [isPending, startTransition] = useTransition();
+  const searchParams = useSearchParams();
+
+  const [selectedPosition, setSelectedPosition] = useState<string>(
+    jobOpenings[0].title
+  );
+
+  useEffect(() => {
+    setSelectedPosition(
+      decodeURI(searchParams.get("position") || jobOpenings[0].title)
+    );
+  }, [searchParams.toString()]);
 
   const handleSubmit = (formData: FormData) => {
     startTransition(async () => {
@@ -24,7 +36,7 @@ export default function ApplyJobForm({ jobOpenings }: IProps) {
     });
   };
   return (
-    <section className="py-20 bg-gray-100">
+    <section id="applyJobForm" className="py-20 bg-gray-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -82,8 +94,11 @@ export default function ApplyJobForm({ jobOpenings }: IProps) {
                 Position Applied For *
               </label>
               <select
+                key={selectedPosition}
                 name="position"
                 required
+                onChange={(e) => setSelectedPosition(e.currentTarget.value)}
+                defaultValue={selectedPosition}
                 className="w-full px-4 py-3 border bg-white border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
               >
                 <option value="">Select a position</option>

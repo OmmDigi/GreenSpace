@@ -4,13 +4,13 @@ import {
   ChevronLeft,
   ChevronRight,
   Home,
-  DollarSign,
   CheckSquare,
   User,
   Phone,
   Mail,
   MapPin,
   Loader2,
+  IndianRupee,
 } from "lucide-react";
 import { IMultipForm } from "@/types";
 import { multiStepForm } from "@/app/actions/multiStepForm";
@@ -202,7 +202,7 @@ const MultiStepForm = () => {
               {currentStep === 2 && (
                 <div className="animate-fade-in">
                   <div className="flex items-center mb-6">
-                    <DollarSign className="h-6 w-6 text-teal-500 mr-3" />
+                    <IndianRupee className="h-6 w-6 text-teal-500 mr-3" />
                     <h2 className="text-3xl font-bold text-gray-800">
                       Your Budget
                     </h2>

@@ -292,10 +292,10 @@ const FAQPage = () => {
               <h3 className="text-xl font-semibold mb-2">Call Us</h3>
               <p className="text-gray-600 mb-4">Speak directly with our experts</p>
               <a
-                href="tel:+91-9876543210"
+                href="tel:+919836677669"
                 className="bg-gradient-to-tl from-[#f3d662] to-[#e9c01d] text-black px-6 py-2 rounded-lg hover:bg-green-700 transition-colors inline-block"
               >
-                +91-9876543210
+                +91 9836 6776 69
               </a>
             </div>
 
@@ -319,7 +319,7 @@ const FAQPage = () => {
               </div>
               <h3 className="text-xl font-semibold mb-2">Whatsapp Chat</h3>
               <p className="text-gray-600 mb-4">Chat with our support team</p>
-              <a href='https://wa.me/9876543210' className="bg-gradient-to-tl from-[#f3d662] to-[#e9c01d] text-black px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+              <a href='https://wa.me/9804220277' className="bg-gradient-to-tl from-[#f3d662] to-[#e9c01d] text-black px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
                 Whatsapp
               </a>
             </div>

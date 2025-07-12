@@ -109,7 +109,7 @@ const ServiceComparisonSection = () => {
     } else if (status === false) {
       return "bg-red-500";
     } else {
-      return "bg-gray-400";
+      return "bg-gradient-to-tl from-[#f3d662] to-[#e9c01d]";
     }
   };
 
@@ -122,7 +122,7 @@ const ServiceComparisonSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <h2 className="text-3xl lg:text-4xl text-center font-bold text-gray-900 mb-4">
-          — The Green Space Site Service Advantage —
+          — The Green Space Interior Site Service Advantage —
         </h2>
 
         {/* Desktop View - Fixed Table Layout */}
@@ -132,12 +132,12 @@ const ServiceComparisonSection = () => {
             <div className="grid grid-cols-12 bg-gray-50 border-b-2 border-gray-200">
               <div className="col-span-3 px-6 py-4"></div>
               <div className="col-span-2 px-4 py-4 text-center">
-                <div className="bg-orange-500 text-white px-3 py-2 rounded-lg font-semibold text-sm">
+                <div className="bg-red-500 text-white px-3 py-2 rounded-lg font-semibold text-sm">
                   Local Vendor
                 </div>
               </div>
               <div className="col-span-2 px-4 py-4 text-center">
-                <div className="bg-gray-500 text-white px-3 py-2 rounded-lg font-semibold text-sm">
+                <div className="bg-gradient-to-tl from-[#f3d662] to-[#e9c01d] text-black px-3 py-2 rounded-lg font-semibold text-sm">
                   Peer Companies
                 </div>
               </div>

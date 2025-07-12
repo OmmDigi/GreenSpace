@@ -20,9 +20,9 @@ import Link from "next/link";
 
 const WhyChooseUs: React.FC = () => {
   const achievements = [
-    { number: "500+", label: "Projects Completed", icon: Award },
-    { number: "8+", label: "Years of Experience", icon: Clock },
-    { number: "300+", label: "Happy Clients", icon: Users },
+    { number: "225+", label: "Projects Completed", icon: Award },
+    { number: "15+", label: "Years of Experience", icon: Clock },
+    { number: "225+", label: "Happy Clients", icon: Users },
     { number: "100%", label: "Satisfaction Rate", icon: Star },
   ];
 

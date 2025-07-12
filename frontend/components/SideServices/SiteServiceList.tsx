@@ -54,6 +54,17 @@ const SITE_SERVICES_ITEMS = [
       "Install the partition in your bathroom",
     ],
   },
+  {
+    id: "6",
+    service: "FURNITURE",
+    image: "/site-service/furniture.svg",
+    points: [
+      "Custom wardrobes and modular storage",
+      "Modular kitchen units and cabinets",
+      "TV units, study tables, and bookshelves",
+      "Bed frames, side tables, and more!"
+    ],
+  },
 ];
 
 export default function SiteServiceList() {

@@ -43,7 +43,7 @@ export default function VideoViewSection() {
           </div>
         ) : (
           <LazyVideo
-            src="/videos/MicrosoftTeams-video.mp4"
+            src="/videos/GreenSpaceWebsiteVideoHomePage.mp4"
             videostate={videoState}
             setVideoState={setVideoState}
           />

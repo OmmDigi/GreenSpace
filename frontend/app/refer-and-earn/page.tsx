@@ -24,26 +24,26 @@ const ReferEarnPage = () => {
   const rewards = [
     {
       icon: <DollarSign className="w-8 h-8" />,
-      title: "₹5,000 Cash Reward",
+      title: "₹10,000 Cash Reward",
       description:
-        "Earn ₹5,000 for every successful referral when your friend books a complete home interior project",
-      amount: "₹5,000",
+        "Earn ₹10,000 for every successful referral when your friend books a complete home interior project",
+      amount: "₹10,000",
       color: "from-green-500 to-green-600",
     },
     {
       icon: <Home className="w-8 h-8" />,
-      title: "₹2,000 for Kitchen",
+      title: "₹7,000 for Kitchen",
       description:
-        "Get ₹2,000 when your friend books a modular kitchen design with us",
-      amount: "₹2,000",
+        "Get ₹7,000 when your friend books a modular kitchen design with us",
+      amount: "₹7,000",
       color: "from-yellow-500 to-yellow-600",
     },
     {
       icon: <Gift className="w-8 h-8" />,
-      title: "₹1,000 for Rooms",
+      title: "₹5,000 for Rooms",
       description:
-        "Earn ₹1,000 for single room interior bookings through your referral",
-      amount: "₹1,000",
+        "Earn ₹5,000 for single room interior bookings through your referral",
+      amount: "₹5,000",
       color: "from-blue-500 to-blue-600",
     },
   ];
@@ -158,7 +158,7 @@ const ReferEarnPage = () => {
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
               Share the joy of beautiful interiors with your friends and earn up
-              to ₹5,000 for each successful referral!
+              to ₹10,000 for each successful referral!
             </p>
 
             {/* Referral Code Display */}

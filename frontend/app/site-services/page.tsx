@@ -95,6 +95,25 @@ export default function page() {
             },
           ]}
         />
+
+        <DesignCarousel
+          headingText="— Furniture Designs —"
+          buttonText="Talk To Our Expert →"
+          images={[
+            {
+              src: "/Projects/furniture/1.jpg",
+              alt: "Shower Partition",
+            },
+            {
+              src: "/Projects/furniture/2.jpg",
+              alt: "Shower Partition",
+            },
+            {
+              src: "/Projects/furniture/3.jpg",
+              alt: "Shower Partition",
+            },
+          ]}
+        />
       </div>
 
       <SiteServiceList />

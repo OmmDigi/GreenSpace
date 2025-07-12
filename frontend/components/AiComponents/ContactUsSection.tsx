@@ -34,12 +34,12 @@ export default function ContactUsSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">
-                    Visit Our Showroom
+                    Visit Our Registered Address
                   </h4>
                   <p className="text-gray-600">
-                    Shreema Housing Complex, Jalkal, Maheshtala,
+                    287/A, Shreema Housing Complex, Opposite Of Maruti Showroom,
                     <br />
-                    Kolkata – 700141
+                    Jalkal, Maheshtala, Kolkata – 700141
                   </p>
                 </div>
               </div>
