@@ -159,7 +159,7 @@ export default async function page({ params }: IProps) {
               </div>
               <div>
                 <p className="font-medium text-gray-900">Phone</p>
-                <p className="text-gray-600">+91 98765 43210</p>
+                <p className="text-gray-600">+91 9836677669 / +91 9804220277</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -177,7 +177,7 @@ export default async function page({ params }: IProps) {
               </div>
               <div>
                 <p className="font-medium text-gray-900">Address</p>
-                <p className="text-gray-600">Maheshtala, Kolkata</p>
+                <p className="text-gray-600">287/A, Shreema Housing Complex, Opposite Of Maruti Showroom, Jalkal, Maheshtala, Kolkata – 700141</p>
               </div>
             </div>
           </div>
