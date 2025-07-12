@@ -320,7 +320,7 @@ const CustomizeKitchen: React.FC = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto max-sm:px-4">
           <div className="py-8">
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
               Customise Your Kitchen
@@ -337,12 +337,14 @@ const CustomizeKitchen: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      {/* <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-8"> */}
+      <div>
+        {/* <div className="grid grid-cols-1 lg:grid-cols-4 gap-8"> */}
+        <div className="flex min-h-screen gap-10 py-3.5 max-sm:flex-col max-sm:gap-y-0">
           {/* Kitchen Display */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 max">
             <div className="bg-white rounded-lg overflow-hidden space-y-3.5">
-              <div className="relative w-full aspect-[16/10]">
+              <div className="relative w-full aspect-[16/10] min-h-[33rem] max-sm:min-h-auto">
                 {/* Main kitchen image would go here */}
                 {finishTypeOptions[finishTypeIndex].typeInfo.map(
                   (item, index) => (
@@ -354,9 +356,9 @@ const CustomizeKitchen: React.FC = () => {
                       )}
                       alt={item.alt}
                       src={item.src}
-                      height={1280}
+                      height={2560}
+                      width={1440}
                       loading="eager"
-                      width={720}
                     />
                   )
                 )}
@@ -485,7 +487,7 @@ const CustomizeKitchen: React.FC = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="space-y-3">
+            <div className="space-y-3 max-sm:flex max-sm:items-center max-sm:justify-center">
               {/* <button className="w-full bg-teal-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-teal-700 transition-colors duration-200">
                   Book a Free Design Consultation
                 </button> */}
@@ -498,87 +500,6 @@ const CustomizeKitchen: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* Kitchen Gallery */}
-        {/* <div className="mt-16">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-2xl font-bold text-gray-900">
-              Kitchen Designs
-            </h2>
-            <p className="text-gray-600">
-              Showing {filteredKitchens.length} of {kitchenDesigns.length}{" "}
-              designs
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredKitchens.map((kitchen) => (
-              <div
-                key={kitchen.id}
-                className="bg-white rounded-lg shadow-sm overflow-hidden group hover:shadow-md transition-shadow duration-200"
-              >
-                <div className="relative h-48 bg-gray-200">
-                  
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-300 flex items-center justify-center">
-                    <svg
-                      className="w-16 h-16 text-gray-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1}
-                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H9m0 0H5m4 0v-5a1 1 0 011-1h4a1 1 0 011 1v5m-4-8a2 2 0 100-4 2 2 0 000 4z"
-                      />
-                    </svg>
-                  </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200"></div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    {kitchen.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-2 text-xs">
-                    <span className="px-2 py-1 bg-teal-100 text-teal-700 rounded-full">
-                      {kitchen.finish.charAt(0).toUpperCase() +
-                        kitchen.finish.slice(1).replace("-", " ")}
-                    </span>
-                    <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">
-                      {kitchen.style.charAt(0).toUpperCase() +
-                        kitchen.style.slice(1).replace("-", " ")}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {filteredKitchens.length === 0 && (
-            <div className="text-center py-12">
-              <svg
-                className="w-16 h-16 text-gray-400 mx-auto mb-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1}
-                  d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.29-1.009-5.824-2.562M15 6.5a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">
-                No designs found
-              </h3>
-              <p className="text-gray-500">
-                Try adjusting your filters to see more kitchen designs.
-              </p>
-            </div>
-          )}
-        </div> */}
 
         {/* Disclaimer */}
         <div className="mt-12 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">

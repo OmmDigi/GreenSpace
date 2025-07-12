@@ -159,7 +159,7 @@ const CareerPage = () => {
                 View Open Positions
               </Link>
               <Link
-                href={"/why-green-space"}
+                href={"/site-services"}
                 className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors"
               >
                 See What We Do
@@ -316,7 +316,7 @@ const CareerPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
-                href="mailto:careers@greenspaceinterior.in"
+                href="mailto:career@greenspaceinterior.in"
                 // className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
               >
                 <Button>Email HR Team</Button>
