@@ -157,7 +157,7 @@ const SiteServicesPage: React.FC = () => {
     },
     {
       icon: <Star className="w-12 h-12" />,
-      title: "250+ Happy Clients",
+      title: "225+ Happy Clients",
       description:
         "Successfully completed projects with satisfied customers across the region.",
     },

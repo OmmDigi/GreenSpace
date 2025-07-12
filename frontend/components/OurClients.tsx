@@ -19,7 +19,7 @@ const clients = [
   {
     name: "Axis Bank",
     logo: "/clients/axiosbank.jpg",
-    description: "Explore 250+ banking services",
+    description: "Explore 225+ banking services",
   },
   {
     name: "Desari Hospitals Pvt. Ltd.",
@@ -178,7 +178,7 @@ export const OurClients: React.FC = () => {
 
         <div className="text-center mt-12">
           <div className="bg-teal-600 text-white px-8 py-3 rounded-full inline-block">
-            <span className="font-semibold">250+ Happy Clients Served</span>
+            <span className="font-semibold">225+ Happy Clients Served</span>
           </div>
         </div>
       </div>

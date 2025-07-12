@@ -193,7 +193,7 @@ export default async function page({ params }: IProps) {
             Ready to Transform Your Space?
           </h2>
           <p className="text-lg opacity-90 mb-8">
-            Join over 250+ satisfied customers who have transformed their homes
+            Join over 225+ satisfied customers who have transformed their homes
             with us
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
