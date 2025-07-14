@@ -14,9 +14,9 @@ import {
 } from "lucide-react";
 import CustomLink from "../CustomLink";
 import Button from "../Button";
-import { useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation";
 import CustomLinkProgress from "../CustomLinkProgress";
-import { IProjects, PROJECTS } from "@/data/projects";
+import { COMPLETED_PROJECTS } from "@/data/projects";
 import HandleCustomGalleryDialog from "../Dialogs/HandleCustomGalleryDialog";
 import OpenGetQuoteDialog from "../Utils/OpenGetQuoteDialog";
 import Link from "next/link";
@@ -26,21 +26,11 @@ export default function OurProjects() {
   const swiperRef = useRef<SwiperClass | null>(null);
   const [sliderPreviewView, setSliderPreviewView] = useState(2.5);
 
-  const [projectsToShow, setProjectToShow] = useState<IProjects[]>([]);
+  // const [projectsToShow, setProjectToShow] = useState<ICompeltedProjects[]>([]);
 
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
 
-  const projectType = searchParams.get("type") || "completed-projects";
-
-  useEffect(() => {
-    PROJECTS.forEach((item) => {
-      item.projects.forEach((eItem) => {
-        if (eItem.tag?.includes("Completed Project")) {
-          setProjectToShow((prev) => [...prev, eItem]);
-        }
-      });
-    });
-  }, [projectType]);
+  // const projectType = searchParams.get("type") || "completed-projects";
 
   useEffect(() => {
     const handleResize = () => {
@@ -168,23 +158,24 @@ export default function OurProjects() {
                 swiperRef.current = swiper;
               }}
             >
-              {projectsToShow.map((item, index) => (
+              {COMPLETED_PROJECTS.map((item, index) => (
                 <SwiperSlide key={index}>
                   <HandleCustomGalleryDialog
+                    key={index}
                     isOpen={true}
-                    galleryItem={projectsToShow.map((item) => ({
-                      id: item.id,
-                      alt: item.title,
-                      src: item.image,
+                    galleryItem={item.images.map((image, index) => ({
+                      alt: image.alt,
+                      id: index.toString(),
+                      src: image.src,
                     }))}
-                    initialIndex={index}
+                    initialIndex={0}
                   >
                     <div className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
                       {/* Image Container */}
                       <div className="relative overflow-hidden aspect-[4/3] md:aspect-[4/3]">
                         <Image
-                          src={item.image}
-                          alt={item.title}
+                          src={item.images[0].src}
+                          alt={item.images[0].alt}
                           fill
                           className="object-cover size-full transition-transform duration-700 group-hover:scale-110"
                         />
@@ -208,7 +199,11 @@ export default function OurProjects() {
 
                         {/* Hover Content */}
                         <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                          <Link onClick={(e) => e.stopPropagation()} href={`/services/${item.service_id}`} className="flex items-center justify-between mb-2">
+                          <Link
+                            onClick={(e) => e.stopPropagation()}
+                            href={`/services/${item.service_id}`}
+                            className="flex items-center justify-between mb-2"
+                          >
                             <span className="text-sm text-gray-200">
                               Open {item.title} Service
                             </span>
@@ -225,7 +220,7 @@ export default function OurProjects() {
                           </h3>
                           <div className="flex items-center justify-between">
                             <span className="text-gray-500 text-sm">
-                              {item.tag}
+                              {item.service_id}
                             </span>
                             {/* <Link
                         href={`/gallery/${item.id}`}
@@ -237,10 +232,13 @@ export default function OurProjects() {
                           </div>
                         </div>
                         <OpenGetQuoteDialog
+                          className="shrink-0"
                           isOpen
                           onClick={(e) => e.stopPropagation()}
                         >
-                          <Button className="max-sm:py-4 max-sm:text-sm">Get Quote</Button>
+                          <Button className="max-sm:py-4 max-sm:text-sm">
+                            Get Quote
+                          </Button>
                         </OpenGetQuoteDialog>
                       </div>
                     </div>

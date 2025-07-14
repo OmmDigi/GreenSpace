@@ -140,3 +140,9 @@ export interface IMultipForm {
   email: string;
   location: string;
 }
+
+export interface ICompeltedProjects {
+  service_id: string;
+  title: string;
+  images: { src: string; alt: string }[];
+}

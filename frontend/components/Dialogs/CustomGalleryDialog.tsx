@@ -16,14 +16,14 @@ import { setGalleryDialogInfo } from "@/redux/slice/customGalleryDialogSlice";
 
 export const CustomGalleryDialog = () => {
   const {
-    isOpen,
+    isOpen = true,
     galleryItem: images,
     initialIndex,
   } = useSelector((state: RootState) => state.customGalleryDialogReducer);
 
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [isLoading, setIsLoading] = useState(false);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(0.5);
   const [rotation, setRotation] = useState(0);
   const [showThumbnails, setShowThumbnails] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
@@ -37,42 +37,66 @@ export const CustomGalleryDialog = () => {
   const dispatch = useDispatch();
 
   // Reset states when dialog opens
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     setCurrentIndex(initialIndex);
-  //     setZoom(1);
-  //     setRotation(0);
-  //     setDragOffset({ x: 0, y: 0 });
-  //   }
-  // }, [isOpen, initialIndex]);
+  useEffect(() => {
+    setCurrentIndex(initialIndex);
+    setRotation(0);
+    setDragOffset({ x: 0, y: 0 });
+  }, [isOpen, initialIndex]);
+
+  // Global mouse events for better drag experience
+  useEffect(() => {
+    const handleGlobalMouseMove = (e: MouseEvent) => {
+      if (isDragging && zoom > 0.5) {
+        e.preventDefault();
+        setDragOffset({
+          x: e.clientX - dragStart.x,
+          y: e.clientY - dragStart.y,
+        });
+      }
+    };
+
+    const handleGlobalMouseUp = () => {
+      setIsDragging(false);
+    };
+
+    if (isDragging) {
+      document.addEventListener('mousemove', handleGlobalMouseMove);
+      document.addEventListener('mouseup', handleGlobalMouseUp);
+    }
+
+    return () => {
+      document.removeEventListener('mousemove', handleGlobalMouseMove);
+      document.removeEventListener('mouseup', handleGlobalMouseUp);
+    };
+  }, [isDragging, dragStart, zoom]);
 
   // Keyboard navigation
-  // useEffect(() => {
-  //   const handleKeyPress = (e: KeyboardEvent) => {
-  //     if (!isOpen) return;
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (!isOpen) return;
 
-  //     switch (e.key) {
-  //       case "Escape":
-  //         //   onClose();
-  //         break;
-  //       case "ArrowLeft":
-  //         goToPrevious();
-  //         break;
-  //       case "ArrowRight":
-  //         goToNext();
-  //         break;
-  //       case "Home":
-  //         setCurrentIndex(0);
-  //         break;
-  //       case "End":
-  //         setCurrentIndex(images.length - 1);
-  //         break;
-  //     }
-  //   };
+      switch (e.key) {
+        case "Escape":
+          closeDialog();
+          break;
+        case "ArrowLeft":
+          goToPrevious();
+          break;
+        case "ArrowRight":
+          goToNext();
+          break;
+        case "Home":
+          setCurrentIndex(0);
+          break;
+        case "End":
+          setCurrentIndex(images.length - 1);
+          break;
+      }
+    };
 
-  //   document.addEventListener("keydown", handleKeyPress);
-  //   return () => document.removeEventListener("keydown", handleKeyPress);
-  // }, [isOpen, currentIndex, images.length]);
+    document.addEventListener("keydown", handleKeyPress);
+    return () => document.removeEventListener("keydown", handleKeyPress);
+  }, [isOpen, currentIndex, images.length]);
 
   const closeDialog = () => {
     dispatch(
@@ -86,21 +110,18 @@ export const CustomGalleryDialog = () => {
 
   const goToNext = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
-    setZoom(1);
     setRotation(0);
     setDragOffset({ x: 0, y: 0 });
   }, [images.length]);
 
   const goToPrevious = useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-    setZoom(1);
     setRotation(0);
     setDragOffset({ x: 0, y: 0 });
   }, [images.length]);
 
   const goToImage = (index: number) => {
     setCurrentIndex(index);
-    setZoom(1);
     setRotation(0);
     setDragOffset({ x: 0, y: 0 });
   };
@@ -118,27 +139,10 @@ export const CustomGalleryDialog = () => {
     setDragOffset({ x: 0, y: 0 });
   };
 
-  // const handleDownload = async () => {
-  //   const currentImage = images[currentIndex];
-  //   try {
-  //     const response = await fetch(currentImage.src);
-  //     const blob = await response.blob();
-  //     const url = window.URL.createObjectURL(blob);
-  //     const a = document.createElement("a");
-  //     a.href = url;
-  //     a.download = currentImage.title || `image-${currentImage.id}`;
-  //     document.body.appendChild(a);
-  //     a.click();
-  //     document.body.removeChild(a);
-  //     window.URL.revokeObjectURL(url);
-  //   } catch (error) {
-  //     console.error("Download failed:", error);
-  //   }
-  // };
-
   // Handle mouse drag for zoomed images
   const handleMouseDown = (e: React.MouseEvent) => {
-    if (zoom >= 1) {
+    if (zoom > 0.5) {
+      e.preventDefault();
       setIsDragging(true);
       setDragStart({
         x: e.clientX - dragOffset.x,
@@ -148,7 +152,7 @@ export const CustomGalleryDialog = () => {
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (isDragging && zoom >= 1) {
+    if (isDragging && zoom > 0.5) {
       e.preventDefault();
       setDragOffset({
         x: e.clientX - dragStart.x,
@@ -163,7 +167,8 @@ export const CustomGalleryDialog = () => {
 
   // Handle touch drag for mobile
   const handleTouchStart = (e: React.TouchEvent) => {
-    if (zoom >= 1 && e.touches.length === 1) {
+    if (zoom > 0.5 && e.touches.length === 1) {
+      e.preventDefault();
       setIsDragging(true);
       const touch = e.touches[0];
       setDragStart({
@@ -174,7 +179,7 @@ export const CustomGalleryDialog = () => {
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (isDragging && zoom >= 1 && e.touches.length === 1) {
+    if (isDragging && zoom > 0.5 && e.touches.length === 1) {
       e.preventDefault();
       const touch = e.touches[0];
       setDragOffset({
@@ -190,7 +195,7 @@ export const CustomGalleryDialog = () => {
 
   // Reset drag offset when zoom changes
   useEffect(() => {
-    if (zoom === 1) {
+    if (zoom === 0.5) {
       setDragOffset({ x: 0, y: 0 });
     }
   }, [zoom]);
@@ -244,14 +249,6 @@ export const CustomGalleryDialog = () => {
               <RotateCw size={16} className="sm:w-5 sm:h-5" />
             </button>
 
-            {/* <button
-              onClick={handleDownload}
-              className="p-1.5 sm:p-2 rounded-full bg-black/30 hover:bg-black/50 transition-colors hidden sm:flex"
-              title="Download"
-            >
-              <Download size={16} className="sm:w-5 sm:h-5" />
-            </button> */}
-
             <button
               onClick={() => setShowThumbnails(!showThumbnails)}
               className={`px-2 sm:px-3 py-1 rounded text-xs sm:text-sm transition-colors ${
@@ -284,8 +281,8 @@ export const CustomGalleryDialog = () => {
 
         <div
           className={`relative ${
-            zoom >= 1 ? "cursor-grab" : "cursor-default"
-          } ${isDragging ? "cursor-grabbing" : ""}`}
+            zoom > 0.5 ? "cursor-default" : "cursor-default"
+          } ${isDragging ? "cursor-default" : ""}`}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
@@ -305,7 +302,7 @@ export const CustomGalleryDialog = () => {
               transform: `scale(${zoom}) rotate(${rotation}deg)`,
               filter: isLoading ? "blur(4px)" : "none",
               userSelect: "none",
-              pointerEvents: zoom >= 1 ? "none" : "auto",
+              pointerEvents: zoom > 0.5 ? "none" : "auto",
             }}
             height={1920}
             width={1080}

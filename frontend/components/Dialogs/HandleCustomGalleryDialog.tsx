@@ -8,14 +8,14 @@ interface IProps {
   galleryItem: GalleryImage[];
   isOpen: boolean;
   initialIndex: number;
-  children : React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function HandleCustomGalleryDialog({
   galleryItem,
   isOpen,
   initialIndex,
-  children
+  children,
 }: IProps) {
   const dispatch = useDispatch();
   return (
@@ -30,6 +30,8 @@ export default function HandleCustomGalleryDialog({
           })
         );
       }}
-    >{children}</span>
+    >
+      {children}
+    </span>
   );
 }
