@@ -246,6 +246,25 @@ const tollygaunge_3bhk = Array.from({ length: 6 }, (_, index) => {
   };
 });
 
+//Bathroom Design
+const bathroom_design = Array.from({ length: 12 }, (_, index) => {
+  const id = (index + 1).toString();
+
+  return {
+    src: `/Projects/completed/bathroom_design/${id}.jpg`,
+    alt: "",
+  };
+});
+
+const parlour_design = Array.from({ length: 23 }, (_, index) => {
+  const id = (index + 1).toString();
+
+  return {
+    src: `/Projects/completed/parlour_design/${id}.jpg`,
+    alt: "",
+  };
+});
+
 export const COMPLETED_PROJECTS: ICompeltedProjects[] = [
   {
     service_id: "1bhk-designs",
@@ -397,6 +416,20 @@ export const COMPLETED_PROJECTS: ICompeltedProjects[] = [
     service_id: "3bhk-designs",
     title: "Tollygaunge Saroni 3bhk Complete Project",
     images: tollygaunge_3bhk,
+  },
+
+  //bathroom design
+  {
+    service_id: "bathroom-designs",
+    title: "Bathroom Design",
+    images: bathroom_design,
+  },
+
+  //Parlour Design
+  {
+    service_id: "parlour-design",
+    title: "Parlour Design",
+    images: parlour_design,
   },
 ];
 
