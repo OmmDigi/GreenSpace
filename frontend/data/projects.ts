@@ -1,4 +1,5 @@
 import { ICompeltedProjects } from "@/types";
+import { string } from "zod/v4";
 
 export interface IProjects {
   id: string;
@@ -551,6 +552,50 @@ const bathroomDesigns = Array.from({ length: 3 }, (_, index) => {
     tag: ["Bathroom Designs", ...(index === 0 ? ["Completed Project"] : [])],
     title: "Bathroom Designs",
   } as IProjects;
+});
+
+COMPLETED_PROJECTS.forEach((projectinfo, pIndex) => {
+  if (projectinfo.service_id === "1bhk-designs") {
+    projectinfo.images.forEach((item, index) => {
+      bhk1.push({
+        id: `1bhk${pIndex}${index}`,
+        image: item.src,
+        service_id: projectinfo.service_id,
+        type: "image",
+        title: projectinfo.title,
+      });
+    });
+  } else if (projectinfo.service_id === "2bhk-designs") {
+    projectinfo.images.forEach((item, index) => {
+      bhk1.push({
+        id: `2bhk${index + 1}`,
+        image: item.src,
+        service_id: projectinfo.service_id,
+        type: "image",
+        title: projectinfo.title,
+      });
+    });
+  } else if (projectinfo.service_id === "3bhk-designs") {
+    projectinfo.images.forEach((item, index) => {
+      bhk1.push({
+        id: `3bhk${index + 1}`,
+        image: item.src,
+        service_id: projectinfo.service_id,
+        type: "image",
+        title: projectinfo.title,
+      });
+    });
+  } else if (projectinfo.service_id === "bathroom-designs") {
+    projectinfo.images.forEach((item, index) => {
+      bhk1.push({
+        id: `bathroom${index + 1}`,
+        image: item.src,
+        service_id: projectinfo.service_id,
+        type: "image",
+        title: projectinfo.title,
+      });
+    });
+  }
 });
 
 const kidsBadroomDesings = Array.from({ length: 9 }, (_, index) => {

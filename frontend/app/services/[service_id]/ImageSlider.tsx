@@ -77,7 +77,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
         >
           {images.map((image, index) => (
             <SwiperSlide
-              key={image.id}
+              key={index}
               className={cn(
                 "flex-center flex-col relative min-h-[18rem] max-h-[18rem] w-48 overflow-hidden max-sm:w-full z-10",
                 itemClassName
@@ -105,13 +105,13 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
                     </div>
                   </div>
                   {image.title && (
-                    <div className="p-3 flex items-center justify-between max-sm:flex-col">
+                    <div className="p-3 flex items-center justify-between gap-1.5 max-sm:flex-col">
                       <h3 className="text-base font-medium text-gray-800 truncate">
                         {image.title}
                       </h3>
                       {/* <OpenGetQuoteDialog isOpen> */}
                       <Button
-                        className="!py-2 !px-5 !text-sm"
+                        className="!py-2 !px-5 !text-sm shrink-0 text-nowrap"
                         onClick={(e) => {
                           e.stopPropagation();
                           dispatch(setGetQuoteDialog({ isOpen: true }));
