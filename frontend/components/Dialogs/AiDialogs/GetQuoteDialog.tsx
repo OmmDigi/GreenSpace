@@ -16,7 +16,6 @@ const locations = [
   "Kolkata",
   "South 24 PGS",
   "North 24 PGS",
-  "Dum Dum",
   "Howrah",
   "Hooghly",
   "Others",

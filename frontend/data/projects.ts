@@ -613,21 +613,41 @@ const kidsBadroomDesings = Array.from({ length: 9 }, (_, index) => {
   } as IProjects;
 });
 
-// const mosquitoSlidingNets = Array.from({ length: 0 }, (_) => {
-//   // const id = (index + 1).toString();
-//   return {} as IProjects;
-//   // return {
-//   //   id,
-//   //   type: "image",
-//   //   image: `/Projects/pooja-room-designs/${id}.webp`,
-//   //   service_id: "pooja-room-designs",
-//   //   tag: [
-//   //     "Pooja Room",
-//   //     ...(index === 1 || index === 2 ? ["Completed Project"] : []),
-//   //   ],
-//   //   title: "Pooja Room Designs",
-//   // } as IProjects;
-// });
+const mosquitoSlidingNets = Array.from({ length: 5 }, (_, index) => {
+  const id = (index + 1).toString();
+  return {
+    id,
+    type: "image",
+    image: `/Projects/mosquito-sliding-nets/${id}.png`,
+    service_id: "mosquito-sliding-nets",
+    tag: ["Mosquito Sliding Nets"],
+    title: "Mosquito Sliding Nets",
+  } as IProjects;
+});
+
+const upvcDoorWindow = Array.from({ length: 7 }, (_, index) => {
+  const id = (index + 1).toString();
+  return {
+    id,
+    type: "image",
+    image: `/Projects/upvc-doors-windows/${id}.jpg`,
+    service_id: "upvc-doors-windows",
+    tag: ["Upvc Door Window"],
+    title: "Upvc Door Window",
+  } as IProjects;
+});
+
+const invisibleGrills = Array.from({ length: 5 }, (_, index) => {
+  const id = (index + 1).toString();
+  return {
+    id,
+    type: "image",
+    image: `/Projects/invisible-grills/${id}.png`,
+    service_id: "invisible-grills",
+    tag: ["Invisible Grills"],
+    title: "Invisible Grills",
+  } as IProjects;
+});
 
 export const PROJECTS: { service_id: string; projects: IProjects[] }[] = [
   {
@@ -672,7 +692,7 @@ export const PROJECTS: { service_id: string; projects: IProjects[] }[] = [
   },
   {
     service_id: "mosquito-sliding-nets",
-    projects: [],
+    projects: mosquitoSlidingNets,
   },
   {
     service_id: "bathroom-designs",
@@ -681,5 +701,13 @@ export const PROJECTS: { service_id: string; projects: IProjects[] }[] = [
   {
     service_id: "kids-badroom-designs",
     projects: kidsBadroomDesings,
+  },
+  {
+    service_id: "upvc-doors-windows",
+    projects: upvcDoorWindow,
+  },
+  {
+    service_id: "invisible-grills",
+    projects: invisibleGrills,
   },
 ];
