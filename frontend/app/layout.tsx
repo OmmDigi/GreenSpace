@@ -11,6 +11,7 @@ import Slider from "@/components/Slider";
 import React from "react";
 import { CustomGalleryDialog } from "@/components/Dialogs/CustomGalleryDialog";
 import FloatingButton from "@/components/FloatingButton";
+import MobileBottomNav from "@/components/MobileBottomNav";
 
 // const jostFont = Jost({
 //   variable: "--font-jost",
@@ -59,6 +60,7 @@ export default function RootLayout({
             <React.Suspense>{children}</React.Suspense>
           </main>
           <Footer />
+          <MobileBottomNav />
         </ReduxProvider>
       </body>
     </html>

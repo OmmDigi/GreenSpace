@@ -84,7 +84,7 @@ export const SERVICES = [
     },
   },
   {
-    id: "kids-badroom-designs",
+    id: "kids-bedroom-designs",
     name: "Kids Bedroom Designs",
     image: "/Services/KidsBadroom.webp",
 
@@ -374,9 +374,9 @@ export const NAV_ITEMS: INav[] = [
     //     slug: "/design-gallery?type=bedroom-designs",
     //   },
     //   {
-    //     id: "kids-badroom-designs",
+    //     id: "kids-bedroom-designs",
     //     name: "Kids Bedroom Designs",
-    //     slug: "/design-gallery?type=kids-badroom-designs",
+    //     slug: "/design-gallery?type=kids-bedroom-designs",
     //   },
     //   {
     //     id: "wardrobe-designs",

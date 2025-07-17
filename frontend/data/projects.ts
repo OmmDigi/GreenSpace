@@ -458,7 +458,7 @@ const livingRoom = Array.from({ length: 24 }, (_, index) => {
   } as IProjects;
 });
 
-const badRoom = Array.from({ length: 12 }, (_, index) => {
+const badRoom = Array.from({ length: 10 }, (_, index) => {
   const id = (index + 1).toString();
   return {
     id,
@@ -470,7 +470,7 @@ const badRoom = Array.from({ length: 12 }, (_, index) => {
   } as IProjects;
 });
 
-const wardrobe = Array.from({ length: 12 }, (_, index) => {
+const wardrobe = Array.from({ length: 18 }, (_, index) => {
   const id = (index + 1).toString();
   return {
     id,
@@ -482,7 +482,7 @@ const wardrobe = Array.from({ length: 12 }, (_, index) => {
   } as IProjects;
 });
 
-const diningRoom = Array.from({ length: 9 }, (_, index) => {
+const diningRoom = Array.from({ length: 5 }, (_, index) => {
   const id = (index + 1).toString();
   return {
     id,
@@ -494,7 +494,7 @@ const diningRoom = Array.from({ length: 9 }, (_, index) => {
   } as IProjects;
 });
 
-const poojaRoom = Array.from({ length: 9 }, (_, index) => {
+const poojaRoom = Array.from({ length: 17 }, (_, index) => {
   const id = (index + 1).toString();
   return {
     id,
@@ -542,7 +542,7 @@ const bhk3 = Array.from({ length: 1 }, (_, index) => {
   } as IProjects;
 });
 
-const bathroomDesigns = Array.from({ length: 3 }, (_, index) => {
+const bathroomDesigns = Array.from({ length: 11 }, (_, index) => {
   const id = (index + 1).toString();
   return {
     id,
@@ -598,18 +598,18 @@ COMPLETED_PROJECTS.forEach((projectinfo, pIndex) => {
   }
 });
 
-const kidsBadroomDesings = Array.from({ length: 9 }, (_, index) => {
+const kidsBedroomDesings = Array.from({ length: 9 }, (_, index) => {
   const id = (index + 1).toString();
   return {
     id,
     type: "image",
-    image: `/Projects/kids-badroom-designs/${id}.webp`,
-    service_id: "kids-badroom-designs",
+    image: `/Projects/kids-bedroom-designs/${id}.webp`,
+    service_id: "kids-bedroom-designs",
     tag: [
-      "Kids Badroom Designs",
+      "Kids Bedroom Designs",
       ...(index === 0 ? ["Completed Project"] : []),
     ],
-    title: "Kids Badroom Designs",
+    title: "Kids Bedroom Designs",
   } as IProjects;
 });
 
@@ -646,6 +646,18 @@ const invisibleGrills = Array.from({ length: 5 }, (_, index) => {
     service_id: "invisible-grills",
     tag: ["Invisible Grills"],
     title: "Invisible Grills",
+  } as IProjects;
+});
+
+const balconyDesigns = Array.from({ length: 12 }, (_, index) => {
+  const id = (index + 1).toString();
+  return {
+    id,
+    type: "image",
+    image: `/Projects/balcony-designs/${id}.webp`,
+    service_id: "balcony-designs",
+    tag: ["Balcony Designs"],
+    title: "Balcony Designs",
   } as IProjects;
 });
 
@@ -699,8 +711,8 @@ export const PROJECTS: { service_id: string; projects: IProjects[] }[] = [
     projects: bathroomDesigns,
   },
   {
-    service_id: "kids-badroom-designs",
-    projects: kidsBadroomDesings,
+    service_id: "kids-bedroom-designs",
+    projects: kidsBedroomDesings,
   },
   {
     service_id: "upvc-doors-windows",
@@ -709,5 +721,9 @@ export const PROJECTS: { service_id: string; projects: IProjects[] }[] = [
   {
     service_id: "invisible-grills",
     projects: invisibleGrills,
+  },
+  {
+    service_id: "balcony-designs",
+    projects: balconyDesigns,
   },
 ];
