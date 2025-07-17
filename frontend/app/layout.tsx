@@ -10,6 +10,7 @@ import GetQuoteDialog from "@/components/Dialogs/AiDialogs/GetQuoteDialog";
 import Slider from "@/components/Slider";
 import React from "react";
 import { CustomGalleryDialog } from "@/components/Dialogs/CustomGalleryDialog";
+import FloatingButton from "@/components/FloatingButton";
 
 // const jostFont = Jost({
 //   variable: "--font-jost",
@@ -19,7 +20,7 @@ import { CustomGalleryDialog } from "@/components/Dialogs/CustomGalleryDialog";
 const latoFont = Lato({
   variable: "--lato",
   weight: ["100", "300", "400", "700", "900"],
-  subsets : ["latin"]
+  subsets: ["latin"],
 });
 
 // const libreCaslonFont = Libre_Caslon_Text({
@@ -46,6 +47,7 @@ export default function RootLayout({
         className={`${latoFont.variable} ${latoFont.className} antialiased mx-auto max-w-[1920px] max-sm:max-w-full max-sm:w-full overflow-x-hidden m-0 p-0`}
       >
         <ReduxProvider>
+          <FloatingButton />
           <CustomGalleryDialog />
           <Slider />
           <GetQuoteDialog />

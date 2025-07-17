@@ -57,6 +57,8 @@ export default function ContactUsSection() {
                     +91 9836677669
                     <br />
                     +91 9804220277
+                    <br />
+                    +91 6289532707
                   </p>
                 </div>
               </div>

@@ -3,8 +3,10 @@ import { ApiResponse } from "@/lib/ApiResponse";
 import { sendMail } from "@/lib/send-mail";
 
 export async function applyJobForm(formData: FormData) {
+  const sendTo = process.env.CAREER_MAIL_RECIEVER?.split(",");
   try {
     await sendMail({
+      sendTo,
       title: `Job Application ${formData.get("name")}`,
       subject: "Job Application Enquiry",
       html: `

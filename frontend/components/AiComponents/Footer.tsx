@@ -68,14 +68,19 @@ const FOOTER_LINKS: {
     heading: "Contact Details",
     links: [
       {
-        text: "+91 9836 6776 69",
+        text: "+91 98366 77669",
         slug: "tel:+919836677669",
         icon : <Phone size={15}/>
       },
       {
-        text: "+91 9804 2202 77",
-        slug: "tel:+919804220277",
+        text: "+91 62895 32707",
+        slug: "https://api.whatsapp.com/send?phone=916289532707",
         icon : <MessageCircle size={15}/>
+      },
+      {
+        text: "+91 98042 20277",
+        slug: "tel:+919804220277",
+        icon : <Phone size={15}/>
       },
       {
         text: "info@greenspaceinterior.com",

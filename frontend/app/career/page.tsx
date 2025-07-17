@@ -315,21 +315,18 @@ const CareerPage = () => {
               opportunities
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <a
+              <Link
                 href="mailto:career@greenspaceinterior.in"
-                // className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
               >
                 <Button>Email HR Team</Button>
-              </a>
-              <a
+              </Link>
+              {/* <a
                 href="tel:+919836677669"
-                // className="!bg-transparent"
-                // className="border-2 border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-600 hover:text-white transition-colors"
               >
                 <Button className="bg-transparent border border-yellow-400 hover:!bg-transparent">
                   Call Us Now
                 </Button>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

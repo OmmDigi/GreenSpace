@@ -40,6 +40,7 @@ const ContactUs: React.FC = () => {
             <h3 className="font-semibold text-gray-900 mb-2">Call Us</h3>
             <p className="text-gray-600">+91 98366 77669</p>
             <p className="text-gray-600">+91 98042 20277</p>
+            <p className="text-gray-600">+91 62895 32707</p>
           </div>
 
           <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
@@ -48,7 +49,7 @@ const ContactUs: React.FC = () => {
             </div>
             <h3 className="font-semibold text-gray-900 mb-2">Email Us</h3>
             <p className="text-gray-600">info@interiordesign.com</p>
-            <p className="text-gray-600">projects@interiordesign.com</p>
+            <p className="text-gray-600">career@greenspaceinterior.in</p>
           </div>
 
           <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
@@ -148,7 +149,7 @@ const ContactUs: React.FC = () => {
             </div>
 
             {/* Map Placeholder */}
-            <div className="bg-white rounded-lg shadow-lg p-8">
+            {/* <div className="bg-white rounded-lg shadow-lg p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Find Us</h3>
               <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
                 <div className="text-center">
@@ -160,7 +161,7 @@ const ContactUs: React.FC = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

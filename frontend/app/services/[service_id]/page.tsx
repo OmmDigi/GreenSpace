@@ -159,7 +159,7 @@ export default async function page({ params }: IProps) {
               </div>
               <div>
                 <p className="font-medium text-gray-900">Phone</p>
-                <p className="text-gray-600">+91 9836677669 / +91 9804220277</p>
+                <p className="text-gray-600">+91 9836677669 <br /> +91 9804220277 <br /> +91 6289532707</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
