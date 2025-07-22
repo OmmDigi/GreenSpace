@@ -270,6 +270,7 @@ export const COMPLETED_PROJECTS: ICompeltedProjects[] = [
   {
     service_id: "1bhk-designs",
     title: "Baghajatin 1bhk Complete Project",
+    description: "",
     images: bagha_jatin_1_bhk,
   },
   {
@@ -661,6 +662,42 @@ const balconyDesigns = Array.from({ length: 12 }, (_, index) => {
   } as IProjects;
 });
 
+const commercialDesigns = Array.from({ length: 12 }, (_, index) => {
+  const id = (index + 1).toString();
+  return {
+    id,
+    type: "image",
+    image: `/Projects/commercial-designs/${id}.jpg`,
+    service_id: "commercial",
+    tag: ["Commercial Designs"],
+    title: "Commercial Designs",
+  } as IProjects;
+});
+
+const tvUnit = Array.from({ length: 16 }, (_, index) => {
+  const id = (index + 1).toString();
+  return {
+    id,
+    type: "image",
+    image: `/Projects/tv-unit/${id}.jpg`,
+    service_id: "tv-unit",
+    tag: ["Tv Units"],
+    title: "Tv Units",
+  } as IProjects;
+});
+
+const cabinets = Array.from({ length: 10 }, (_, index) => {
+  const id = (index + 1).toString();
+  return {
+    id,
+    type: "image",
+    image: `/Projects/cabinets/${id}.jpg`,
+    service_id: "commercial",
+    tag: ["Cabinets Designs"],
+    title: "Cabinets Designs",
+  } as IProjects;
+});
+
 export const PROJECTS: { service_id: string; projects: IProjects[] }[] = [
   {
     service_id: "modular-kitchen-designs",
@@ -725,5 +762,17 @@ export const PROJECTS: { service_id: string; projects: IProjects[] }[] = [
   {
     service_id: "balcony-designs",
     projects: balconyDesigns,
+  },
+  {
+    service_id: "commercial-designs",
+    projects: commercialDesigns,
+  },
+  {
+    service_id: "tv-unit",
+    projects: tvUnit,
+  },
+  {
+    service_id: "cabinets",
+    projects: cabinets,
   },
 ];

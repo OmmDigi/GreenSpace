@@ -21,7 +21,7 @@ export const SERVICES = [
       heading: "Modular Kitchen Design",
       fetcherImage: "/Services/ModularKitchenDesigns.webp",
       fetcherVideo: null,
-      priceStarting: "₹2,50,000",
+      priceStarting: "₹1.49 Lakh (Price for essential)",
       description: `
         <p>
           Transform Your Cooking Space with Green Space Interior’s Elegant Modular Kitchen Creations
@@ -50,7 +50,7 @@ export const SERVICES = [
       heading: "Living Room Designs",
       fetcherImage: "/Services/LivingRoom.webp",
       fetcherVideo: null,
-      priceStarting: "₹2,50,000",
+      priceStarting: "₹2.99 Lakh (Price for essential)",
       description: `
         <p>Breathe Life into Your Home with Green Space Interior’s Signature Living Room Designs.</p>
         <br />
@@ -71,7 +71,7 @@ export const SERVICES = [
       heading: "Bedroom Design",
       fetcherImage: "/Services/BadRoom.webp",
       fetcherVideo: null,
-      priceStarting: "₹2,50,000",
+      priceStarting: "₹2.99 Lakh (Price for essential)",
       description: `
         <p>Dream in Style with Green Space Interior’s Exquisite Bedroom Designs.</p>
         <br />
@@ -92,7 +92,7 @@ export const SERVICES = [
       heading: "Kids Bedroom Designs",
       fetcherImage: "/Services/KidsBadroom.webp",
       fetcherVideo: null,
-      priceStarting: "₹2,50,000",
+      priceStarting: "Based On Your Requirment",
       description: `
         <p>Playful Meets Practical in Green Space Interior’s Delightful Kids Bedroom Designs.</p>
         <br />
@@ -113,7 +113,7 @@ export const SERVICES = [
       heading: "Wardrobe Design",
       fetcherImage: "/Services/WardrobeDesign.webp",
       fetcherVideo: null,
-      priceStarting: "₹2,50,000",
+      priceStarting: "Based On Your Requirment",
       description: `
         <p>Smart. Stylish. Space-Saving. Green Space Interior’s Custom Wardrobe Designs.</p>
         <br />
@@ -134,7 +134,7 @@ export const SERVICES = [
       heading: "Dining Room design",
       fetcherImage: "/Services/DiningRoom.webp",
       fetcherVideo: null,
-      priceStarting: "₹2,50,000",
+      priceStarting: "Based On Your Requirment",
       description: `
         <p>Dine in Elegance with Green Space Interior’s Bespoke Dining Room Designs.</p>
         <br />
@@ -155,7 +155,7 @@ export const SERVICES = [
       heading: "Dining Room design",
       fetcherImage: "/Services/PoojaRoom.webp",
       fetcherVideo: null,
-      priceStarting: "₹2,50,000",
+      priceStarting: "₹59,000 (Price for essential)",
       description: `
         <p>Bring Peace and Positivity Home with Green Space Interior’s Serene Pooja Room Designs.</p>
         <br />
@@ -175,7 +175,7 @@ export const SERVICES = [
       heading: "Space-saving Designs",
       fetcherImage: "/Services/SpaceSaving.webp",
       fetcherVideo: null,
-      priceStarting: "₹2,50,000",
+      priceStarting: "Based On Your Requirment",
       description: `
         <p>Maximize Every Inch with Green Space Interior’s Innovative Space-Saving Designs.</p>
         <br />
@@ -195,7 +195,7 @@ export const SERVICES = [
       heading: "Bathroom Design",
       fetcherImage: "/Services/BathRoom.webp",
       fetcherVideo: null,
-      priceStarting: "₹2,50,000",
+      priceStarting: "₹1.99 Lakh (Price for essential)",
       description: `
         <p>Step In. Unwind. Feel Refreshed with Green Space Interior’s Luxurious Bathroom Designs.</p>
         <br />
@@ -213,7 +213,7 @@ export const SERVICES = [
       heading: "Balcony Designs",
       fetcherImage: "/Services/Balcony.webp",
       fetcherVideo: null,
-      priceStarting: "₹2,50,000",
+      priceStarting: "Based On Your Requirment",
       description: `
         <p>Turn Your Balcony into Your Favourite Corner with Green Space Interior’s Thoughtful Designs.</p>
         <br />
@@ -232,7 +232,8 @@ export const SERVICES = [
       heading: "1 BHK Designs",
       fetcherImage: "/Services/1BhK.webp",
       fetcherVideo: null,
-      priceStarting: "₹2,50,000",
+      priceStarting:
+        "₹1.99 LAKH (For Essential)\n₹2.99 LAKH (For Premium)\n₹3.99 LAKH (For Luxury)",
       description: `
         <p>Smart Design. Stylish Living. Perfect for Your 1 BHK.</p>
         <br />
@@ -252,7 +253,8 @@ export const SERVICES = [
       heading: "2 BHK Designs",
       fetcherImage: "/Services/2BhK.webp",
       fetcherVideo: null,
-      priceStarting: "₹2,50,000",
+      priceStarting:
+        "₹4.19 LAKH (For Essential)\n₹5.59 LAKH (For Premium)\n₹6.99 LAKH (For Luxury)",
       description: `
         <p>Perfect Harmony of Space and Style in Green Space Interior’s 2 BHK Flat Designs</p>
         <br />
@@ -272,7 +274,8 @@ export const SERVICES = [
       heading: "3 BHK Designs",
       fetcherImage: "/Services/3bhk.webp",
       fetcherVideo: null,
-      priceStarting: "₹2,50,000",
+      priceStarting:
+        "₹4.59 LAKH (For Essential)\n₹6.99 LAKH (For Premium)\n₹9.49 LAKH (For Luxury)",
       description: `
         <p>Luxury Redefined with Green Space Interior’s Elegant 3 BHK Flat Designs.</p>
         <br />
@@ -292,7 +295,7 @@ export const SERVICES = [
       heading: "Mosquito Sliding Nets",
       fetcherImage: "/Services/MosquitoSlidingNets.webp",
       fetcherVideo: null,
-      priceStarting: "₹2,50,000",
+      priceStarting: "₹350/sq ft",
       description: `
         <p>Keep Your Home Peaceful and Pest-Free with Green Space Interior’s Mosquito Sliding Nets</p>
         <br />
@@ -313,7 +316,7 @@ export const SERVICES = [
       heading: "Invisible Grills",
       fetcherImage: "/Services/InvisibleGrills.webp",
       fetcherVideo: null,
-      priceStarting: "₹2,50,000",
+      priceStarting: "Based On Your Requirment",
       description: `
         <p>Safe Homes, Clear Views with Green Space Interior’s Invisible Grills</p>
         <br />
@@ -333,7 +336,7 @@ export const SERVICES = [
       heading: "UPVC doors & windows",
       fetcherImage: "/Services/UPVCdoorswindows.jpg",
       fetcherVideo: null,
-      priceStarting: "₹2,50,000",
+      priceStarting: "Based On Your Requirment",
       description: `
         <p>Strong, Stylish and Long-Lasting UPVC Doors and Windows by Green Space Interior</p>
         <br />
@@ -345,102 +348,89 @@ export const SERVICES = [
     `,
     },
   },
+  {
+    id: "commercial-designs",
+    name: "Commercial Projects",
+    image: "/Projects/commercial-designs/2.jpg",
+    singlePageInfo: {
+      heading: "Commercial Projects",
+      fetcherImage: "/Projects/commercial-designs/2.jpg",
+      fetcherVideo: null,
+      priceStarting: "Based On Your Requirment",
+      description: `
+        <p>Strong, Stylish and Long-Lasting UPVC Doors and Windows by Green Space Interior.</p>
+        <br />
+        <p>In any commercial space, doors and windows do more than just separate rooms. They protect your work environment, keep it peaceful and add to the overall look and feel. With Green Space Interior’s UPVC doors and windows, you get strong, elegant solutions that last for years with very little maintenance.</p>
+        <br />
+        <p>Built to handle Kolkata’s weather, our UPVC options keep noise, dust and heat out while letting in fresh air and light. From smooth sliding windows to secure doors, every piece is designed to blend with your interiors and make your space more comfortable and professional.</p>
+        <br />
+        <p>Give your commercial project the strength, style and peace of mind it deserves with UPVC doors and windows from Green Space Interior.</p>
+    `,
+    },
+  },
+  {
+    id: "tv-unit",
+    name: "Tv Unit",
+    image: "/Projects/tv-unit/1.webp",
+    singlePageInfo: {
+      heading: "Tv Unit",
+      fetcherImage: "/Projects/tv-unit/1.webp",
+      fetcherVideo: null,
+      priceStarting: "Based On Your Requirment",
+      description: `
+        <p>Stylish, Functional and Made Just for You by Green Space Interior.</p>
+        <br />
+        <p>Your TV unit is more than just a stand for your screen. It ties your living room together, hides the clutter and adds a touch of style to your space. At Green Space Interior, we design TV units that fit perfectly with your interiors and your lifestyle.</p>
+        <br />
+        <p>Whether you want a sleek wall-mounted setup, extra storage for gadgets or a cosy space to display decor, we plan every detail with care. Our designs keep cables hidden, save space and make your living area feel organised and welcoming.</p>
+        <br />
+        <p>Bring home a TV unit that looks good, works well and makes your living room feel complete with Green Space Interior.</p>
+    `,
+    },
+  },
+  {
+    id: "cabinets",
+    name: "Cabinets",
+    image: "/Projects/cabinets/1.jpg",
+    singlePageInfo: {
+      heading: "Cabinets",
+      fetcherImage: "/Projects/cabinets/1.jpg",
+      fetcherVideo: null,
+      priceStarting: "Based On Your Requirment",
+      description: `
+        <p>Smart, Stylish and Made to Last by Green Space Interior.</p>
+        <br />
+        <p>Good cabinets do more than just store things. They help you keep your home neat, organised and looking beautiful every day. At Green Space Interior, we design cabinets that fit your space, match your style and make life easier.</p>
+        <br />
+        <p>Whether it’s your kitchen, bedroom or living room, our cabinets are built with sturdy materials and smooth finishes that handle Kolkata’s changing weather without losing their look or strength. Smart storage and thoughtful details keep your things safe, dry and easy to reach all year round.</p>
+        <br />
+        <p>Add more space, more style and more peace of mind to your home with custom cabinets from Green Space Interior.</p>
+    `,
+    },
+  },
 ];
 
 export const NAV_ITEMS: INav[] = [
-  // {
-  //   id: 1,
-  //   name: "Home",
-  //   slug: "/",
-  // },
   {
     id: 2,
     name: "Design Gallery",
     slug: "/design-gallery",
-    // submenu: [
-    //   {
-    //     id: "modular-kitchen-designs",
-    //     name: "Modular Kitchen Designs",
-    //     slug: "/design-gallery?type=modular-kitchen-designs",
-    //   },
-    //   {
-    //     id: "living-room-designs",
-    //     name: "Living Room Designs",
-    //     slug: "/design-gallery?type=living-room-designs",
-    //   },
-    //   {
-    //     id: "bedroom-designs",
-    //     name: "Bedroom Designs",
-    //     slug: "/design-gallery?type=bedroom-designs",
-    //   },
-    //   {
-    //     id: "kids-bedroom-designs",
-    //     name: "Kids Bedroom Designs",
-    //     slug: "/design-gallery?type=kids-bedroom-designs",
-    //   },
-    //   {
-    //     id: "wardrobe-designs",
-    //     name: "Wardrobe Designs",
-    //     slug: "/design-gallery?type=wardrobe-designs",
-    //   },
-    //   {
-    //     id: "dining-room-designs",
-    //     name: "Dining Room Designs",
-    //     slug: "/design-gallery?type=dining-room-designs",
-    //   },
-    //   {
-    //     id: "pooja-room-designs",
-    //     name: "Pooja Room Designs",
-    //     slug: "/design-gallery?type=pooja-room-designs",
-    //   },
-    //   {
-    //     id: "space-saving-designs",
-    //     name: "Space Saving Designs",
-    //     slug: "/design-gallery?type=space-saving-designs",
-    //   },
-    //   {
-    //     id: "bathroom-designs",
-    //     name: "Bathroom Designs",
-    //     slug: "/design-gallery?type=bathroom-designs",
-    //   },
 
-    //   {
-    //     id: "balcony-designs",
-    //     name: "Balcony Designs",
-    //     slug: "/design-gallery?type=balcony-designs",
-    //   },
-    //   {
-    //     id: "1bhk-designs",
-    //     name: "1 BHK Designs",
-    //     slug: "/design-gallery?type=1bhk-designs",
-    //   },
-    //   {
-    //     id: "2bhk-designs",
-    //     name: "2 BHK Designs",
-    //     slug: "/design-gallery?type=2bhk-designs",
-    //   },
-    //   {
-    //     id: "3bhk-designs",
-    //     name: "3 BHK Designs",
-    //     slug: "/design-gallery?type=3bhk-designs",
-    //   },
-    // ],
     submenu: SERVICES.map((item) => ({
       id: item.id,
       name: item.name,
-      // slug: `/design-gallery?type=${item.id}`,
       slug: `/services/${item.id}`,
     })),
   },
-  // {
-  //   id: 3,
-  //   name: "Our Projects",
-  //   slug: "/our-projects",
-  // },
+  {
+    id: "customize-kitchen",
+    name: "Customize Kitchen",
+    slug: "/customize-kitchens",
+  },
   {
     id: 4,
-    name: "Customized Kitchen",
-    slug: "/customize-kitchens",
+    name: "Recent Projects",
+    slug: "/recent-projects",
   },
   {
     id: 5,
@@ -448,26 +438,6 @@ export const NAV_ITEMS: INav[] = [
     slug: "/site-services",
   },
 
-  // {
-  //   id: 6,
-  //   name: "FAQ",
-  //   slug: "#",
-  // },
-  // {
-  //   id: 7,
-  //   name: "Blog",
-  //   slug: "#",
-  // },
-  // {
-  //   id: 8,
-  //   name: "Contact",
-  //   slug: "#",
-  // },
-  // {
-  //   id: 9,
-  //   name: "More",
-  //   slug: "#",
-  // },
   {
     id: 6,
     name: "Blog",

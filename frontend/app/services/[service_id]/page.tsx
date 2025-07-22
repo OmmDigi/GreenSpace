@@ -124,7 +124,7 @@ export default async function page({ params }: IProps) {
                 <div className="flex justify-between items-center">
                   <div>
                     <p className="text-sm opacity-90">Starting from</p>
-                    <p className="text-3xl font-bold">
+                    <p className="text-3xl font-bold whitespace-pre-wrap">
                       {singleService.singlePageInfo?.priceStarting}
                     </p>
                     <p className="text-sm opacity-90">
