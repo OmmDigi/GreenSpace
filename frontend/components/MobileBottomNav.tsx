@@ -66,7 +66,7 @@ const MobileBottomNav: React.FC = () => {
   };
 
   return (
-    <div className="hidden max-sm:block fixed bottom-0 left-0 right-0 bg-gradient-to-tl from-[#e9c01d]  to-[#e9c01d] shadow-2xl z-50">
+    <div className="hidden max-sm:block fixed bottom-0 left-0 right-0 bg-[#36caadc5] backdrop-blur-2xl shadow-2xl z-50">
       {/* Main Navigation */}
       <div className="flex items-center justify-around px-2 py-2">
         {navItems.map((item) => {
