@@ -488,6 +488,11 @@ export const NAV_ITEMS: INav[] = [
         name: "EMI Options",
         slug: "/emi-options",
       },
+      {
+        id: "7-9",
+        name: "DC Signature",
+        slug: "/dc-signature",
+      },
     ],
   },
 ];

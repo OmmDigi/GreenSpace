@@ -1,3 +1,6 @@
+import ReviewsCarousel from "@/components/AiComponents/ReviewsCarousel";
+import DCDesignCarousel from "@/components/DcSignature/DCDesignCarousel";
+import DCSignatureSection from "@/components/DcSignature/WhyDcDesign";
 import OpenGetQuoteDialog from "@/components/Utils/OpenGetQuoteDialog";
 import Image from "next/image";
 import React from "react";
@@ -141,11 +144,100 @@ export default function page() {
 
           {/* CTA Button */}
           <div className="text-center">
-            <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium px-8 py-3 rounded-md transition-colors duration-300">
-              Meet A Design Expert Today!
-            </button>
+            <OpenGetQuoteDialog isOpen>
+              <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium px-8 py-3 rounded-md transition-colors duration-300">
+                Meet A Design Expert Today!
+              </button>
+            </OpenGetQuoteDialog>
           </div>
         </div>
+      </section>
+
+      <section className="bg-[#c1b5a6]">
+        <DCDesignCarousel
+          buttonText="Get A Free Quote!"
+          headingText="Designs With Fluted Laminates"
+          images={[
+            {
+              alt: "L-Shaped Kitchen With A Breakfast Counter",
+              src: "/dc-sign/1.jpg",
+              caption: "L-Shaped Kitchen With A Breakfast Counter",
+            },
+            {
+              alt: "Two-Door Wardrobe With An Attached Study",
+              src: "/dc-sign/2.jpg",
+              caption: "Two-Door Wardrobe With An Attached Study",
+            },
+            {
+              alt: "L-Shaped Kitchen With A Crockery Unit",
+              src: "/dc-sign/3.jpg",
+              caption: "L-Shaped Kitchen With A Crockery Unit",
+            },
+          ]}
+        />
+        <DCDesignCarousel
+          buttonText="Meet Our Designer"
+          headingText="Designs With Patterned Engineered Veneer"
+          images={[
+            {
+              alt: "A Sliding Door Wardrobe With Glass And Veneer",
+              src: "/dc-sign/4.jpg",
+              caption: "A Sliding Door Wardrobe With Glass And Veneer",
+            },
+            {
+              alt: "A Black Sliding Door Wardrobe",
+              src: "/dc-sign/5.jpg",
+              caption: "A Black Sliding Door Wardrobe",
+            },
+            {
+              alt: "A Light Grey Sliding Door Wardrobe",
+              src: "/dc-sign/6.jpg",
+              caption: "A Light Grey Sliding Door Wardrobe",
+            },
+          ]}
+        />
+        <DCDesignCarousel
+          buttonText="Book A Free Consultation"
+          headingText="Designs With Fabric Panels"
+          images={[
+            {
+              alt: "A Sliding Door Wardrobe In Earthy Tones",
+              src: "/dc-sign/7.jpg",
+              caption: "A Sliding Door Wardrobe In Earthy Tones",
+            },
+            {
+              alt: "A Glass Sliding Door Wardrobe With Fabric Panels",
+              src: "/dc-sign/8.jpg",
+              caption: "A Glass Sliding Door Wardrobe With Fabric Panels",
+            },
+            {
+              alt: "A Two-Toned Sliding Door Wardrobe With Fabric Panels",
+              src: "/dc-sign/9.jpg",
+              caption: "A Two-Toned Sliding Door Wardrobe With Fabric Panels",
+            },
+          ]}
+        />
+      </section>
+
+      <DCSignatureSection />
+
+      <section className="bg-[#c1b5a6] pt-10">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-4 mb-2">
+            <div className="w-8 h-px bg-[#6a6661]"></div>
+            <div className="w-3 h-3 border-2 border-[#6a6661] rotate-45"></div>
+            <div className="w-8 h-px bg-[#6a6661]"></div>
+          </div>
+          <h2 className="text-4xl font-semibold text-[#6a6661] mb-4">
+            Customers Say They Love Our Exclusive Designs
+          </h2>
+          <div className="inline-flex items-center gap-4">
+            <div className="w-8 h-px bg-[#6a6661]"></div>
+            <div className="w-3 h-3 border-2 border-[#6a6661] rotate-45"></div>
+            <div className="w-8 h-px bg-[#6a6661]"></div>
+          </div>
+        </div>
+        <ReviewsCarousel />
       </section>
     </main>
   );
