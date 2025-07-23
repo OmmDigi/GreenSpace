@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Button from "../Button";
+import OpenGetQuoteDialog from "../Utils/OpenGetQuoteDialog";
 
 // // Arrow SVG Component
 // const ArrowIcon = () => (
@@ -144,9 +145,11 @@ const DCSignatureSection: React.FC = () => {
 
         {/* CTA Button */}
         <div className="text-center">
-          <Button className="bg-gradient-to-br from-yellow-400 to-yellow-500 hover:from-yellow-400 hover:to-yellow-500 text-gray-900 font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            Meet A Design Expert Today!
-          </Button>
+          <OpenGetQuoteDialog isOpen>
+            <Button className="bg-gradient-to-br from-yellow-400 to-yellow-500 hover:from-yellow-400 hover:to-yellow-500 text-gray-900 font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              Meet A Design Expert Today!
+            </Button>
+          </OpenGetQuoteDialog>
         </div>
       </div>
     </section>
