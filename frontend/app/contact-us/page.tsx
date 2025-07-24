@@ -48,7 +48,7 @@ const ContactUs: React.FC = () => {
               <Mail className="text-teal-600 w-8 h-8" />
             </div>
             <h3 className="font-semibold text-gray-900 mb-2">Email Us</h3>
-            <p className="text-gray-600">info@interiordesign.com</p>
+            <p className="text-gray-600">info@greenspaceinterior.in</p>
             <p className="text-gray-600">career@greenspaceinterior.in</p>
           </div>
 

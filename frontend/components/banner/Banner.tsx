@@ -72,14 +72,14 @@ export default function Banner() {
   const startTimer = () => {
     intervelId.current = setInterval(() => {
       onNextBannerClick();
-    }, 4000);
-  };
+    }, 4000)
+  }
 
   const clearTimer = () => {
-    if (intervelId.current) {
-      clearInterval(intervelId.current);
+    if(intervelId.current) {
+      clearInterval(intervelId.current)
     }
-  };
+  }
 
   useEffect(() => {
     startTimer();

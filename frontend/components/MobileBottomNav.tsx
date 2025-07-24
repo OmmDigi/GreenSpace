@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import {
   ImageIcon,
-  ChefHat,
-  Settings,
   MessageCircle,
+  Phone,
+  Instagram,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -21,27 +21,28 @@ const navItems: NavItem[] = [
   {
     id: "gallery",
     icon: ImageIcon,
-    label: "Design Gallery",
-    href: "/design-gallery",
+    label: "Designs",
+    href: "/recent-projects",
   },
   {
-    id: "kitchen",
-    icon: ChefHat,
-    label: "Custom Kitchen",
-    href: "/customize-kitchens",
+    id: "callus",
+    icon: Phone,
+    label: "Call Us",
+    href: "tel:9836677669",
   },
   {
-    id: "services",
-    icon: Settings,
-    label: "Site Services",
-    href: "/site-services",
-  },
-  {
-    id: "contact",
+    id: "whatsapp",
     icon: MessageCircle,
     label: "Whatsapp",
     href: "https://api.whatsapp.com/send?phone=916289532707",
     isWhatsApp: true,
+  },
+  {
+    id: "instagram",
+    icon: Instagram,
+    label: "Instagram",
+    href: "https://www.instagram.com/greenspaceinterior23",
+    
   },
 ];
 
