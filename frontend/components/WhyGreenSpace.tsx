@@ -39,6 +39,13 @@ const TABS = [
     content: `<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 30px; font-weight: 400; color: rgb(34, 34, 34); font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(248, 248, 248); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" id="isPasted"><span style="box-sizing: border-box; font-weight: 400;">Professional project managers answer your queries and keep the project on time.</span></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 30px; font-weight: 400; color: rgb(34, 34, 34); font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(248, 248, 248); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="box-sizing: border-box; font-weight: 400;">Trained carpenters and site staff ensure that your floors are protected during installation and that standard operating procedures on a 51 point checklist are followed.</span></p>`,
   },
   {
+    id: "6",
+    text: "Pricing",
+    image: "/why-us/1,-2,-3-BHK-web-banner-final.png",
+    btnText: "Talk To An Expert Today",
+    content: `<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 30px; font-weight: 400; color: rgb(34, 34, 34); font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(248, 248, 248); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" id="isPasted"><span style="box-sizing: border-box; font-weight: 400;">Professional project managers answer your queries and keep the project on time.</span></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 30px; font-weight: 400; color: rgb(34, 34, 34); font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(248, 248, 248); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="box-sizing: border-box; font-weight: 400;">Trained carpenters and site staff ensure that your floors are protected during installation and that standard operating procedures on a 51 point checklist are followed.</span></p>`,
+  },
+  {
     id: "4",
     text: "Easy EMI options",
     image: "/why-us/whyUs4.webp",
@@ -169,32 +176,35 @@ export default function WhyGreenSpace() {
 
         <div
           className={cn(
-            "grid grid-cols-3 py-10 max-w-[75rem] mx-auto max-sm:grid-cols-1 max-sm:max-w-full"
+            currentTabIndex === 3 ? "" : "grid grid-cols-3",
+            "py-10 max-w-[75rem] mx-auto max-sm:grid-cols-1 max-sm:max-w-full"
           )}
         >
           <Image
-            className="w-[30rem]"
+            className={cn(currentTabIndex === 3 ? "w-full" : "w-[30rem]")}
             src={TABS[currentTabIndex].image}
             alt="Why Choose Us Image"
             height={1920}
             width={1920}
           />
 
-          <div className="p-10 flex flex-col h-full col-span-2 max-sm:py-2 max-sm:px-0">
-            <div className="text-xl font-[400] space-y-3.5 grow h-full">
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: TABS[currentTabIndex].content,
-                }}
-              ></span>
-            </div>
+          {currentTabIndex === 3 ? null : (
+            <div className="p-10 flex flex-col h-full col-span-2 max-sm:py-2 max-sm:px-0">
+              <div className="text-xl font-[400] space-y-3.5 grow h-full">
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: TABS[currentTabIndex].content,
+                  }}
+                ></span>
+              </div>
 
-            <OpenGetQuoteDialog isOpen>
-              <Button className="flex items-center gap-3.5">
-                <span>→</span> <span>{TABS[currentTabIndex].btnText}</span>
-              </Button>
-            </OpenGetQuoteDialog>
-          </div>
+              <OpenGetQuoteDialog isOpen>
+                <Button className="flex items-center gap-3.5">
+                  <span>→</span> <span>{TABS[currentTabIndex].btnText}</span>
+                </Button>
+              </OpenGetQuoteDialog>
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -99,7 +99,7 @@ export default function Banner() {
       }}
       className="relative"
     >
-      <div className="flex w-full aspect-[3/1.2] max-sm:aspect-[4/5] cursor-pointer">
+      <div className="flex w-full aspect-[3/1.2] max-sm:aspect-[3.6/5] cursor-pointer">
         {BANNER_ITEMS.map((item, index) => (
           <Image
             onClick={onImageClick}

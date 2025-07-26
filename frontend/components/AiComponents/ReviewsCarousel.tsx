@@ -115,45 +115,6 @@ export default function ReviewsCarousel() {
         setIsOpen={setIsVideoDialogOpen}
       />
       <div className="relative max-w-[90%] mx-auto">
-        {/* Navigation Buttons */}
-        <div className="absolute top-0 bottom-0 left-0 flex items-center justify-center z-20 ">
-          <button
-            onClick={goBack}
-            className="w-12 h-12 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group border border-gray-100 -ml-16 hover:scale-110"
-            style={{
-              backgroundColor: "white",
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#00776e";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "white";
-            }}
-          >
-            <ChevronLeft className="w-6 h-6 text-gray-600 group-hover:text-white transition-colors" />
-          </button>
-        </div>
-
-        <div className="absolute top-0 right-0 bottom-0 flex items-center justify-center z-20 ">
-          <button
-            onClick={goNext}
-            className="w-12 h-12 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group border border-gray-100 -mr-16 hover:scale-110"
-            style={{
-              backgroundColor: "white",
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#00776e";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "white";
-            }}
-          >
-            <ChevronRight className="w-6 h-6 text-gray-600 group-hover:text-white transition-colors" />
-          </button>
-        </div>
-
         {/* Swiper Component */}
         <Swiper
           slidesPerView={sliderPreviewView}
@@ -283,6 +244,45 @@ export default function ReviewsCarousel() {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* Navigation Buttons */}
+        <div className="absolute top-0 bottom-0 left-0 flex items-center justify-center z-20 max-sm:left-6">
+          <button
+            onClick={goBack}
+            className="w-12 h-12 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group border border-gray-100 -ml-16 hover:scale-110"
+            style={{
+              backgroundColor: "white",
+              transition: "all 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#00776e";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "white";
+            }}
+          >
+            <ChevronLeft className="w-6 h-6 text-gray-600 group-hover:text-white transition-colors" />
+          </button>
+        </div>
+
+        <div className="absolute top-0 right-0 bottom-0 flex items-center justify-center z-20 max-sm:right-6">
+          <button
+            onClick={goNext}
+            className="w-12 h-12 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group border border-gray-100 -mr-16 hover:scale-110"
+            style={{
+              backgroundColor: "white",
+              transition: "all 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#00776e";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "white";
+            }}
+          >
+            <ChevronRight className="w-6 h-6 text-gray-600 group-hover:text-white transition-colors" />
+          </button>
+        </div>
       </div>
 
       <style jsx>{`
