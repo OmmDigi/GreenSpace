@@ -252,7 +252,7 @@ const VideoSlider: React.FC<VideoSliderProps> = ({
 
       {/* Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4">
+        <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-black bg-opacity-90 p-4">
           <div className="relative max-w-5xl max-h-full flex items-center justify-center w-full">
             <video
               key={videos[modalVideoIndex].id}

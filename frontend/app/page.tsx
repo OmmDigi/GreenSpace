@@ -19,7 +19,7 @@ import MultiStepForm from "@/components/MultiStepForm";
 export default function Home() {
   return (
     <AOSProvider>
-      <div className="space-y-16">
+      <div className="space-y-10">
         <Banner />
         <WhyChooseSection />
         <MultiStepForm />

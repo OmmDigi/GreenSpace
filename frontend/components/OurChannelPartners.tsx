@@ -114,7 +114,7 @@ export const OurChannelPartners: React.FC = () => {
   // };
 
   return (
-    <section className="pt-16 bg-white !font-jost">
+    <section className="bg-white !font-jost">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center">
           <div

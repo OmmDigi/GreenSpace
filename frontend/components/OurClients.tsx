@@ -101,7 +101,7 @@ export const OurClients: React.FC = () => {
   }, []);
 
   return (
-    <section className="pt-16 bg-gray-50 !font-jost">
+    <section className="!font-jost">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center">
           <div
