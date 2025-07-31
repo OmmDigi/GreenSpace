@@ -65,7 +65,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
   return (
     <div className={`relative w-full ${className}`}>
       {/* Slider Container */}
-      <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-gray-50 to-gray-100 p-6">
+      <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-gray-50 to-gray-100 p-6 max-sm:p-0">
         <Swiper
           slidesPerView={sliderPreviewView}
           centeredSlides={false}
@@ -79,7 +79,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
             <SwiperSlide
               key={index}
               className={cn(
-                "flex-center flex-col relative min-h-[18rem] max-h-[18rem] w-48 overflow-hidden max-sm:w-full z-10",
+                "flex-center flex-col relative min-h-[18rem] max-h-[18rem] w-48 overflow-hidden max-sm:w-full max-sm:max-h-max z-10",
                 itemClassName
               )}
             >
