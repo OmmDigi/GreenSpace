@@ -142,9 +142,9 @@ export default async function page({ params }: IProps) {
           </div>
 
           {/* Right Side - Contact Form */}
-         <div className="sticky top-0">
-           <DetailsPageForm currentServiceName={singleService.name} />
-         </div>
+          <div className="sticky top-0">
+            <DetailsPageForm currentServiceName={singleService.name} />
+          </div>
         </div>
 
         {/* Contact Details Section */}
@@ -159,7 +159,9 @@ export default async function page({ params }: IProps) {
               </div>
               <div>
                 <p className="font-medium text-gray-900">Phone</p>
-                <p className="text-gray-600">+91 9836677669 <br /> +91 9804220277 <br /> +91 6289532707</p>
+                <p className="text-gray-600">
+                  +91 9836677669 <br /> +91 9804220277 <br /> +91 6289532707
+                </p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -177,7 +179,10 @@ export default async function page({ params }: IProps) {
               </div>
               <div>
                 <p className="font-medium text-gray-900">Address</p>
-                <p className="text-gray-600">287/A, Shreema Housing Complex, Opposite Of Maruti Showroom, Jalkal, Maheshtala, Kolkata – 700141</p>
+                <p className="text-gray-600">
+                  287/A, Shreema Housing Complex, Opposite Of Maruti Showroom,
+                  Jalkal, Maheshtala, Kolkata – 700141
+                </p>
               </div>
             </div>
           </div>
@@ -197,7 +202,10 @@ export default async function page({ params }: IProps) {
             with us
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <OpenGetQuoteDialog isOpen>
+            <OpenGetQuoteDialog
+              isOpen
+              extraValue={{ form_type: "multi-step-form" }}
+            >
               {/* <button className="bg-white text-[#00776e] hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-colors">
                 Get Quote
               </button> */}

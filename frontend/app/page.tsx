@@ -14,7 +14,7 @@ import { OurClients } from "@/components/OurClients";
 import { OurChannelPartners } from "@/components/OurChannelPartners";
 import WhyChooseSection from "@/components/WhyChooseSection";
 import WhyGreenSpace from "@/components/WhyGreenSpace";
-import MultiStepForm from "@/components/MultiStepForm";
+import MultiStepFormSection from "@/components/MultiStepFormSection";
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
       <div className="space-y-10">
         <Banner />
         <WhyChooseSection />
-        <MultiStepForm />
+        <MultiStepFormSection />
         <AboutUsSection />
 
         <ScrollText />

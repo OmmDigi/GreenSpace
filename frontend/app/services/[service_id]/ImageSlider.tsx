@@ -114,7 +114,14 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
                         className="!py-2 !px-5 !text-sm shrink-0 text-nowrap"
                         onClick={(e) => {
                           e.stopPropagation();
-                          dispatch(setGetQuoteDialog({ isOpen: true }));
+                          dispatch(
+                            setGetQuoteDialog({
+                              isOpen: true,
+                              extraValue: {
+                                form_type: "multi-step-form",
+                              },
+                            })
+                          );
                         }}
                       >
                         Get Quote

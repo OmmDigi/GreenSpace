@@ -9,7 +9,7 @@ const getQuoteDialogSlice = createSlice({
   name: "Get Quote Dialog Slice",
   initialState,
   reducers: {
-    setGetQuoteDialog: (state, action: PayloadAction<IGetQuoteDialog>) =>
+    setGetQuoteDialog: (state, action: PayloadAction<IGetQuoteDialog<any>>) =>
       action.payload,
   },
 });

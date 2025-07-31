@@ -11,6 +11,7 @@ import { handleGetQuoteDialogContactForm } from "@/app/actions/handleGetQuoteDia
 import { useRouter } from "next/navigation";
 import { SERVICES } from "@/constant";
 import Image from "next/image";
+import MultiStepForm from "@/components/MultiStepForm";
 
 const locations = [
   "Kolkata",
@@ -22,7 +23,7 @@ const locations = [
 ];
 
 const GetQuoteDialog = () => {
-  const { isOpen } = useSelector(
+  const { isOpen, extraValue } = useSelector(
     (state: RootState) => state.getQuoteDialogReducer
   );
   const route = useRouter();
@@ -142,9 +143,12 @@ const GetQuoteDialog = () => {
                     </h2>
                   </div>
 
-                  <form action={handleFormSubmit} className="space-y-5">
-                    {/* Property Type */}
-                    {/* <div>
+                  {extraValue?.form_type === "multi-step-form" ? (
+                    <MultiStepForm />
+                  ) : (
+                    <form action={handleFormSubmit} className="space-y-5">
+                      {/* Property Type */}
+                      {/* <div>
                       <label className="block text-gray-700 font-medium mb-3">
                         Property type
                       </label>
@@ -166,57 +170,57 @@ const GetQuoteDialog = () => {
                       </div>
                     </div> */}
 
-                    {/* Name */}
-                    <div className="flex items-center flex-wrap gap-2.5">
-                      <div className="w-full">
-                        <label className="block text-gray-700 font-medium mb-3">
-                          Full Name *
-                        </label>
-                        <input
-                          name="name"
-                          type="text"
-                          required
-                          placeholder="Full name *"
-                          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-teal-600 transition-colors"
-                        />
-                      </div>
-                      <div className="w-full">
-                        <label className="block text-gray-700 font-medium mb-3">
-                          Mobile Number *
-                        </label>
-                        <input
-                          pattern="^\d{10}$"
-                          name="phone"
-                          required
-                          placeholder="Mobile Number *"
-                          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-teal-600 transition-colors"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Property Location */}
-                    <div className="flex items-center flex-wrap gap-2.5">
-                      <div className="w-full">
-                        <label className="block text-gray-700 font-medium mb-3">
-                          Services *
-                        </label>
-                        <div className="w-full p-3 border border-gray-300 rounded-lg text-left flex items-center justify-between hover:border-gray-400 transition-colors">
-                          <select
-                            name="service"
+                      {/* Name */}
+                      <div className="flex items-center flex-wrap gap-2.5">
+                        <div className="w-full">
+                          <label className="block text-gray-700 font-medium mb-3">
+                            Full Name *
+                          </label>
+                          <input
+                            name="name"
+                            type="text"
                             required
-                            className="w-full outline-none"
-                          >
-                            {SERVICES.map((item) => (
-                              <option key={item.id}>{item.name}</option>
-                            ))}
-                          </select>
+                            placeholder="Full name *"
+                            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-teal-600 transition-colors"
+                          />
+                        </div>
+                        <div className="w-full">
+                          <label className="block text-gray-700 font-medium mb-3">
+                            Mobile Number *
+                          </label>
+                          <input
+                            pattern="^\d{10}$"
+                            name="phone"
+                            required
+                            placeholder="Mobile Number *"
+                            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-teal-600 transition-colors"
+                          />
                         </div>
                       </div>
-                      <div className="w-full">
-                        <label className="block text-gray-700 font-medium mb-3">
-                          Location *
-                        </label>
-                        {/* <div className="relative">
+
+                      {/* Property Location */}
+                      <div className="flex items-center flex-wrap gap-2.5">
+                        <div className="w-full">
+                          <label className="block text-gray-700 font-medium mb-3">
+                            Services *
+                          </label>
+                          <div className="w-full p-3 border border-gray-300 rounded-lg text-left flex items-center justify-between hover:border-gray-400 transition-colors">
+                            <select
+                              name="service"
+                              required
+                              className="w-full outline-none"
+                            >
+                              {SERVICES.map((item) => (
+                                <option key={item.id}>{item.name}</option>
+                              ))}
+                            </select>
+                          </div>
+                        </div>
+                        <div className="w-full">
+                          <label className="block text-gray-700 font-medium mb-3">
+                            Location *
+                          </label>
+                          {/* <div className="relative">
                         <button
                           type="button"
                           onClick={() =>
@@ -256,29 +260,29 @@ const GetQuoteDialog = () => {
                           </div>
                         )}
                       </div> */}
-                        <div className="w-full p-3 border border-gray-300 rounded-lg text-left flex items-center justify-between hover:border-gray-400 transition-colors">
-                          <select
-                            name="location"
-                            required
-                            className="w-full outline-none"
-                          >
-                            {locations.map((item, index) => (
-                              <option key={index}>{item}</option>
-                            ))}
-                          </select>
+                          <div className="w-full p-3 border border-gray-300 rounded-lg text-left flex items-center justify-between hover:border-gray-400 transition-colors">
+                            <select
+                              name="location"
+                              required
+                              className="w-full outline-none"
+                            >
+                              {locations.map((item, index) => (
+                                <option key={index}>{item}</option>
+                              ))}
+                            </select>
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    <textarea
-                      name="message"
-                      placeholder="Message..."
-                      className="flex-1 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-teal-600 transition-colors"
-                      rows={5}
-                    ></textarea>
+                      <textarea
+                        name="message"
+                        placeholder="Message..."
+                        className="flex-1 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-teal-600 transition-colors"
+                        rows={5}
+                      ></textarea>
 
-                    {/* WhatsApp Updates */}
-                    {/* <div className="flex items-center gap-2">
+                      {/* WhatsApp Updates */}
+                      {/* <div className="flex items-center gap-2">
                       <input
                         type="checkbox"
                         id="whatsapp"
@@ -295,30 +299,31 @@ const GetQuoteDialog = () => {
                       </label>
                     </div> */}
 
-                    {/* Submit Button */}
-                    <button
-                      type="submit"
-                      className="w-full flex items-center justify-center bg-red-700 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-800 transition-colors text-lg"
-                    >
-                      {isPending ? (
-                        <LoaderCircle className="animate-spin" />
-                      ) : (
-                        "Book a Free Consultation"
-                      )}
-                    </button>
+                      {/* Submit Button */}
+                      <button
+                        type="submit"
+                        className="w-full flex items-center justify-center bg-red-700 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-800 transition-colors text-lg"
+                      >
+                        {isPending ? (
+                          <LoaderCircle className="animate-spin" />
+                        ) : (
+                          "Book a Free Consultation"
+                        )}
+                      </button>
 
-                    {/* Terms */}
-                    <p className="text-xs text-gray-500 text-center">
-                      By submitting, you consent to{" "}
-                      <a href="#" className="text-teal-600 hover:underline">
-                        privacy policy
-                      </a>{" "}
-                      and{" "}
-                      <a href="#" className="text-teal-600 hover:underline">
-                        terms of use
-                      </a>
-                    </p>
-                  </form>
+                      {/* Terms */}
+                      <p className="text-xs text-gray-500 text-center">
+                        By submitting, you consent to{" "}
+                        <a href="#" className="text-teal-600 hover:underline">
+                          privacy policy
+                        </a>{" "}
+                        and{" "}
+                        <a href="#" className="text-teal-600 hover:underline">
+                          terms of use
+                        </a>
+                      </p>
+                    </form>
+                  )}
                 </div>
               </div>
             </div>

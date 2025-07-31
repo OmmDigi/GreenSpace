@@ -321,7 +321,7 @@ const ServiceComparisonSection = () => {
               Let&apos;s discuss your project and create something amazing
               together.
             </p>
-            <OpenGetQuoteDialog isOpen>
+            <OpenGetQuoteDialog isOpen extraValue={{form_type: "multi-step-form",}}>
               <Button>Get Quote →</Button>
             </OpenGetQuoteDialog>
           </div>

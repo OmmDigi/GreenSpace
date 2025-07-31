@@ -45,7 +45,7 @@ export interface IOurProject {
   highlights: string[];
 }
 
-export interface IGetQuoteDialog<T = undefined> {
+export interface IGetQuoteDialog<T = any> {
   isOpen: boolean;
   extraValue?: T;
 }
