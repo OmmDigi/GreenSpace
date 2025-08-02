@@ -31,7 +31,7 @@ export default function page() {
               <div className="w-8 h-px bg-yellow-400"></div>
             </div>
             <h2 className="text-4xl font-light text-yellow-400 mb-4">
-              Why Choose DC Signature?
+              Why Choose Signature Design?
             </h2>
             <div className="inline-flex items-center gap-4">
               <div className="w-8 h-px bg-yellow-400"></div>

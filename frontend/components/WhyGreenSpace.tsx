@@ -24,7 +24,7 @@ const TABS = [
   {
     id: "2",
     text: "Quality Guaranteed",
-    image: "/why-us/whyUs2.webp",
+    image: "/why-us/whyUs2.jpg",
     content: `<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 30px; font-weight: 400; color: rgb(34, 34, 34); font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(248, 248, 248); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"
   id="isPasted">At Green Space Interior, quality comes first.</p>
 <p
@@ -91,7 +91,7 @@ const TABS = [
   {
     id: "5",
     text: "On-time Delivery",
-    image: "/why-us/whyUs5.webp",
+    image: "/why-us/whyUs5.jpg",
     btnText: "Start Your Project",
     content: `<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 30px; font-weight: 400; color: rgb(34, 34, 34); font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(248, 248, 248); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" id="isPasted"><span style="box-sizing: border-box; font-weight: 400;">With more than&nbsp;<b style="box-sizing: border-box; font-weight: bolder;">75% of materials factory-made</b> on state-of-the-art machines, we ensure a superior finish, while keeping to timelines.</span></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 30px; font-weight: 400; color: rgb(34, 34, 34); font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(248, 248, 248); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="box-sizing: border-box; font-weight: 400;">We mockup products at our factory for a full quality check before carefully shipping it to you without scratches and damages in&nbsp;<b style="box-sizing: border-box; font-weight: bolder;">packaging made from recycled materials.&nbsp;</b></span></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; line-height: 30px; font-weight: 400; color: rgb(34, 34, 34); font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(248, 248, 248); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="box-sizing: border-box; font-weight: 400;">Our satisfaction lies in living up to your expectations, while delivering on time.</span></p>`,
   },

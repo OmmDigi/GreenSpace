@@ -118,7 +118,7 @@ const DCSignatureSection: React.FC = () => {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-6">
-            What&apos;s Special About DC Signature?
+            What&apos;s Special About Signature Design?
           </h2>
 
           <div className="flex items-center justify-center">

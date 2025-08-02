@@ -371,10 +371,10 @@ export const SERVICES = [
   {
     id: "tv-unit",
     name: "Tv Unit",
-    image: "/Projects/tv-unit/1.webp",
+    image: "/Projects/tv-unit/1.jpg",
     singlePageInfo: {
       heading: "Tv Unit",
-      fetcherImage: "/Projects/tv-unit/1.webp",
+      fetcherImage: "/Projects/tv-unit/1.jpg",
       fetcherVideo: null,
       priceStarting: "Based On Your Requirment",
       description: `
@@ -490,7 +490,7 @@ export const NAV_ITEMS: INav[] = [
       },
       {
         id: "7-9",
-        name: "DC Signature",
+        name: "Signature Design",
         slug: "/dc-signature",
       },
     ],
