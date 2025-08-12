@@ -440,9 +440,10 @@ export const NAV_ITEMS: INav[] = [
 
   {
     id: 6,
-    name: "Blog",
-    slug: "/blogs",
+    name: "Signature Design",
+    slug: "/dc-signature",
   },
+
   {
     id: 7,
     name: "More",
@@ -488,10 +489,15 @@ export const NAV_ITEMS: INav[] = [
         name: "EMI Options",
         slug: "/emi-options",
       },
+      // {
+      //   id: "7-9",
+      //   name: "Signature Design",
+      //   slug: "/dc-signature",
+      // },
       {
         id: "7-9",
-        name: "Signature Design",
-        slug: "/dc-signature",
+        name: "Blog",
+        slug: "/blogs",
       },
     ],
   },

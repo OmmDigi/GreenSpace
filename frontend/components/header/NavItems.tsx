@@ -23,7 +23,7 @@ function NavListView({ items, wrapperClassName, itemClassName }: INavListView) {
           <Link
             href={eachItem.slug}
             className={cn(
-              "flex items-center scale-100 py-1.5 gap-1.5 relative group/eachnavlink",
+              "flex items-center scale-100 py-1.5 gap-0.5 relative group/eachnavlink",
               itemClassName
             )}
           >
