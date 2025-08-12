@@ -499,6 +499,12 @@ export const NAV_ITEMS: INav[] = [
 
 export const BANNER_ITEMS = [
   {
+    id: "4",
+    bannerImage: "/banners/4.png",
+    bannerImageMobile: "/banners/m4.png",
+    altTag: "Sample Alt Tag 1",
+  },
+  {
     id: "1",
     bannerImage: "/banners/1.png",
     bannerImageMobile: "/banners/m1.png",
