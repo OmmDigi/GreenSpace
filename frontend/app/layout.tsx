@@ -44,6 +44,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="-VcAOH4X9-z_-Lju-W6odJqcVQneTioAG_vFVvvNr7g"
+        />
+      </head>
       <body
         className={`${latoFont.variable} ${latoFont.className} antialiased mx-auto max-w-[1920px] max-sm:max-w-full max-sm:w-full overflow-x-hidden m-0 p-0`}
       >
