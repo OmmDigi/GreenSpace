@@ -12,6 +12,7 @@ import React from "react";
 import { CustomGalleryDialog } from "@/components/Dialogs/CustomGalleryDialog";
 import FloatingButton from "@/components/FloatingButton";
 import MobileBottomNav from "@/components/MobileBottomNav";
+import Head from "next/head";
 
 // const jostFont = Jost({
 //   variable: "--font-jost",
@@ -37,6 +38,32 @@ export const metadata: Metadata = {
   description: "Best Interior Designer In Kolkata",
 };
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  name: "Green Space Interior",
+  image: "https://greenspaceinterior.in/_next/image?url=%2Flogo.png&w=640&q=75",
+  "@id": "",
+  url: "http://www.greenspaceinterior.in/",
+  telephone: "+9198366 77669",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Budge Budge Trunk Rd",
+    addressLocality: "Gauripur, Maheshtala, Kolkata, West Bengal",
+    postalCode: "700141",
+    addressCountry: "IN",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 22.505184303440846,
+    longitude: 88.26225644232765,
+  },
+  sameAs: [
+    "https://www.facebook.com/greenspaceinterior2023",
+    "https://www.instagram.com/greenspaceinterior23/",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -44,12 +71,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <Head>
         <meta
           name="google-site-verification"
           content="-VcAOH4X9-z_-Lju-W6odJqcVQneTioAG_vFVvvNr7g"
         />
-      </head>
+
+        <script
+          type="application/ld+json"
+          // Note: stringify converts JS object → valid JSON
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      </Head>
       <body
         className={`${latoFont.variable} ${latoFont.className} antialiased mx-auto max-w-[1920px] max-sm:max-w-full max-sm:w-full overflow-x-hidden m-0 p-0`}
       >
