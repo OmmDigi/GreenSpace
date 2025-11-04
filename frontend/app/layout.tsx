@@ -12,7 +12,7 @@ import React from "react";
 import { CustomGalleryDialog } from "@/components/Dialogs/CustomGalleryDialog";
 import FloatingButton from "@/components/FloatingButton";
 import MobileBottomNav from "@/components/MobileBottomNav";
-import Head from "next/head";
+import Script from "next/script";
 
 // const jostFont = Jost({
 //   variable: "--font-jost",
@@ -71,18 +71,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <meta
           name="google-site-verification"
           content="-VcAOH4X9-z_-Lju-W6odJqcVQneTioAG_vFVvvNr7g"
         />
 
-        <script
+        <Script
+          id="schema-home"
           type="application/ld+json"
-          // Note: stringify converts JS object → valid JSON
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
-      </Head>
+      </head>
       <body
         className={`${latoFont.variable} ${latoFont.className} antialiased mx-auto max-w-[1920px] max-sm:max-w-full max-sm:w-full overflow-x-hidden m-0 p-0`}
       >
