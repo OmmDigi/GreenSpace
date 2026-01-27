@@ -117,6 +117,7 @@ const FOOTER_LINKS: {
 ];
 
 export default function Footer() {
+  const date = new Date();
   return (
     <footer
       className={cn("bg-gradient-to-r from-[#05b1a2] to-[#00524b] text-white")}
@@ -171,7 +172,7 @@ export default function Footer() {
           )}
         >
           <div className={cn("text-teal-100 text-sm max-sm:text-center")}>
-            © 2025 Green Space Interior.
+            © {date.getFullYear()} Green Space Interior.
             {/* <Link href="#" className={cn("hover:text-white ml-2")}>
               Privacy Policy
             </Link>{" "}

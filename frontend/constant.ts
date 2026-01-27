@@ -3,11 +3,11 @@ import { INav } from "./types";
 export const OFFER_LISTS = [
   {
     id: "1",
-    content: `FLAT 25% OFF on Modular Interiors. Hurry, Book Before 31st Oct 2025! <span style = "text-decoration: underline;" href = '/'>Get Offer</span>`,
+    content: `FLAT 25% OFF on Modular Interiors. Hurry, Book Before 15th April 2026! <span style = "text-decoration: underline;" href = '/'>Get Offer</span>`,
   },
   {
     id: "2",
-    content: `2 FLAT 25% OFF on Modular Interiors. Hurry, Book Before 31st Oct 2025! <span style = "text-decoration: underline;">Get Offer</span>`,
+    content: `2 FLAT 25% OFF on Modular Interiors. Hurry, Book Before 15th April 2026! <span style = "text-decoration: underline;">Get Offer</span>`,
   },
 ];
 
