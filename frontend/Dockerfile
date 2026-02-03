@@ -54,7 +54,6 @@ RUN npm ci --force --only=production
 # Copy Needed Folders
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/templates ./templates
 
 # Expose port
 EXPOSE 3000
