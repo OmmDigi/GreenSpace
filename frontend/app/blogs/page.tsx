@@ -143,7 +143,7 @@ const BlogListing: React.FC = async () => {
                   <img
                     src={blog.thumbnail ?? "/placeholder_background.jpg"}
                     alt="Featured"
-                    className="object-cover"
+                    className="object-cover size-full"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-medium">
