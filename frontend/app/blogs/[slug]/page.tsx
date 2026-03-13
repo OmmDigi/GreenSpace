@@ -65,6 +65,7 @@ const BlogSingle = async ({ params }: IProps) => {
               className="w-full h-full object-cover aspect-video rounded-3xl"
               height={1280}
               width={720}
+              unoptimized = {true}
             />
             <div
               className="rich-text-content"

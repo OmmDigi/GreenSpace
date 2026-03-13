@@ -145,6 +145,7 @@ const BlogListing: React.FC = async () => {
                     alt="Featured"
                     className="object-cover"
                     fill
+                    unoptimized = {true}
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-medium">
