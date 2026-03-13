@@ -1,7 +1,7 @@
 import React from "react";
 import { Calendar } from "lucide-react";
 import { notFound } from "next/navigation";
-import Image from "next/image";
+// import Image from "next/image";
 import "@/app/rich-text-content.css";
 import axios from "axios";
 import { ISingleBlog } from "@/types";
@@ -62,7 +62,7 @@ const BlogSingle = async ({ params }: IProps) => {
             <img
               src={blogPost.thumbnail ?? "/placeholder_background.jpg"}
               alt={blogPost.title}
-              className="w-full h-full object-cover aspect-video rounded-3xl"
+              className="w-full h-auto object-cover rounded-3xl"
               height={1280}
               width={720}
             />
