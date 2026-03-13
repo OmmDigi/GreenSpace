@@ -26,7 +26,7 @@ export default async function RelatedBlogs({
         <Link key={rPost.slug} href={`/blogs/${rPost.slug}`}>
           <article className="group cursor-pointer">
             <div className="relative overflow-hidden rounded-lg mb-4">
-              <Image
+              <img
                 src={rPost.thumbnail ?? "/placeholder_background.jpg"}
                 alt={rPost.title}
                 height={1280}
