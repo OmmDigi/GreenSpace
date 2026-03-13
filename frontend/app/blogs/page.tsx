@@ -140,12 +140,10 @@ const BlogListing: React.FC = async () => {
             <Link key={blog.id} href={`/blogs/${blog.slug}`}>
               <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                 <div className="relative h-48">
-                  <Image
+                  <img
                     src={blog.thumbnail ?? "/placeholder_background.jpg"}
                     alt="Featured"
                     className="object-cover"
-                    fill
-                    unoptimized = {true}
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-medium">

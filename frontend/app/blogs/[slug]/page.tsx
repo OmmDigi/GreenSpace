@@ -59,13 +59,12 @@ const BlogSingle = async ({ params }: IProps) => {
               <Calendar className="h-4 w-4" />
               <span>{blogPost.date}</span>
             </div>
-            <Image
+            <img
               src={blogPost.thumbnail ?? "/placeholder_background.jpg"}
               alt={blogPost.title}
               className="w-full h-full object-cover aspect-video rounded-3xl"
               height={1280}
               width={720}
-              unoptimized = {true}
             />
             <div
               className="rich-text-content"
