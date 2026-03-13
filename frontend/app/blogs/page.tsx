@@ -6,6 +6,8 @@ import Link from "next/link";
 import { IBlogList } from "@/types";
 import Pagination from "@/components/Pagination";
 
+export const dynamic = "force-dynamic";
+
 const BlogListing: React.FC = async () => {
   // const [currentPage, setCurrentPage] = useState(1);
   // const postsPerPage = 12;
